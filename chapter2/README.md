@@ -13,4 +13,3 @@ There're also some helper for front-end, Like `i18n` for internationalisation. `
 For the front-end, We leave full flexible to developers which means you can have fully customisable UI and Router.
 
 OK, Keep this image in your mind, let's go through each part of QOR deeper.
-
