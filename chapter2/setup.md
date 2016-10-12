@@ -29,18 +29,14 @@ import {
 }
 
 Admin := admin.New(&qor.Config{DB: DB})
-
-// Set admin page title
-Admin.SetSiteName("Qor DEMO")
-
-// Add dashboard
-Admin.AddMenu(&admin.Menu{Name: "Dashboard", Link: "/admin"})
 ```
 
-Check [here](../chapter2/menus.md#h1) about how to setup menus for QOR admin
+### 3. General settings
 
-TODO: how to set up menus for QOR admin
-TODO: add search center resource
+- [Dashboard](../chapter2/dashboard.md#h1)
+- [Site name](../chapter2/site_name.md#h1)
+- [Menus](../chapter2/menus.md#h1)
+- [Router](../chapter2/router.md#h1)
+- [Authentication](../chapter2/authentication.md#h1)
+
 TODO: Other qor.Configs
-
-Next, we'll introduce how to manage resource for QOR admin.

@@ -31,42 +31,47 @@ Here's the meta we supported
 
 This set what attributes of resource shall be shown in the index, new, edit, show page.
 
+```go
+// Set attributes will be shown in the index page
+// show given attributes
+order.IndexAttrs("User", "PaymentAmount", "ShippedAt", "CancelledAt", "State", "ShippingAddress")
+// show all attributes except `State`
+order.IndexAttrs("-State")
+
+// Set attributes will be shown in the new page
+order.NewAttrs("User", "PaymentAmount", "ShippedAt", "CancelledAt", "State", "ShippingAddress")
+// show all attributes except `State`
+order.NewAttrs("-State")
+// Structure the new form to make it tidy and clean with `Section`
+product.NewAttrs(
+  &admin.Section{
+    Title: "Basic Information",
+    Rows: [][]string{
+      {"Name"},
+      {"Code", "Price"},
+    }
+  },
+  &admin.Section{
+    Title: "Organization",
+    Rows: [][]string{
+      {"Category", "Collections", "MadeCountry"},
+    }
+  },
+  "Description",
+  "ColorVariations",
+}
+
+// Set attributes will be shown for the edit page, similar to new page
+order.EditAttrs("User", "PaymentAmount", "ShippedAt", "CancelledAt", "State", "ShippingAddress")
+
+// Set attributes will be shown for the show page, similar to new page
+// If ShowAttrs haven't been configured, there will be no show page generated, by will show the edit from instead
+order.ShowAttrs("User", "PaymentAmount", "ShippedAt", "CancelledAt", "State", "ShippingAddress")
 ```
-  // Attributes in index page
-  user.IndexAttrs("Email", "Name", "Gender")
 
-  // Attributes in new page
-  user.NewAttrs("Email", "Name", "Gender")
+#### General settings
 
-  // Attributes in edit page
-  user.EditAttrs("Email", "Name", "Gender")
-
-  // Attributes in show page
-  user.ShowAttrs("Email", "Name", "Gender")
-```
-
-#### Set search-able attributes
-
-```
-  user.SearchAttrs("User.Name", "User.Email")
-```
-
-This allow users to be searched by its name and email.
-
-#### Set filters
-
-Make resource filter-able by given setting
-
-```
-  user.Filter(&admin.Filter{
-    Name: "Gender",
-    Config: &admin.SelectOneConfig{
-      Collection: []string{"Male", "Female", "Unknown"},
-    },
-  })
-```
-
-TODO: Check more detail about filter [here]()
-
-#### Set action
-#### Set resouce-specific theme
+- [Search](../chapter2/search.md#h1)
+- [Scopes and Filters](../chapter2/filter.md#h1)
+- [Actions](../chapter2/actions.md#h1)
+- [Theme & Customize views](../chapter2/theme.md#h1)
