@@ -37,7 +37,7 @@ Admin.SetSiteName("Qor DEMO")
 Admin.AddMenu(&admin.Menu{Name: "Dashboard", Link: "/admin"})
 ```
 
-Check [here](./menus.md) about how to setup menus for QOR admin
+Check [here](../chapter2/menus.md#h1) about how to setup menus for QOR admin
 
 TODO: how to set up menus for QOR admin
 TODO: add search center resource
