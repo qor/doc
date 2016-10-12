@@ -6,7 +6,18 @@
   user := Admin.AddResource(&User{}, &admin.Config{Menu: []string{"User Management"}})
 ```
 
-TODO: introduce other available configurations
+Configurations:
+
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+| Name | string |  | Display name of the resource. |
+| Menu | []string |  | Menu setting of the resource, check [Menus](../chapter2/menus.md#h1) for detail. |
+| Invisible | bool | false | Set whether the resource is visible in menu. |
+| Priority | int |  | Control the display sequence in menu, ASC. |
+| PageCount | int |  | How many records shall be shown per page. |
+| Singleton | bool | false | Set the resource is a single object or multiple objects. e.g. "SEO setting" vs "Users". |
+| Permission | *roles.Permission |  | Control authority of the resource. check [Authority]() for - detail |
+| Themes | []ThemeInterface |  | Set customized theme for the resource, check [Theme](../chapter2/- theme.md#h1) for detail. |
 
 #### Set field type
 
@@ -75,3 +86,5 @@ order.ShowAttrs("User", "PaymentAmount", "ShippedAt", "CancelledAt", "State", "S
 - [Scopes and Filters](../chapter2/filter.md#h1)
 - [Actions](../chapter2/actions.md#h1)
 - [Theme & Customize views](../chapter2/theme.md#h1)
+
+

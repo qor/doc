@@ -8,7 +8,7 @@ A custom theme can be applied using a custom javascript and css file, for exampl
 product.UseTheme("fancy")
 ```
 
-#### Customizing Views
+#### Customizing Views {#customize-views}
 
 QOR Admin will look up templates in QOR Admin view paths and use them to render any admin page. By placing your own templates in `{current path}/app/views/qor` you can extend your application by customizing it's views. If you want to customize your views from other places, you could register any new paths with `admin.RegisterViewPath`.
 

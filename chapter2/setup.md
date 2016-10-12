@@ -1,4 +1,4 @@
-## Set up engine
+## Set up QOR admin
 
 ### 1. Prepare database
 
@@ -37,6 +37,3 @@ Admin := admin.New(&qor.Config{DB: DB})
 - [Site name](../chapter2/site_name.md#h1)
 - [Menus](../chapter2/menus.md#h1)
 - [Router](../chapter2/router.md#h1)
-- [Authentication](../chapter2/authentication.md#h1)
-
-TODO: Other qor.Configs
