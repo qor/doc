@@ -14,25 +14,29 @@
 
 ## Examples
 
+### Set option manually
+
 Change the Meta type of `Gender` field in User resource from `string` (default value) to `select_one`, with options `M` | `F`
 
 ```go
 user.Meta(&admin.Meta{Name: "Gender", Type: "select_one", Config: &admin.SelectOneConfig{Collection: []string{"M", "F"}}})
 ```
 
-Add clear icon to clear current selection
+### Add clear icon to clear current selection
 
 ```go
 u.Meta(&admin.Meta{Name: "Gender", Type: "select_one", Config: &admin.SelectOneConfig{Collection: []string{"M", "F"}, AllowBlank: true}})
 ```
 
-Overwrite default SelectionTemplate
+### Overwrite default SelectionTemplate
 
 ```go
 u.Meta(&admin.Meta{Name: "Gender", Type: "select_one", Config: &admin.SelectOneConfig{Collection: []string{"M", "F"}, SelectionTemplate: "metas/form/customised_select_one.tmpl"}})
 ```
 
 The full path of `SelectionTemplate` in example is `app/views/qor/metas/form/customised_select_one.tmpl`. About how to define/use customise template. Check [QOR view paths](../chapter2/theme.md#customize-views) document.
+
+### Different select mode
 
 TODO: SelectMode: `select_async`, `bottom_sheet` with `remoteDataResource`.
 
