@@ -25,10 +25,11 @@
         * [string/text](chapter2/meta-text-input.md)
    * [Authentication](chapter2/authentication.md)
    * [Authority](chapter2/authority.md)
-   * [Plugins](chapter2/plugins-intro.md)
+   * Plugins
      * [worker](chapter2/plugin-worker.md)
      * [exchange](chapter2/plugin-exchange.md)
      * [media library](chapter2/plugin-media-library.md)
-   * [Helpers](chapter2/helpers-intro.md)
+     * [publish](chapter2/plugin-publish.md)
+   * Helpers
      * [action bar](chapter2/helper-action-bar.md)
      * [render](chapter2/helper-render.md)
