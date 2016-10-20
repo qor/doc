@@ -15,8 +15,7 @@
       * Form fields
         * [checkbox](chapter2/meta-checkbox.md)
         * [collection/single edit](chapter2/meta-collection-edit.md)
-        * [date]()
-        * [datetime]()
+        * [date/datetime](chapter2/meta-date.md)
         * [float]()
         * [hidden]()
         * [number]()
