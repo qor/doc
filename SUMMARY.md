@@ -13,8 +13,8 @@
       * [Actions](chapter2/actions.md)
       * [Theme & Customize views](chapter2/theme.md)
       * Form fields
-        * [checkbox]()
-        * [collection edit]()
+        * [checkbox](chapter2/meta-checkbox.md)
+        * [collection/single edit](chapter2/meta-collection-edit.md)
         * [date]()
         * [datetime]()
         * [float]()
@@ -25,7 +25,6 @@
         * [rich editor]()
         * [select many](chapter2/meta-select-many.md)
         * [select one](chapter2/meta-select-one.md)
-        * [single edit]()
         * [string](chapter2/meta-text-input.md)
         * [text]()
    * [Authentication](chapter2/authentication.md)

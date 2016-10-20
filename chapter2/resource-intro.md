@@ -31,7 +31,7 @@ Here's an example about make "Gender" of user as a select element in the user fo
   user.Meta(&admin.Meta{Name: "Gender", Config: &admin.SelectOneConfig{Collection: []string{"Male", "Female", "Unknown"}}})
 ```
 
-#### Configurations
+#### Configurations {#meta-config}
 
 | Name | Type | Description |
 | --- | --- | --- |
