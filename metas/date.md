@@ -16,7 +16,7 @@ type Product struct {
 
 The form will be
 
-![Datetime](../chapter2/meta-datetime.png)
+![Datetime](../metas/meta-datetime.png)
 
 ## Date
 
