@@ -30,6 +30,9 @@
      * [exchange](chapter2/plugin-exchange.md)
      * [media library](chapter2/plugin-media-library.md)
      * [publish](chapter2/plugin-publish.md)
+     * [transition](chapter2/plugin-transition.md)
    * Helpers
+     * [widget](chapter2/helper-widget.md)
      * [action bar](chapter2/helper-action-bar.md)
+     * [sorting](chapter2/helper-sorting.md)
      * [render](chapter2/helper-render.md)
