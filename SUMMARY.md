@@ -31,6 +31,7 @@
      * [media library](chapter2/plugin-media-library.md)
      * [publish](chapter2/plugin-publish.md)
      * [transition](chapter2/plugin-transition.md)
+     * [notification](chapter2/plugin-notification.md)
    * Helpers
      * [widget](chapter2/helper-widget.md)
      * [action bar](chapter2/helper-action-bar.md)
