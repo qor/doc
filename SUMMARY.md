@@ -34,6 +34,7 @@
      * [notification](plugins/notification.md)
      * [activity](plugins/activity.md)
      * [L10n](plugins/l10n.md)
+     * [I18n](plugins/i18n.md)
    * Helpers
      * [widget](helpers/widget.md)
      * [action bar](helpers/action-bar.md)
