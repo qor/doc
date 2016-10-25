@@ -9,7 +9,7 @@
 | SelectMode | string | "select" | Set the data source of the options, Three available options "select", "select_async" and "bottom_sheet". Check examples for detail |
 | Select2ResultTemplate | template.JS |  | Same as select2's option [templateResult](https://select2.github.io/options.html#can-i-change-how-the-placeholder-looks) |
 | Select2SelectionTemplate | template.JS |  | Same as select2's option [templateSelection](https://select2.github.io/options.html#templateSelection) |
-| RemoteDataResource | *Resource |  | For the configuration `SelectMode`, when it set to "select_async" or "bottom_sheet", this will be the data resource, check examples for usage detail |
+| RemoteDataResource | *Resource |  | For the configuration `SelectMode`, when it set to "select_async" or "bottom_sheet", this will be the data resource, Usually this will be set by association between resources by default. See `FavouriteProducts` example below. |
 
 ## Examples
 
@@ -66,10 +66,6 @@ u.Meta(&admin.Meta{Name: "FavouriteProducts", Type: "select_many", Config: &admi
 
 The full path of `SelectionTemplate` in example is `app/views/qor/metas/form/customised_select_many.tmpl`. About how to define/use customise template. Check [QOR view paths](../chapter2/theme.md#customize-views) document.
 
-### Different select mode
+### Select option in pop-up
 
-TODO: SelectMode: `select_async`, `bottom_sheet` with `remoteDataResource`.
-
-```
-u.Meta(&admin.Meta{Name: "Gender", Type: "select_one", Config: &admin.SelectOneConfig{Collection: []string{"M", "F"}, SelectMode: `select_async` }})
-```
+Set the `SelectMode` as `bottom_sheet`. The options of select will be displayed in a pop-up.
