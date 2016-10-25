@@ -35,11 +35,3 @@ u.Meta(&admin.Meta{Name: "Gender", Type: "select_one", Config: &admin.SelectOneC
 ```
 
 The full path of `SelectionTemplate` in example is `app/views/qor/metas/form/customised_select_one.tmpl`. About how to define/use customise template. Check [QOR view paths](../chapter2/theme.md#customize-views) document.
-
-### Different select mode
-
-TODO: SelectMode: `select_async`, `bottom_sheet` with `remoteDataResource`.
-
-```
-u.Meta(&admin.Meta{Name: "Gender", Type: "select_one", Config: &admin.SelectOneConfig{Collection: []string{"M", "F"}, SelectMode: `select_async` }})
-```

@@ -17,17 +17,3 @@ Customize Views Rules:
 * To overwrite a template, create a file with the same name under `{current path}/app/views/qor`.
 * To overwrite templates for a specific resource, put templates with the same name in `{qor view paths}/{resource param}`, for example `{current path}/app/views/qor/products/index.tmpl`.
 * To overwrite templates for resources using a theme, put templates with the same name in `{qor view paths}/themes/{theme name}`.
-
-TODO: Available parameters:
-
-```
-  var data = map[string]interface{}{
-    "Context":       context,
-    "BaseResource":  meta.baseResource,
-    "Meta":          meta,
-    "ResourceValue": value,
-    "Value":         context.FormattedValueOf(value, meta),
-    "Label":         meta.Label,
-    "InputName":     strings.Join(prefix, "."),
-  }
-```

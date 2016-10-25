@@ -6,4 +6,4 @@ Set attribute type as `int*`. The field will be a number field.
 
 ## Float
 
-TODO: not clear to doc author now.
+Set attribute type as `float*`. The field will be a float field.
