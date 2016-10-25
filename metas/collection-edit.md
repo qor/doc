@@ -45,3 +45,13 @@ type Parameter struct {
 The form will looks like
 
 ![Single edit](single_edit.png)
+
+## Customize field inside nested form
+
+Continue use single edit example, You can customize attribute of Parameter resource by:
+
+```
+product := Admin.AddResource(&Product{})
+parameter := product.Meta(&admin.Meta{Name: "Parameter"}).Resource
+parameter.Meta(&admin.Meta{Name: "Height", Type: "Float"})
+```
