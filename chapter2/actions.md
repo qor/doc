@@ -21,8 +21,11 @@ product.Action(&admin.Action{
   },
   Modes: []string{"index", "edit", "show", "menu_item"},
 })
+```
 
-// Register Actions need user's input
+## Register Actions need user's input
+
+```go
 order.Action(&admin.Action{
   Name: "Ship",
   Handle: func(argument *admin.ActionArgument) error {
@@ -40,8 +43,11 @@ order.Action(&admin.Action{
 type trackingNumberArgument struct {
   TrackingNumber string
 }
+```
 
-// Use `Visible` to hide registered Action in some case
+## Use `Visible` to hide registered Action in some case
+
+```go
 order.Action(&admin.Action{
   Name: "Cancel",
   Handle: func(argument *admin.ActionArgument) error {

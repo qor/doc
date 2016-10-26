@@ -1,6 +1,8 @@
-# String / Text
+# Text input / Text area
 
-These are rendered by the attributes type.
+## Text input
+
+It is rendered by the attributes type by default.
 
 ```
 type User struct {
@@ -10,4 +12,10 @@ type User struct {
 
 The `Name` will be rendered as text input.
 
+## Text area
 
+Simply set the `Type` as "text".
+
+```go
+  product.Meta(&admin.Meta{Name: "Description", Type: "text"})
+```

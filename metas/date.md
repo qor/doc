@@ -14,7 +14,7 @@ type Product struct {
 }
 ```
 
-The form will be
+The "ReleaseDate" in form shall looks like
 
 ![Datetime](../metas/meta-datetime.png)
 

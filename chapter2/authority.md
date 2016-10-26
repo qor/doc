@@ -10,13 +10,11 @@ Roles is an authorization library for Golang.
 
 Permission Modes are really the 'roles' in Roles. Roles has [5 default permission modes](https://github.com/qor/roles/blob/master/permission.go#L8-L12):
 
-```
-roles.Read
-roles.Update
-roles.Create
-roles.Delete
-roles.CRUD   // CRUD means Read, Update, Create, Delete
-```
+- roles.Read
+- roles.Update
+- roles.Create
+- roles.Delete
+- roles.CRUD   // CRUD means Read, Update, Create, Delete
 
 You can use those Permission Modes, or create your own, to [define permission](#define-permission).
 

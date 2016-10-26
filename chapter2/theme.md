@@ -2,7 +2,7 @@
 
 #### Using a Theme
 
-A custom theme can be applied using a custom javascript and css file, for example to make a product page look super fancy. To apply a custom theme, provide the theme name using the `UseTheme` method, this will load `assets/javascripts/fancy.js` and `assets/stylesheets/fancy.css` from [QOR view paths](#customizing-views)
+A custom theme can be applied using a custom javascript and css file, for example to make a product page looks fancy. To apply a custom theme, provide the theme name using the `UseTheme` method, this will load `assets/javascripts/fancy.js` and `assets/stylesheets/fancy.css` from [QOR view paths](#customizing-views)
 
 ```go
 product.UseTheme("fancy")

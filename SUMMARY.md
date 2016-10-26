@@ -22,7 +22,7 @@
         * [Rich editor](metas/rich-editor.md)
         * [Select many](metas/select-many.md)
         * [Select one](metas/select-one.md)
-        * [String/Text](metas/text-input.md)
+        * [Text input/Text area](metas/text-input.md)
    * [Authentication](chapter2/authentication.md)
    * [Authority](chapter2/authority.md)
    * Plugins
