@@ -1,8 +1,10 @@
 ## Set up QOR admin
 
+[QOR admin](https://github.com/qor/admin) is the foundation of QOR. All resources are created based on it.
+
 ### 1. Prepare database
 
-The official ORM that QOR used is [GORM](http://jinzhu.me/gorm/). But this doesn't means QOR is binded with GORM. You can use any ORM you want. We would recommend user to use GORM because other ORM may lack of features that QOR needed.
+The official ORM that QOR used is [GORM](http://jinzhu.me/gorm/). We use it in the demo code too.
 
 Define models and setup a database.
 
@@ -23,9 +25,12 @@ DB.AutoMigrate(&User{})
 
 ### 2. Initialise QOR admin
 
+The `qor.Config` here only do one thing that is accept the database as a parameter.
+
 ```
 import {
   "github.com/qor/admin"
+  "github.com/qor/qor"
 }
 
 Admin := admin.New(&qor.Config{DB: DB})
@@ -33,7 +38,6 @@ Admin := admin.New(&qor.Config{DB: DB})
 
 ### 3. General settings
 
-- [Dashboard](../chapter2/dashboard.md#h1)
-- [Site name](../chapter2/site_name.md#h1)
-- [Menus](../chapter2/menus.md#h1)
-- [Router](../chapter2/router.md#h1)
+You can customize the [Dashboard](../chapter2/dashboard.md#h1), Set [Site name](../chapter2/site_name.md#h1), Configure [Menus](../chapter2/menus.md#h1) and [Router](../chapter2/router.md#h1).
+
+In the next chapter, We will introduce the Resource.

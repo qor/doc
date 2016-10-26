@@ -7,14 +7,18 @@ It is possible to define a nested menu structure for the admin interface.
 ```go
 Admin.AddMenu(&admin.Menu{Name: "Dashboard", Link: "/admin"})
 
-// Register nested menu
+// Register nested menu, The "menu" under "Dashboard"
 Admin.AddMenu(&admin.Menu{Name: "menu", Link: "/link", Ancestors: []string{"Dashboard"}})
 
-// Register menu with permission
+// Register menu with permission, User has "admin" permission could access "Report" page.
 Admin.AddMenu(&admin.Menu{Name: "Report", Link: "/admin", Permission: roles.Allow(roles.Read, "admin")})
 ```
 
+Please check [Authority](authority.md) for more permission control informations.
+
 #### Add Resources to a menu
+
+By default, Resource will be listed at the top level of menu. You can set the position manually.
 
 ```go
 Admin.AddResource(&User{})

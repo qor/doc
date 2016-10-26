@@ -12,7 +12,7 @@ product.UseTheme("fancy")
 
 QOR Admin will look up templates in QOR Admin view paths and use them to render any admin page. By placing your own templates in `{current path}/app/views/qor` you can extend your application by customizing it's views. If you want to customize your views from other places, you could register any new paths with `admin.RegisterViewPath`.
 
-Customize Views Rules:
+#### Customize Views Rules:
 
 * To overwrite a template, create a file with the same name under `{current path}/app/views/qor`.
 * To overwrite templates for a specific resource, put templates with the same name in `{qor view paths}/{resource param}`, for example `{current path}/app/views/qor/products/index.tmpl`.

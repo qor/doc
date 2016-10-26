@@ -52,7 +52,7 @@ Admin.AddResource(&User{})
 Admin.AddResource(&Product{})
 ```
 
-Register router and amount qor admin to `/admin`
+Register router and mount qor admin to `/admin`
 
 ```
 // Register route
@@ -114,5 +114,3 @@ func main() {
 ```
 
 Execute `go get -u ./...` to install the dependencies, then run `go run main.go` and visit <localhost:9000/admin> to see the site.
-
-
