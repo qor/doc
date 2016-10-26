@@ -1,6 +1,8 @@
 # Search
 
-It is possible to specify database table columns as search attributes, using `SearchAttrs`, the columns will be used to perform any search queries. It is also possible to specify nested relations.
+It is possible to specify database table columns as a search attributes by using `SearchAttrs`, the columns will be used to perform any search queries.
+
+## Examples
 
 ```go
 // Search products with its name, code, category's name, brand's name
@@ -13,6 +15,15 @@ If you want to fully customize the search function, you could set the `SearchHan
 order.SearchHandler = func(keyword string, context *qor.Context) *gorm.DB {
   // search orders
 }
+```
+
+## Searching by nested relations
+
+It is also possible to specify nested relations.
+
+```go
+// Search order by user's name and email. shipping address's contact name, addresses.
+order.SearchAttrs("User.Name", "User.Email", "ShippingAddress.ContactName", "ShippingAddress.Address1", "ShippingAddress.Address2")
 ```
 
 ## Search Center
