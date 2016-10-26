@@ -1,12 +1,18 @@
 # Router
 
+You can define your own routes by Router.
+
 ## Registering HTTP routes
 
-Qor admin uses Qor's Router.
+First, Get `router` from QOR admin.
 
 ```go
 router := Admin.GetRouter()
+```
 
+### General routes
+
+```go
 router.Get("/path", func(context *admin.Context) {
     // do something here
 })
@@ -22,13 +28,19 @@ router.Put("/path", func(context *admin.Context) {
 router.Delete("/path", func(context *admin.Context) {
     // do something here
 })
+```
 
-// naming route
+### Naming route
+
+```go
 router.Get("/path/:name", func(context *admin.Context) {
     context.Request.URL.Query().Get(":name")
 })
+```
 
-// regexp support
+### Regexp support
+
+```go
 router.Get("/path/:name[world]", func(context *admin.Context) { // "/hello/world"
     context.Request.URL.Query().Get(":name")
 })
