@@ -1,12 +1,12 @@
 # Audited
 
-Audited is used to record the last User who created and/or updated your [GORM](https://github.com/jinzhu/gorm) model. It does so using a `CreatedBy` and `UpdatedBy` field
+Audited is used to record the last User who created and/or updated your [GORM](https://github.com/jinzhu/gorm) model. It does so using a `CreatedBy` and `UpdatedBy` field. Audited could be used alone, but it works very nicely with QOR.
 
 [![GoDoc](https://godoc.org/github.com/qor/audited?status.svg)](https://godoc.org/github.com/qor/audited)
 
 ### Register GORM Callbacks
 
-Audited utilises [GORM](https://github.com/jinzhu/gorm) callbacks to log data, so you will need to register callbacks first:
+Audited utilizes [GORM](https://github.com/jinzhu/gorm) callbacks to log data, So you need to register callbacks first:
 
 ```go
 import (
@@ -57,12 +57,4 @@ func main() {
 }
 ```
 
-## [Qor Support](https://github.com/qor/qor)
-
-[QOR](http://getqor.com) is architected from the ground up to accelerate development and deployment of Content Management Systems, E-commerce Systems, and Business Applications and as such is comprised of modules that abstract common features for such systems.
-
-Audited could be used alone, but it works very nicely with QOR - if you have requirements to manage your application's data, be sure to check QOR out!
-
 [QOR Demo:  http://demo.getqor.com/admin](http://demo.getqor.com/admin)
-
-To use Audited with QOR, just embedded `audited.AuditedModel` for a model, it will subsequently be tracked whenever creating/updating in Qor Admin.
