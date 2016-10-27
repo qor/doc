@@ -1,6 +1,6 @@
 # Activity
 
-Activity is dependant on [QOR Admin](https://github.com/qor/admin). It provides QOR Admin with an activity tracking feature for any Resource.
+Activity provides QOR Admin with an activity tracking feature for any Resource.
 
 Applying Activity to a Resource will add `Comment` and `Track` data/state changes within the admin interface.
 
@@ -19,5 +19,9 @@ func main() {
   activity.Register(order)
 }
 ```
+
+This will add activity tracking feature to order like:
+
+![activity demo](activity-demo.png)
 
 [Online Demo](http://demo.getqor.com/admin/orders)
