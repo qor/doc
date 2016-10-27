@@ -1,6 +1,6 @@
 # QOR Notification
 
-QOR Notification is built for send notification to the users. Like order, delivery notices.
+QOR Notification provides a way to send notifications to the users. Like order update, delivery notices.
 
 ## Usage
 
@@ -16,8 +16,8 @@ Notification.RegisterChannel(database.New(&database.Config{DB: db.DB}))
 // Send Notification
 Notification.Send(message *Message, context *qor.Context)
 
-// Get Notificatio
-Notification.GetNotification(user interface{}, messageID string, context *qor.Context) *QorNotification
+// Get Notification
+Notification.GetNotification(user interface{}, messageID string, context *qor.Context)
 
 // Get Notifications
 Notification.GetNotifications(user interface{}, context *qor.Context)

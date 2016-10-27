@@ -23,6 +23,10 @@ type Shop struct {
 }
 ```
 
+Screenshot for location:
+
+![location](location.png)
+
 ## [Qor Support](https://github.com/qor/qor)
 
 [QOR](http://getqor.com) is architected from the ground up to accelerate development and deployment of Content Management Systems, E-commerce Systems, and Business Applications and as such is comprised of modules that abstract common features for such systems.

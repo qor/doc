@@ -1,6 +1,6 @@
 # ActionBar
 
-ActionBar is dependant on [QOR Admin](https://github.com/qor/admin). It provides an action bar on the top of frontend page. The bar contains:
+ActionBar depends on [QOR Admin](https://github.com/qor/admin). It provides an action bar on the top of frontend page. The bar contains:
 
 * Switcher of `Preview` and `Edit` mode
 * Login/Logout links

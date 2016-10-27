@@ -1,6 +1,6 @@
 # Cache Store
 
-Cache Store
+Cache Store provide a way to cache things.
 
 ## Memcached Cache Store Usage
 

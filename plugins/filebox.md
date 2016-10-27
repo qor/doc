@@ -1,6 +1,6 @@
 # Filebox
 
-Filebox could be used to provide access permission control for files, directories
+Filebox provides access permission control for files, directories
 
 You could choose filebox to satisfy below scenarios:
 

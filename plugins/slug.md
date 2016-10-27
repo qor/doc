@@ -14,9 +14,13 @@ import (
   "github.com/qor/slug"
 )
 
-type Product struct {
+type User struct {
   gorm.Model
   Name            string
   NameWithSlug    slug.Slug
 }
 ```
+
+In the admin:
+
+![slug](slug.png)

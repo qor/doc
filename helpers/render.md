@@ -1,6 +1,6 @@
 # Render
 
-Render Templates
+Render support to render templates by your control.
 
 ## Usage
 
