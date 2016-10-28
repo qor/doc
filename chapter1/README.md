@@ -1,8 +1,8 @@
 ## Getting started
 
-Let's build a run-able QOR content management site with gorm first.
+Start with building a very simple content management system based on QOR admin. It only have a user model and a product model. By using this as a foundation, You can explore QOR further. Like configure menus for QOR admin, Try QOR supported form fields. Set up authentication/authority etc.
 
-First, Define package and import dependencies
+So first, Define package and import dependencies
 
 ```
 package main
