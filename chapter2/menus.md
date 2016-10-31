@@ -2,7 +2,7 @@
 
 #### Register a Menu
 
-It is possible to define a nested menu structure for the admin interface.
+It is possible to define a nested menu structure for the [QOR Admin](https://github.com/qor/admin) interface.
 
 ```go
 Admin.AddMenu(&admin.Menu{Name: "Dashboard", Link: "/admin"})
@@ -18,7 +18,7 @@ Please check [Roles](../plugins/roles.md) for more permission control informatio
 
 #### Add Resources to a menu
 
-By default, Resource will be listed at the top level of menu. You can set the position manually.
+By default, `Resource` will be listed at the top level of menu. You can set the position manually.
 
 ```go
 Admin.AddResource(&User{})
@@ -30,7 +30,7 @@ Admin.AddResource(&Size{}, &admin.Config{Menu: []string{"Product Management"}})
 Admin.AddResource(&Order{}, &admin.Config{Menu: []string{"Order Management"}})
 ```
 
-If you don't want a resource to be displayed in the menu, pass the Invisible option:
+If you don't want a resource to be displayed in the menu, pass the `Invisible` option:
 
 ```go
 Admin.AddResource(&User{}, &admin.Config{Invisible: true})
