@@ -114,3 +114,5 @@ func main() {
 ```
 
 Execute `go get -u ./...` to install the dependencies, then run `go run main.go` and visit <localhost:9000/admin> to see the site.
+
+Check [QOR example](https://github.com/qor/qor-example) for a more complete example. Including Authentication, Authority, I18n, SEO, Widget, Worker, Publish and product & store & order & user management.
