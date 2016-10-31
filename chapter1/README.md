@@ -1,8 +1,13 @@
 ## Getting started
 
-Start with building a very simple content management system based on QOR admin. It only have a user model and a product model. By using this as a foundation, You can explore QOR further. Like configure menus for QOR admin, Try QOR supported form fields. Set up authentication/authority etc.
+In this document, we will provide example code based on a simple, hypothetical project: a content management system based on QOR Admin. The end goal is to have a User model and a Product model, which would allow an administrator to use QOR Admin to manage data within a User table and Product table within a [SQLite3 database](https://sqlite.org/ "SQLite3 database"). We hope that this simple project code will establish the foundations of QOR for you as you read through this document. So the first aspects we will touch on are:
 
-So first, Define package and import dependencies
+- configuring menus for QOR Admin,
+- try out some QOR supported form fields.
+
+It will really help if you type out this code and run it - you'll learn a lot in the process!
+
+Let's begin, define a package and import dependencies...
 
 ```
 package main
@@ -18,7 +23,7 @@ import (
 )
 ```
 
-Then, Define models
+Then, we define models...
 
 ```
 type User struct {
@@ -33,16 +38,14 @@ type Product struct {
 }
 ```
 
-In the `main()` function
-
-Set up database
+In the `main()` function, set up the database...
 
 ```
 DB, _ := gorm.Open("sqlite3", "demo.db")
 DB.AutoMigrate(&User{}, &Product{})
 ```
 
-Initialise QOR admin
+Now Initialise QOR Admin...
 
 ```
 Admin := admin.New(&qor.Config{DB: DB})
@@ -52,7 +55,7 @@ Admin.AddResource(&User{})
 Admin.AddResource(&Product{})
 ```
 
-Register router and mount qor admin to `/admin`
+Register a router and mount qor admin to `/admin`...
 
 ```
 // Register route
@@ -64,7 +67,7 @@ fmt.Println("Listening on: 9000")
 http.ListenAndServe(":9000", mux)
 ```
 
-Finally, The file should looks like this
+Finally, The file should looks like this:
 
 ```
 package main
@@ -115,4 +118,4 @@ func main() {
 
 Execute `go get -u ./...` to install the dependencies, then run `go run main.go` and visit <localhost:9000/admin> to see the site.
 
-Check [QOR example](https://github.com/qor/qor-example) for a more complete example. Including Authentication, Authority, I18n, SEO, Widget, Worker, Publish and product & store & order & user management.
+Next step: have a look at the [QOR example](https://github.com/qor/qor-example) code which solves the needs of a more realistic example project. The project is considerably larger and includes: Authentication, Authority, i18n, SEO, Widget, Worker, Publish, product, store, order, and user management.
