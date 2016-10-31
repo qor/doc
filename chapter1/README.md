@@ -1,8 +1,8 @@
 ## Getting started
 
-Let's build a run-able QOR content management site with gorm first.
+Start with building a very simple content management system based on QOR admin. It only have a user model and a product model. By using this as a foundation, You can explore QOR further. Like configure menus for QOR admin, Try QOR supported form fields. Set up authentication/authority etc.
 
-First, Define package and import dependencies
+So first, Define package and import dependencies
 
 ```
 package main
@@ -114,3 +114,5 @@ func main() {
 ```
 
 Execute `go get -u ./...` to install the dependencies, then run `go run main.go` and visit <localhost:9000/admin> to see the site.
+
+Check [QOR example](https://github.com/qor/qor-example) for a more complete example. Including Authentication, Authority, I18n, SEO, Widget, Worker, Publish and product & store & order & user management.
