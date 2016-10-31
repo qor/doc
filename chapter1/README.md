@@ -45,7 +45,7 @@ DB, _ := gorm.Open("sqlite3", "demo.db")
 DB.AutoMigrate(&User{}, &Product{})
 ```
 
-Now Initialise [QOR Admin](https://github.com/qor/admin)...
+Now initialise [QOR Admin](https://github.com/qor/admin)...
 
 ```
 Admin := admin.New(&qor.Config{DB: DB})
@@ -116,6 +116,6 @@ func main() {
 }
 ```
 
-Execute `go get -u ./...` to install the dependencies, then run `go run main.go` and visit <localhost:9000/admin> to see the site.
+Execute `go get -u ./...` to install the dependencies, then run `go run main.go` and visit [localhost:9000/admin](localhost:9000/admin) to see the site.
 
 Next step: have a look at the [QOR example](https://github.com/qor/qor-example) code which solves the needs of a more realistic example project. The project is considerably larger and includes: Authentication, Authority, i18n, SEO, Widget, Worker, Publish, product, store, order, and user management.

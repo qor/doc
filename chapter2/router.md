@@ -1,6 +1,6 @@
 # Router
 
-You can define your own routes by Router.
+You can define your own routes by `Router`.
 
 ## Registering HTTP routes
 
