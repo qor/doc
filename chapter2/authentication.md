@@ -1,6 +1,8 @@
 # Authentication
 
-QOR Admin provides a flexible authorization solution. With it, you could integrate with your current authorization method.
+QOR Admin provides a flexible authentication and authorization solution. With it, you could integrate with your current authentication and authorization methods.
+
+The authorization aspect of this interface lies in the `GetCurrentUser` method, while the remaining methods are all about authentication.
 
 What you need to do is implement an `Auth` interface like below, and set it in the Admin value.
 
