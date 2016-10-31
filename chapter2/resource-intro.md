@@ -28,7 +28,7 @@ Available options inside `admin.Config` are:
 | Priority | int |  | Control the display sequence in menu, ordered by ASC. |
 | PageCount | int |  | Pagination setting, Set how many records shall be shown per page. |
 | Singleton | bool | false | Set the resource is a single object or multiple objects. e.g. "SEO setting" vs "Users". |
-| Permission | *roles.Permission |  | Control the authority of the resource. check [Authority](../chapter2/authority.md#h1) for detail |
+| Permission | *roles.Permission |  | Control the authority of the resource. check [Roles](../plugins/roles.md) for detail |
 | Themes | []ThemeInterface |  | Set customized theme for the resource, check [Theme](../chapter2/theme.md#h1) for detail. |
 
 #### Set CRUD attributes
@@ -99,7 +99,7 @@ Here's an example about make "Gender" of user as a select element in the user fo
 | Valuer | func(interface{}, *qor.Context) interface{} | Overwrite default "Getter" logic to customize the value fetched from the database. |
 | FormattedValuer | func(interface{}, *qor.Context) interface{} | Customize the output of the attribute in index page and API. |
 | Resource | *Resource | Used for customize attribute in nested form, Check [How to customize attribute in nested form](../metas/collection-edit.md) for detail. |
-| Permission | *roles.Permission | Define user authority of this attribute, Check [Authority](authority.md) for detail. |
+| Permission | *roles.Permission | Define user authority of this attribute, Check [Roles](../plugins/roles.md) for detail. |
 | Config | MetaConfigInterface | The configuration of current type of attribute, e.g. `Config: &admin.SelectOneConfig{Collection: []string{"Male", "Female", "Unknown"}}`. Check each meta document for detail. |
 
 **Predefined meta types**:

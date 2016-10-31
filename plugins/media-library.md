@@ -1,12 +1,12 @@
 # Media Library
 
-Media Library is a [Golang](http://golang.org/) library that supports the upload of files/images to a filesystem or cloud storage. The Plugin includes cropping and resizing features for images.
+[Media Library](https://github.com/qor/media_library) is a [Golang](http://golang.org/) library that supports the upload of files/images to a filesystem or cloud storage. The plugin includes cropping and resizing features for images.
 
 [![GoDoc](https://godoc.org/github.com/qor/media_library?status.svg)](https://godoc.org/github.com/qor/media_library)
 
 ## Usage
 
-Media Library is dependant on [GORM-backend](https://github.com/jinzhu/gorm) models as it is using GORM's callbacks to handle file processing, so you will need to register callbacks first:
+[Media Library](https://github.com/qor/media_library) depends on [GORM](https://github.com/jinzhu/gorm) models as it is using [GORM](https://github.com/jinzhu/gorm)'s callbacks to handle file processing, so you will need to register callbacks first:
 
 ```go
 import "github.com/jinzhu/gorm"
@@ -17,7 +17,7 @@ DB, err = gorm.Open("sqlite3", "demo_db") // [gorm](https://github.com/jinzhu/go
 media_library.RegisterCallbacks(&DB)
 ```
 
-Add Media Library support to structs:
+Add [Media Library](https://github.com/qor/media_library) support to structs:
 
 ```go
 // upload file to FileSystem
@@ -82,7 +82,7 @@ product.Image.URL("big@ld")
 
 [QOR](http://getqor.com) is architected from the ground up to accelerate development and deployment of Content Management Systems, E-commerce Systems, and Business Applications and as such is comprised of modules that abstract common features for such systems.
 
-Media Library could be used alone, but it works very nicely with QOR (as a QOR Plugin), if you have requirements to manage your application's data, be sure to check QOR out!
+[Media Library](https://github.com/qor/media_library) could be used alone, but it works very nicely with [QOR](https://github.com/qor/qor) (as a [QOR](https://github.com/qor/qor) Plugin), if you have requirements to manage your application's data, be sure to check [QOR](https://github.com/qor/qor) out!
 
 [QOR Demo:  http://demo.getqor.com/admin](http://demo.getqor.com/admin)
 

@@ -1,8 +1,8 @@
 # Transition
 
-Transition is a Golang state machine implementation.
+[Transition](https://github.com/qor/transition) is a Golang state machine implementation.
 
-Transition can be used standalone, but it works very nicely with [GORM](https://github.com/jinzhu/gorm) models. When integrated with GORM, it will also store state change logs in the database automatically.
+[Transition](https://github.com/qor/transition) can be used standalone, but it works very nicely with [GORM](https://github.com/jinzhu/gorm) models. When integrated with [GORM](https://github.com/jinzhu/gorm), it will also store state change logs in the database automatically.
 
 [![GoDoc](https://godoc.org/github.com/qor/transition?status.svg)](https://godoc.org/github.com/qor/transition)
 
@@ -10,7 +10,7 @@ Transition can be used standalone, but it works very nicely with [GORM](https://
 
 ### Enable Transition for your struct
 
-Embed `Transition` into your struct, it will enable the state machine feature for the struct:
+Embed [Transition](https://github.com/qor/transition) into your struct, it will enable the state machine feature for the struct:
 
 ```go
 import "github.com/qor/transition"
@@ -96,7 +96,7 @@ order.SetState("finished") // this will only update order's state, won't save it
 
 ## State change logs
 
-When working with GORM, it will store all state change logs in the database, use `GetStateChangeLogs` to get those logs:
+When working with [GORM](https://github.com/jinzhu/gorm), it will store all state change logs in the database, use `GetStateChangeLogs` to get those logs:
 
 ```go
 // create the table used to store logs first

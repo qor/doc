@@ -1,6 +1,6 @@
 # Qor Slug
 
-Slug package is an extension for qor. It provides an easy way to create a pretty URL for your model.
+[Slug](https://github.com/qor/slug) package is an extension for [QOR](https://github.com/qor/qor). It provides an easy way to create a pretty URL for your model.
 
 [![GoDoc](https://godoc.org/github.com/qor/slug?status.svg)](https://godoc.org/github.com/qor/slug)
 

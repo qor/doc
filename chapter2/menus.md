@@ -14,7 +14,7 @@ Admin.AddMenu(&admin.Menu{Name: "menu", Link: "/link", Ancestors: []string{"Dash
 Admin.AddMenu(&admin.Menu{Name: "Report", Link: "/admin", Permission: roles.Allow(roles.Read, "admin")})
 ```
 
-Please check [Authority](authority.md) for more permission control informations.
+Please check [Roles](../plugins/roles.md) for more permission control informations.
 
 #### Add Resources to a menu
 

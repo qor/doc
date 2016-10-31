@@ -1,6 +1,6 @@
 # Exchange
 
-Exchange is a Golang library that allows a database to be exported or imported to or from a file.
+[Exchange](https://github.com/qor/exchange) is a [Golang](http://golang.org/) library that allows a database to be exported or imported to or from a file.
 
 Data can optionally be validated during import and export.
 

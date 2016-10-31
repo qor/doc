@@ -1,24 +1,24 @@
 # BindataFS
 
-Compile qor templates into binary with [go-bindata](https://github.com/jteeuwen/go-bindata)
+[BindataFS](https://github.com/qor/bindatafs) compile [QOR](https://github.com/qor/qor) templates into binary with [go-bindata](https://github.com/jteeuwen/go-bindata)
 
 [![GoDoc](https://godoc.org/github.com/qor/bindatafs?status.svg)](https://godoc.org/github.com/qor/bindatafs)
 
 ## Usage
 
-Install BindataFS
+Install [BindataFS](https://github.com/qor/bindatafs)
 
 ```sh
 $ go install github.com/qor/bindatafs
 ```
 
-Initialize BindataFS for your project, `config/bindatafs` is the path you want to store bindatafs related files
+Initialize [BindataFS](https://github.com/qor/bindatafs) for your project, `config/bindatafs` is the path you want to store [BindataFS](https://github.com/qor/bindatafs) related files
 
 ```sh
 $ bindatafs config/bindatafs
 ```
 
-Use Bindatafs for QOR Admin
+Use [BindataFS](https://github.com/qor/bindatafs) for [QOR Admin](https://github.com/qor/admin)
 
 ```go
 import "<your_project>/config/bindatafs"
@@ -29,7 +29,7 @@ func main() {
 }
 ```
 
-Compiling QOR templates
+Compiling [QOR](https://github.com/qor/qor) templates
 
 ```sh
 go run main.go --compile-qor-templates

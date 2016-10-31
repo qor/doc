@@ -1,8 +1,8 @@
 # Filebox
 
-Filebox provides access permission control for files, directories
+[Filebox](https://github.com/qor/filebox) provides access permission control for files, directories.
 
-You could choose filebox to satisfy below scenarios:
+You could choose [Filebox](https://github.com/qor/filebox) to satisfy below scenarios:
 
 Scenario 1:
 

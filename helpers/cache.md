@@ -1,6 +1,6 @@
 # Cache Store
 
-Cache Store provide a way to cache things.
+[Cache Store](https://github.com/qor/cache) provide a way to cache things.
 
 ## Memcached Cache Store Usage
 
