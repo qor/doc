@@ -1,6 +1,6 @@
 # WildcardRouter
 
-WildcardRouter is component that used to handle dynamic routing.
+[WildcardRouter](https://github.com/qor/wildcard_router) is component that used to handle dynamic routing.
 
 You could use wildcard_router to satisfy below scenario:
 
