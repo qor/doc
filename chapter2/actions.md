@@ -1,11 +1,11 @@
 # Actions
 
-QOR Admin has the notion of four `Action Modes`:
+QOR Admin has the notion of four action modes:
 
-* Bulk actions (will be shown in index page as bulk actions),
-* Edit form action (will be shown in edit page),
-* Show page action (will be shown in show page),
-* Menu item action (will be shown in table's menu).
+* Bulk actions (will be shown in index page as bulk actions)
+* Edit form action (will be shown in edit page)
+* Show page action (will be shown in show page)
+* Menu item action (will be shown in table's menu)
 
 You can register an Action of any mode using the `Action` method, along with `Modes` values to contol where to show them:
 
