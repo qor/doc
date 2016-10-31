@@ -1,16 +1,12 @@
 # Sorting
 
-Sorting is used to add reordering abilities to [GORM-backend](https://github.com/jinzhu/gorm) models and sort collections
+[Sorting](https://github.com/qor/sorting) is used to add reordering abilities to [GORM](https://github.com/jinzhu/gorm) models and sort collections
 
 [![GoDoc](https://godoc.org/github.com/qor/sorting?status.svg)](https://godoc.org/github.com/qor/sorting)
 
-## Sorting GORM-backend Models
-
-Sorting all records of a model and save the order into the model's position column
-
 ### Register GORM Callbacks
 
-Sorting is utilises [GORM](https://github.com/jinzhu/gorm) callbacks to log data, so you  will need to register callbacks first:
+[Sorting](https://github.com/qor/sorting) is utilises [GORM](https://github.com/jinzhu/gorm) callbacks to log data, so you will need to register callbacks first:
 
 ```go
 import (
@@ -26,7 +22,7 @@ func main() {
 
 ### Sort Modes
 
-Sorting has defined two modes which could be used as anonymous fields in a model.
+[Sorting](https://github.com/qor/sorting) has defined two modes which could be used as anonymous fields in a model.
 
 - Ascending mode:smallest first (`sorting.Sorting`)
 - Descending mode: smallest last (`sorting.SortingDESC`)
@@ -107,13 +103,13 @@ Although Sorting could be used alone, it works very nicely with QOR - if you hav
 
 ### Sorting GORM-backend Models
 
-After enable sorting modes for GORM-backend models, qor admin will automatically enable the sorting feature for the resource
+After enable sorting modes for [GORM](https://github.com/jinzhu/gorm) models, [QOR Admin](https://github.com/qor/admin) will automatically enable the sorting feature for the resource.
 
 [Sorting Demo with QOR](http://demo.getqor.com/admin/colors?sorting=true)
 
 ### Sorting Collections
 
-If you want to make a `select_many`, `collection_edit` Field be sortable, you could add a `sorting.SortableCollection` field with name Field's name + 'Sorter', which is used to save above field's data's order. then the above Field will be identified to be sortable in qor admin.
+If you want to make a [select_many](../metas/select_many.md), [collection_edit](../metas/collection-edit.md) field be sortable, You could add a `sorting.SortableCollection` field with name Field's name + 'Sorter', which is used to save above field's data's order. then the above Field will be identified to be sortable in [QOR Admin](https://github.com/qor/admin).
 
 ```
 // For model relations

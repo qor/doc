@@ -1,6 +1,6 @@
 # Widget
 
-Define some customizable, shareable HTML widgets for different pages
+[Widget](https://github.com/qor/widget) defined customizable, shareable HTML widgets for different pages
 
 ## Getting Started
 
@@ -100,7 +100,7 @@ Widget's template is Golang HTML template based, so supposed to be as flexible a
 
 Above widget configured to use templates `banner1`, `banner2`, QOR widget will look up templates from path `$APP_ROOT/app/views/widgets` by default, so you need to put your template to the right place.
 
-When render with the found template, QOR widget will use the widget's generated context and use it to render the template like how Golang template works.
+When render with the found template, [QOR Widget](https://github.com/qor/widget) will use the widget's generated context and use it to render the template like how Golang template works.
 
 ```go
 // app/views/widgets/banner1.tmpl
