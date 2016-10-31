@@ -17,5 +17,4 @@ To keep up-to-date with QOR developments, subscribe to one or more of the follow
 - follow our [Twitter](https://twitter.com/QORSDK "Twitter") account,
 - circle our [Google+ page](https://plus.google.com/u/0/113759909389888286690 "Google+ page"),
 - join our [Google+ Community](https://plus.google.com/communities/105869262256660405319 "Google+ Community"),
-- join our [Facebook group](https://www.facebook.com/qorsdk/ "Facebook group"),
-- join our WeChat public group (if you speak Chinese or want to practice) [coming soon!].
+- join our [Facebook group](https://www.facebook.com/qorsdk/ "Facebook group").
