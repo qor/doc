@@ -6,7 +6,7 @@ Typically, a [QOR](https://github.com/qor/qor)-based system will revolve around 
 
 The bulk of [QOR](https://github.com/qor/qor)'s multifaceted capabilities lie in the plugins, they can be used independently but their super-powers shine when used together. Many of the plugins utilise [GORM](https://github.com/jinzhu/gorm), but it is possible to utilise any other ORM if need be.
 
-We, The Plant, utilise [QOR](https://github.com/qor/qor) on our own projects and are interested to hear about yours and your experience in using [QOR](https://github.com/qor/qor) - there are a number of ways to contribute and communicate with us and the [QOR](https://github.com/qor/qor) community:
+We, [The Plant](https://theplant.jp), utilise [QOR](https://github.com/qor/qor) on our own projects and are interested to hear about yours and your experience in using [QOR](https://github.com/qor/qor) - there are a number of ways to contribute and communicate with us and the [QOR](https://github.com/qor/qor) community:
 
 * our [English speaking Gitter chat](https://gitter.im/qor/qor "English speaking Gitter chat") or [Chinese speaking Gitter chat](https://gitter.im/qor/qor/china "Chinese speaking Gitter chat"),
 * email us [docs@getqor.com](mailto://docs@getqor.com "docs@getqor.com")
