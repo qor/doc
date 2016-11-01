@@ -103,13 +103,13 @@ Although Sorting could be used alone, it works very nicely with QOR - if you hav
 
 ### Sorting GORM-backend Models
 
-After enable sorting modes for [GORM](https://github.com/jinzhu/gorm) models, [QOR Admin](https://github.com/qor/admin) will automatically enable the sorting feature for the resource.
+After enable sorting modes for [GORM](https://github.com/jinzhu/gorm) models, [QOR Admin](../chapter2/setup.md) will automatically enable the sorting feature for the resource.
 
 [Sorting Demo with QOR](http://demo.getqor.com/admin/colors?sorting=true)
 
 ### Sorting Collections
 
-If you want to make a [select_many](../metas/select_many.md), [collection_edit](../metas/collection-edit.md) field be sortable, You could add a `sorting.SortableCollection` field with name Field's name + 'Sorter', which is used to save above field's data's order. then the above Field will be identified to be sortable in [QOR Admin](https://github.com/qor/admin).
+If you want to make a [select_many](../metas/select_many.md), [collection_edit](../metas/collection-edit.md) field be sortable, You could add a `sorting.SortableCollection` field with name Field's name + 'Sorter', which is used to save above field's data's order. then the above Field will be identified to be sortable in [QOR Admin](../chapter2/setup.md).
 
 ```
 // For model relations

@@ -1,6 +1,6 @@
 # Actions
 
-[QOR Admin](https://github.com/qor/admin) has the notion of four `Action Modes`:
+[QOR Admin](../chapter2/setup.md) has the notion of four `Action Modes`:
 
 * Bulk actions (will be shown in index page as bulk actions),
 * Edit form action (will be shown in edit page),

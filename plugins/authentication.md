@@ -1,8 +1,8 @@
 # Authentication
 
-[QOR Admin](https://github.com/qor/admin) provides a flexible authorization solution. With it, you could integrate with your current authorization method.
+[QOR Admin](../chapter2/setup.md) provides a flexible authorization solution. With it, you could integrate with your current authorization method.
 
-What you need to do is implement an `Auth` interface like below, and set it in the [QOR Admin](https://github.com/qor/admin) value.
+What you need to do is implement an `Auth` interface like below, and set it in the [QOR Admin](../chapter2/setup.md) value.
 
 ```go
 type Auth interface {

@@ -1,6 +1,6 @@
 # Publish
 
-The [Publish](https://github.com/qor/publish) Plugin decouples the timing of data updates in the [QOR Admin](https://github.com/qor/admin) interface from the display of data on the frontend of the website which [QOR Admin](https://github.com/qor/admin) is backing. A [GORM](https://github.com/jinzhu/gorm) model can be withheld from frontend display until it is "published".
+The [Publish](https://github.com/qor/publish) Plugin decouples the timing of data updates in the [QOR Admin](../chapter2/setup.md) interface from the display of data on the frontend of the website which [QOR Admin](../chapter2/setup.md) is backing. A [GORM](https://github.com/jinzhu/gorm) model can be withheld from frontend display until it is "published".
 
 [![GoDoc](https://godoc.org/github.com/qor/publish?status.svg)](https://godoc.org/github.com/qor/publish)
 
@@ -86,7 +86,7 @@ Although Publish could be used alone, it works very nicely with [QOR](https://gi
 
 [Publish Demo: http://demo.getqor.com/admin/publish](http://demo.getqor.com/admin/publish)
 
-If you want all changes made to be stored in the draft table by default, initialize [QOR Admin](https://github.com/qor/admin) with the [Publish](https://github.com/qor/publish) value's draft DB. If you then want to manage those drafts' data, add the [Publish](https://github.com/qor/publish) value as resource to [QOR Admin](https://github.com/qor/admin):
+If you want all changes made to be stored in the draft table by default, initialize [QOR Admin](../chapter2/setup.md) with the [Publish](https://github.com/qor/publish) value's draft DB. If you then want to manage those drafts' data, add the [Publish](https://github.com/qor/publish) value as resource to [QOR Admin](../chapter2/setup.md):
 
 ```go
 Admin := admin.New(&qor.Config{DB: Publish.DraftDB()})

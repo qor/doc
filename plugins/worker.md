@@ -2,7 +2,7 @@
 
 [Worker](https://github.com/qor/worker) runs a single Job in the background, it can do so immediately or at a scheduled time.
 
-Once registered with [QOR Admin](https://github.com/qor/admin), [Worker](https://github.com/qor/worker) will provide a `Workers` section in the navigation tree, containing pages for listing and managing the following aspects of Workers:
+Once registered with [QOR Admin](../chapter2/setup.md), [Worker](https://github.com/qor/worker) will provide a `Workers` section in the navigation tree, containing pages for listing and managing the following aspects of Workers:
 
   - All Jobs.
   - Running: Jobs that are currently running.
@@ -71,6 +71,6 @@ func main() {
 
 [QOR](http://getqor.com) is architected from the ground up to accelerate development and deployment of Content Management Systems, E-commerce Systems, and Business Applications and as such is comprised of modules that abstract common features for such systems.
 
-[Worker](https://github.com/qor/worker) is a Plugin of [QOR Admin](https://github.com/qor/admin) - if you have requirements to manage your application's data be sure to check QOR out!
+[Worker](https://github.com/qor/worker) is a Plugin of [QOR Admin](../chapter2/setup.md) - if you have requirements to manage your application's data be sure to check QOR out!
 
 [Worker Demo:  http://demo.getqor.com/admin/workers](http://demo.getqor.com/admin/workers)

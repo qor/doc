@@ -1,6 +1,6 @@
 ## Resource
 
-### Add a resource to [QOR Admin](https://github.com/qor/admin)
+### Add a resource to [QOR Admin](../chapter2/setup.md)
 
 ```
   type User struct {
@@ -77,9 +77,9 @@ order.ShowAttrs("User", "PaymentAmount", "ShippedAt", "CancelledAt", "State", "S
 
 ### Field type
 
-By default, Resource fields in [QOR Admin](https://github.com/qor/admin) are rendered based on its types and relations. The default should satisfy the usual cases, you can customize the rendering by overwritting the `Meta` definition.
+By default, Resource fields in [QOR Admin](../chapter2/setup.md) are rendered based on its types and relations. The default should satisfy the usual cases, you can customize the rendering by overwritting the `Meta` definition.
 
-There are some `Meta` types that have been predefined, including `string`, `password`, `date`, `datetime`, `rich_editor`, `select_one`, `select_many` and so on (see full list below). [QOR Admin](https://github.com/qor/admin) will auto select a type for `Meta` based on a field's data type. For example, if a field's type is `time.Time`, [QOR Admin](https://github.com/qor/admin) will determine `datetime` as the type.
+There are some `Meta` types that have been predefined, including `string`, `password`, `date`, `datetime`, `rich_editor`, `select_one`, `select_many` and so on (see full list below). [QOR Admin](../chapter2/setup.md) will auto select a type for `Meta` based on a field's data type. For example, if a field's type is `time.Time`, [QOR Admin](../chapter2/setup.md) will determine `datetime` as the type.
 
 Here's an example about make "Gender" of user as a select element in the user form that include three options "Male", "Female" and "Unknown".
 
@@ -95,7 +95,7 @@ Here's an example about make "Gender" of user as a select element in the user fo
 | Type | string | The display type of the attribute, e.g. select_one, password.|
 | Label | string | The label of the attribute in the form. The default label of "address" is "Address". You can set another label for "address" by this option.|
 | FieldName | string | Mapping to the attribute name in the resource, Usually, This is no need to set and same with Name by default. |
-| Setter| func(resource interface{}, metaValue *resource.MetaValue, context *qor.Context) | Overwrite default "Setter" of [QOR Admin](https://github.com/qor/admin) to customize the value before save it to database. |
+| Setter| func(resource interface{}, metaValue *resource.MetaValue, context *qor.Context) | Overwrite default "Setter" of [QOR Admin](../chapter2/setup.md) to customize the value before save it to database. |
 | Valuer | func(interface{}, *qor.Context) interface{} | Overwrite default "Getter" logic to customize the value fetched from the database. |
 | FormattedValuer | func(interface{}, *qor.Context) interface{} | Customize the output of the attribute in index page and API. |
 | Resource | *Resource | Used for customize attribute in nested form, Check [How to customize attribute in nested form](../metas/collection-edit.md) for detail. |
