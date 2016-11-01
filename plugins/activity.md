@@ -1,8 +1,8 @@
 # Activity
 
-Activity provides QOR Admin with an activity tracking feature for any Resource.
+[Activity](https://github.com/qor/activity) provides [QOR Admin](https://github.com/qor/admin) with an activity tracking feature for any [Resource](../chapter2/resource-intro.md).
 
-Applying Activity to a Resource will add `Comment` and `Track` data/state changes within the admin interface.
+Applying [Activity](https://github.com/qor/activity) to a [Resource](../chapter2/resource-intro.md) will add `Comment` and `Track` data/state changes within the [QOR Admin](https://github.com/qor/admin) interface.
 
 [![GoDoc](https://godoc.org/github.com/qor/activity?status.svg)](https://godoc.org/github.com/qor/activity)
 

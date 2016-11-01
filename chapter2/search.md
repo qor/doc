@@ -28,7 +28,7 @@ order.SearchAttrs("User.Name", "User.Email", "ShippingAddress.ContactName", "Shi
 
 ## Search Center
 
-You might want to search a broad range of resources from a single web page, in this case `Search Center` is for you!  Simply add resources that you want to be searchable to the Admin value's search center:
+You might want to search a broad range of resources from a single web page, in this case `Search Center` is for you!  Simply add resources that you want to be searchable to the [QOR Admin](https://github.com/qor/admin) value's search center:
 
 ```go
 // add resource `product`, `user`, `order` to search resources

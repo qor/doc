@@ -1,6 +1,6 @@
 # Render
 
-Render support to render templates by your control.
+[Render](https://github.com/qor/render) support to render templates by your control.
 
 ## Usage
 

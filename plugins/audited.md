@@ -1,12 +1,12 @@
 # Audited
 
-Audited is used to record the last User who created and/or updated your [GORM](https://github.com/jinzhu/gorm) model. It does so using a `CreatedBy` and `UpdatedBy` field. Audited could be used alone, but it works very nicely with QOR.
+[Audited](https://github.com/qor/audited) is used to record the last user who created and/or updated your [GORM](https://github.com/jinzhu/gorm) model. It does so using a `CreatedBy` and `UpdatedBy` field. [Audited](https://github.com/qor/audited) could be used alone, but it works very nicely with [QOR](https://github.com/qor/qor).
 
 [![GoDoc](https://godoc.org/github.com/qor/audited?status.svg)](https://godoc.org/github.com/qor/audited)
 
 ### Register GORM Callbacks
 
-Audited utilizes [GORM](https://github.com/jinzhu/gorm) callbacks to log data, So you need to register callbacks first:
+[Audited](https://github.com/qor/audited) utilizes [GORM](https://github.com/jinzhu/gorm) callbacks to log data, So you need to register callbacks first:
 
 ```go
 import (
@@ -20,7 +20,7 @@ audited.RegisterCallbacks(db)
 
 ### Make Model Auditable
 
-Embed `audited.AuditedModel` into your model as an anonymous field to make the model auditable:
+Embed `audited.AuditedModel` into your model as an anonymous field to make the model audit-able:
 
 ```go
 type Product struct {

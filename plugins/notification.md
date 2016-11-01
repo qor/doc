@@ -1,6 +1,6 @@
 # QOR Notification
 
-QOR Notification provides a way to send notifications to the users. Like order update, delivery notices.
+[QOR Notification](https://github.com/qor/notification) provides a way to send notifications to the users. Like order update, delivery notices.
 
 ## Usage
 

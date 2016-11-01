@@ -1,10 +1,10 @@
 # Validations
 
-Validations provides a means to validate [GORM-backend](https://github.com/jinzhu/gorm) models when creating and updating them.
+[Validations](https://github.com/qor/validations) provides a means to validate [GORM](https://github.com/jinzhu/gorm) models when creating and updating them.
 
 ### Register GORM Callbacks
 
-Validations uses [GORM](https://github.com/jinzhu/gorm) callbacks to handle validations, so you will need to register callbacks first:
+[Validations](https://github.com/qor/validations) uses [GORM](https://github.com/jinzhu/gorm) callbacks to handle validations, so you will need to register callbacks first:
 
 ```go
 import (
@@ -68,13 +68,13 @@ type User struct {
 
 ## [Qor Support](https://github.com/qor/qor)
 
-[QOR](http://getqor.com) is architected from the ground up to accelerate development and deployment of Content Management Systems, E-commerce Systems, and Business Applications and as such is comprised of modules that abstract common features for such systems.
+[QOR](https://github.com/qor/qor) is architected from the ground up to accelerate development and deployment of Content Management Systems, E-commerce Systems, and Business Applications and as such is comprised of modules that abstract common features for such systems.
 
-Validations could be used alone, but it works very nicely with QOR (as a QOR Plugin) - if you have requirements to manage your application's data be sure to check QOR out!
+[Validations](https://github.com/qor/validations) could be used alone, but it works very nicely with [QOR](https://github.com/qor/qor) (as a [QOR](https://github.com/qor/qor) Plugin) - if you have requirements to manage your application's data be sure to check [QOR](https://github.com/qor/qor) out!
 
 [QOR Demo:  http://demo.getqor.com/admin](http://demo.getqor.com/admin)
 
-If you want to display errors for each form field in QOR Admin, you could register your error like this:
+If you want to display errors for each form field in [QOR Admin](https://github.com/qor/admin), you could register your error like this:
 
 ```go
 func (user User) Validate(db *gorm.DB) {
