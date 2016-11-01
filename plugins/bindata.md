@@ -18,7 +18,7 @@ Initialize [BindataFS](https://github.com/qor/bindatafs) for your project, `conf
 $ bindatafs config/bindatafs
 ```
 
-Use [BindataFS](https://github.com/qor/bindatafs) for [QOR Admin](https://github.com/qor/admin)
+Use [BindataFS](https://github.com/qor/bindatafs) for [QOR Admin](../chapter2/setup.md)
 
 ```go
 import "<your_project>/config/bindatafs"

@@ -2,7 +2,7 @@
 
 #### Register a Menu
 
-It is possible to define a nested menu structure for the [QOR Admin](https://github.com/qor/admin) interface.
+It is possible to define a nested menu structure for the [QOR Admin](../chapter2/setup.md) interface.
 
 ```go
 Admin.AddMenu(&admin.Menu{Name: "Dashboard", Link: "/admin"})

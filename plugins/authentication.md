@@ -1,10 +1,10 @@
 # Authentication
 
-[QOR Admin](https://github.com/qor/admin) provides a flexible authentication and authorization solution. With it, you could integrate with your current authentication and authorization methods.
+[QOR Admin](../chapter2/setup.md) provides a flexible authentication and authorization solution. With it, you could integrate with your current authentication and authorization methods.
 
 The authorization aspect of this interface lies in the `GetCurrentUser` method, while the remaining methods are all about authentication.
 
-What you need to do is implement an `Auth` interface like below, and set it in the [QOR Admin](https://github.com/qor/admin) value.
+What you need to do is implement an `Auth` interface like below, and set it in the [QOR Admin](../chapter2/setup.md) value.
 
 ```go
 type Auth interface {

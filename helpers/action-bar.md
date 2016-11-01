@@ -1,6 +1,6 @@
 # ActionBar
 
-[ActionBar](https://github.com/qor/action_bar) depends on [QOR Admin](https://github.com/qor/admin). It provides an action bar on the top of frontend page. The bar contains:
+[ActionBar](https://github.com/qor/action_bar) depends on [QOR Admin](../chapter2/setup.md). It provides an action bar on the top of frontend page. The bar contains:
 
 * Switcher of `Preview` and `Edit` mode
 * Login/Logout links

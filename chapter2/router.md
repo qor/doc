@@ -4,7 +4,7 @@ You can define your own routes by `Router`.
 
 ## Registering HTTP routes
 
-First, Get `router` from [QOR Admin](https://github.com/qor/admin).
+First, Get `router` from [QOR Admin](../chapter2/setup.md).
 
 ```go
 router := Admin.GetRouter()

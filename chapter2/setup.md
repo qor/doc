@@ -1,6 +1,6 @@
 ## Set up QOR admin
 
-[QOR admin](https://github.com/qor/admin) is the foundation of [QOR](https://github.com/qor/qor). All resources are created based on it.
+[QOR Admin](https://github.com/qor/admin) is the foundation of [QOR](https://github.com/qor/qor). All resources are created based on it.
 
 ### 1. Prepare database
 

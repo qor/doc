@@ -1,8 +1,8 @@
 ## Getting started
 
-In this document, we will provide example code based on a simple, hypothetical project: a content management system based on [QOR Admin](https://github.com/qor/admin). The end goal is to have a User model and a Product model, which would allow an administrator to use [QOR Admin](https://github.com/qor/admin) to manage data within a `User` table and `Product` table within a [SQLite3 database](https://sqlite.org/ "SQLite3 database"). We hope that this simple project code will establish the foundations of [QOR](https://github.com/qor/qor) for you as you read through this document. So the first aspects we will touch on are:
+In this document, we will provide example code based on a simple, hypothetical project: a content management system based on [QOR Admin](../chapter2/setup.md). The end goal is to have a User model and a Product model, which would allow an administrator to use [QOR Admin](../chapter2/setup.md) to manage data within a `User` table and `Product` table within a [SQLite3 database](https://sqlite.org/ "SQLite3 database"). We hope that this simple project code will establish the foundations of [QOR](https://github.com/qor/qor) for you as you read through this document. So the first aspects we will touch on are:
 
-- configuring menus for [QOR Admin](https://github.com/qor/admin),
+- configuring menus for [QOR Admin](../chapter2/setup.md),
 - try out some [QOR](https://github.com/qor/qor) supported form fields.
 
 It will really help if you type out this code and run it - you'll learn a lot in the process!
@@ -45,7 +45,7 @@ DB, _ := gorm.Open("sqlite3", "demo.db")
 DB.AutoMigrate(&User{}, &Product{})
 ```
 
-Now initialise [QOR Admin](https://github.com/qor/admin)...
+Now initialise [QOR Admin](../chapter2/setup.md)...
 
 ```
 Admin := admin.New(&qor.Config{DB: DB})
@@ -55,7 +55,7 @@ Admin.AddResource(&User{})
 Admin.AddResource(&Product{})
 ```
 
-Register a router and mount [QOR Admin](https://github.com/qor/admin) to `/admin`...
+Register a router and mount [QOR Admin](../chapter2/setup.md) to `/admin`...
 
 ```
 // Register route

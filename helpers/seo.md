@@ -1,6 +1,6 @@
 # SEO
 
-The [SEO](https://github.com/qor/seo) library allows for the management of and injection of dynamic data into HTML tags for the purpose of Search Engine Optimisation. Using the [QOR Admin](https://github.com/qor/admin) interface, an administrator can easily manage the content of an HTML page's title, description, and meta tags.
+The [SEO](https://github.com/qor/seo) library allows for the management of and injection of dynamic data into HTML tags for the purpose of Search Engine Optimisation. Using the [QOR Admin](../chapter2/setup.md) interface, an administrator can easily manage the content of an HTML page's title, description, and meta tags.
 
 [![GoDoc](https://godoc.org/github.com/qor/seo?status.svg)](https://godoc.org/github.com/qor/seo)
 

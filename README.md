@@ -2,7 +2,7 @@ NOTE: THIS DOCUMENT IS STILL WIP.
 
 [QOR](https://github.com/qor/qor) is a set of libraries written in Go that abstract common features needed for business applications, Content Management Systems (CMS), and E-commerce systems (EC).
 
-Typically, a [QOR](https://github.com/qor/qor)-based system will revolve around [QOR Admin](https://github.com/qor/admin), which is the CMS component. [QOR Admin](https://github.com/qor/admin) facilitates easy database and media content management and is not bound to a single database technology.
+Typically, a [QOR](https://github.com/qor/qor)-based system will revolve around [QOR Admin](./chapter2/setup.md), which is the CMS component. [QOR Admin](./chapter2/setup.md) facilitates easy database and media content management and is not bound to a single database technology.
 
 The bulk of [QOR](https://github.com/qor/qor)'s multifaceted capabilities lie in the plugins, they can be used independently but their super-powers shine when used together. Many of the plugins utilise [GORM](https://github.com/jinzhu/gorm), but it is possible to utilise any other ORM if need be.
 
