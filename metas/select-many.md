@@ -53,7 +53,7 @@ type Product struct {
 user.Meta(&admin.Meta{Name: "FavouriteProducts", Type: "select_many"})
 ```
 
-This will looks like:
+Screenshot:
 
 ![select many: nested form](select_many_with_other_objects.png)
 

@@ -42,7 +42,7 @@ type Parameter struct {
 }
 ```
 
-The form will looks like
+The form will be
 
 ![Single edit](single_edit.png)
 

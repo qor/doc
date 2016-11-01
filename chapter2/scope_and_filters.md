@@ -2,7 +2,7 @@
 
 ## Filters
 
-Make resource filter-able by given setting
+Make resource filter-able by given setting, This example shows how to filter users by the gender(Male, Female and Unknown).
 
 ```
   // Filter users by gender.
@@ -14,6 +14,10 @@ Make resource filter-able by given setting
   })
 ```
 
+Screenshot:
+
+![filter](filter-demo.png)
+
 ## Scopes
 
 You can define scopes to filter data with given conditions, for example:
@@ -24,6 +28,10 @@ user.Scope(&admin.Scope{Name: "Active", Handle: func(db *gorm.DB, context *qor.C
   return db.Where("active = ?", true)
 }})
 ```
+
+Screenshot
+
+![scope](scope-demo.png)
 
 ## Group Scopes
 
@@ -39,4 +47,10 @@ order.Scope(&admin.Scope{Name: "Shipped", Group: "State", Handle: func(db *gorm.
 }})
 ```
 
+Screenshot:
+
+![group scope](group-scope.png)
+
 [Scopes Online Demo](http://demo.getqor.com/admin/products)
+
+
