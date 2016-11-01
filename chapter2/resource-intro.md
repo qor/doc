@@ -1,5 +1,7 @@
 ## Resource
 
+You can think of a Resource as a representation of any similar set of data that is used in your system, mostly that is content that will manifest on the front-end.
+
 ### Add a resource to [QOR Admin](https://github.com/qor/admin)
 
 ```
