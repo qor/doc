@@ -35,4 +35,8 @@ func main() {
 
 ```
 
+Screenshot:
+
+![actionbar](actionbar-demo.png)
+
 [Online Demo](http://demo.getqor.com/), you will see a bar at the top of homepage.

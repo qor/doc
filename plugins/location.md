@@ -23,7 +23,7 @@ type Shop struct {
 }
 ```
 
-Screenshot for location:
+Screenshot:
 
 ![location](location.png)
 

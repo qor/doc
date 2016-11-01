@@ -84,6 +84,4 @@ product.Image.URL("big@ld")
 
 [Media Library](https://github.com/qor/media_library) could be used alone, but it works very nicely with [QOR](https://github.com/qor/qor) (as a [QOR](https://github.com/qor/qor) Plugin), if you have requirements to manage your application's data, be sure to check [QOR](https://github.com/qor/qor) out!
 
-[QOR Demo:  http://demo.getqor.com/admin](http://demo.getqor.com/admin)
-
 [Media Library Demo with QOR](http://demo.getqor.com/admin/products/1)

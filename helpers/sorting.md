@@ -99,8 +99,6 @@ products // => []Product{
 
 Although Sorting could be used alone, it works very nicely with QOR - if you have requirements to manage your application's data, be sure to check QOR out!
 
-[QOR Demo:  http://demo.getqor.com/admin](http://demo.getqor.com/admin)
-
 ### Sorting GORM-backend Models
 
 After enable sorting modes for [GORM](https://github.com/jinzhu/gorm) models, [QOR Admin](../chapter2/setup.md) will automatically enable the sorting feature for the resource.
