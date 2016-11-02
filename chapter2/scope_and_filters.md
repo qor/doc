@@ -2,7 +2,7 @@
 
 ## Filters
 
-Make resource filter-able by given setting
+Make any [Resource](../chapter2/resource-intro.md) filter-able, within [QOR Admin](../chapter2/setup.md), with given setting(s).
 
 ```
   // Filter users by gender.
@@ -27,7 +27,7 @@ user.Scope(&admin.Scope{Name: "Active", Handle: func(db *gorm.DB, context *qor.C
 
 ## Group Scopes
 
-To put similar scopes into one group. Set `Group` name for it like below.
+To put similar scopes into one group, set the `Group` name for it as below:
 
 ```go
 order.Scope(&admin.Scope{Name: "Paid", Group: "State", Handle: func(db *gorm.DB, context *qor.Context) *gorm.DB {

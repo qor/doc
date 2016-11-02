@@ -1,10 +1,12 @@
 # Router
 
-You can define your own routes by `Router`.
+You can define your own routes using `Router`.
+
+Routes (a.k.a. mux, handlers) are a way to map from a URL path to some code which is executed when an end-user accesses that path.
 
 ## Registering HTTP routes
 
-First, Get `router` from [QOR Admin](../chapter2/setup.md).
+First, get `router` from [QOR Admin](../chapter2/setup.md)...
 
 ```go
 router := Admin.GetRouter()

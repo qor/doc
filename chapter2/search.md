@@ -1,6 +1,6 @@
 # Search
 
-It is possible to specify database table columns as a search attributes by using `SearchAttrs`, the columns will be used to perform any search queries.
+It is possible to specify database table columns as search attributes by using `SearchAttrs`, the columns will be used to perform search queries.
 
 ## Examples
 
@@ -9,7 +9,7 @@ It is possible to specify database table columns as a search attributes by using
 product.SearchAttrs("Name", "Code", "Category.Name", "Brand.Name")
 ```
 
-If you want to fully customize the search function, you could set the `SearchHandler`:
+If you want to fully customize the search function, you can set the `SearchHandler`:
 
 ```go
 order.SearchHandler = func(keyword string, context *qor.Context) *gorm.DB {
