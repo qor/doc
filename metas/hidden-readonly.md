@@ -2,7 +2,7 @@
 
 ## Hidden
 
-Hide a field from the form
+You can hide a field from the form using the `Hidden` Meta.
 
 ```
 product.Meta(&admin.Meta{Name: "Name", Type: "Hidden"})
@@ -11,7 +11,7 @@ product.Meta(&admin.Meta{Name: "Name", Type: "Hidden"})
 
 ## Readonly
 
-Make a filed read-only in the form
+To make a file read-only in a form, use the `Readonly` Meta.
 
 ```
 product.Meta(&admin.Meta{Name: "Name", Type: "Readonly"})

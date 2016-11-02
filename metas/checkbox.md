@@ -1,6 +1,6 @@
 # Checkbox
 
-`bool` attribute will be rendered as checkbox directly. like
+Allows a `bool` attribute to be rendered as a checkbox, for example:
 
 ```
 type User struct {
@@ -8,7 +8,7 @@ type User struct {
 }
 ```
 
-You can set other parameters like "label" by
+You can set other parameters, such as "label":
 
 ```
 user.Meta(&admin.Meta{Name: "ReceivePromotionEmail", Label: "Receive email"})
