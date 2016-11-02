@@ -26,6 +26,10 @@ Notification.GetNotifications(user interface{}, context *qor.Context)
 Notification.GetUnresolvedNotificationsCount(user interface{}, context *qor.Context)
 ```
 
+Screenshot:
+
+![notification](notification-demo.png)
+
 ## Register Actions for Notification
 
 ```go

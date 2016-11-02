@@ -4,6 +4,8 @@
 
 Make any [Resource](../chapter2/resource-intro.md) filter-able, within [QOR Admin](../chapter2/setup.md), with given setting(s).
 
+The example below shows how to filter Users, in a hypothetical project, by gender (either 'Male', 'Female', or 'Unknown').
+
 ```
   // Filter users by gender.
   user.Filter(&admin.Filter{
@@ -13,6 +15,10 @@ Make any [Resource](../chapter2/resource-intro.md) filter-able, within [QOR Admi
     },
   })
 ```
+
+Screenshot:
+
+![filter](filter-demo.png)
 
 ## Scopes
 
@@ -24,6 +30,10 @@ user.Scope(&admin.Scope{Name: "Active", Handle: func(db *gorm.DB, context *qor.C
   return db.Where("active = ?", true)
 }})
 ```
+
+Screenshot
+
+![scope](scope-demo.png)
 
 ## Group Scopes
 
@@ -39,4 +49,10 @@ order.Scope(&admin.Scope{Name: "Shipped", Group: "State", Handle: func(db *gorm.
 }})
 ```
 
+Screenshot:
+
+![group scope](group-scope.png)
+
 [Scopes Online Demo](http://demo.getqor.com/admin/products)
+
+

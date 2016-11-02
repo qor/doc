@@ -10,7 +10,18 @@ product.UseTheme("fancy")
 
 #### Customizing Views {#customize-views}
 
-[QOR Admin](../chapter2/setup.md) will look up templates in [QOR Admin](../chapter2/setup.md) view paths and use them to render any [QOR Admin](../chapter2/setup.md) page. By placing your own templates in `{current path}/app/views/qor` you can extend your application by customizing it's views. If you want to customize your views from other places, you could register any new paths with `admin.RegisterViewPath`.
+The default view path is
+
+`{current path}/app/views/qor`
+
+The default assets path is
+
+- Javascripts `{current path}/app/views/qor/assets/javascripts`
+- Stylesheets `{current path}/app/views/qor/assets/stylesheets`
+
+[QOR Admin](../chapter2/setup.md) will look up templates in [QOR Admin](../chapter2/setup.md) view paths and use them to render any [QOR Admin](../chapter2/setup.md) page. By placing your own templates in `{current path}/app/views/qor` you can extend your application by customizing it's views.
+
+If you want to customize your views from other places, you could register any new paths with `admin.RegisterViewPath`.
 
 #### Customize Views Rules:
 
