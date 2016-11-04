@@ -4,37 +4,37 @@
 
 | Name | Type | Default | Description |
 | --- | --- | --- | --- |
-| Collection | interface{} |  | Specify the options of the select, Accept 1 or 2 dimensional array |
-| SelectionTemplate | string |  | Accept a file path to overwrite default selector template. Default path is `/metas/form/select_one`. Check examples for usage. |
-| SelectMode | string | "select" | Set the data source of the options, Three available options "select", "select_async" and "bottom_sheet". Check examples for detail |
-| Select2ResultTemplate | template.JS |  | Same as select2's option [templateResult](https://select2.github.io/options.html#can-i-change-how-the-placeholder-looks) |
-| Select2SelectionTemplate | template.JS |  | Same as select2's option [templateSelection](https://select2.github.io/options.html#templateSelection) |
-| RemoteDataResource | *Resource |  | For the configuration `SelectMode`, when it set to "select_async" or "bottom_sheet", this will be the data resource, Usually this will be set by association between resources by default. See `FavouriteProducts` example below. |
+| Collection | interface{} |  | Specify the options of the *select*. Accepts 1 or 2 dimensional arrays. |
+| SelectionTemplate | string |  | Accept a file path to overwrite the default *select * template. Default path is `/metas/form/select_one`. |
+| SelectMode | string | "select" | Set the data source of the options. Three available options: "select", "select_async" and "bottom_sheet". |
+| Select2ResultTemplate | template.JS |  | Same as [select2](https://select2.github.io)'s option [templateResult](https://select2.github.io/options.html#can-i-change-how-the-placeholder-looks) |
+| Select2SelectionTemplate | template.JS |  | Same as [select2](https://select2.github.io)'s option [templateSelection](https://select2.github.io/options.html#templateSelection) |
+| RemoteDataResource | *Resource |  | Works in conjunction with the`SelectMode` configuation, when set to "select_async" or "bottom_sheet" the value represents the data resource. Usually this will be set by association between resources by default. See `FavouriteProducts` example below. |
 
 ## Examples
 
 ### Set option manually
 
-Assume User has many favorite products. Like
+Assuming, in a hypothetical project, a User has many favorite brands, like:
 
 ```
 type User struct {
   gorm.Model
   Name              string
   Gender            string
-  FavouriteProducts []string
+  FavouriteBrands []string
 }
 ```
 
-Then add two brands "ASICS" and "Lacoste" as candidates.
+...So add two hypothetical brands "AwesomeStuff" and "ExcellentStuff" as candidates.
 
 ```go
-user.Meta(&admin.Meta{Name: "FavouriteProducts", Type: "select_many", Config: &admin.SelectManyConfig{Collection: []string{"ASICS", "Lacoste"}}})
+user.Meta(&admin.Meta{Name: "FavouriteBrands", Type: "select_many", Config: &admin.SelectManyConfig{Collection: []string{"AwesomeStuff", "ExcellentStuff"}}})
 ```
 
 ### Use association data
 
-You can use other resource's data as options. Assume a user has some favorite products, and there is a product "Product a" existing in the database. QOR could do this automatically with zero configuration.
+You can use an other resource's data as options. Assuming, in a hypothetical project, a User has some favorite products, and there is a Product called "Product a" existing in the database: QOR can associate these recources automatically, with very little configuration.
 
 ```
 type User struct {
@@ -64,8 +64,8 @@ Screenshot:
 u.Meta(&admin.Meta{Name: "FavouriteProducts", Type: "select_many", Config: &admin.SelectManyConfig{Collection: []string{"ASICS", "Lacoste"}, SelectionTemplate: "metas/form/customised_select_many.tmpl"}})
 ```
 
-The full path of `SelectionTemplate` in example is `app/views/qor/metas/form/customised_select_many.tmpl`. About how to define/use customise template. Check [QOR view paths](../chapter2/theme.md#customize-views) document.
+The above code snippet is taken from the [qor-example project](https://github.com/qor/qor-example). The full path of `SelectionTemplate` in [qor-example](https://github.com/qor/qor-example) is `app/views/qor/metas/form/customised_select_many.tmpl`. For more about how to define/use custome templates, have a look at [QOR view paths](../chapter2/theme.md#customize-views).
 
 ### Select option in pop-up
 
-Set the `SelectMode` as `bottom_sheet`. The options of select will be displayed in a pop-up.
+Set the `SelectMode` as `bottom_sheet` and the options of select will be displayed in a pop-up. Too easy!
