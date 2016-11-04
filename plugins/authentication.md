@@ -1,8 +1,8 @@
 # Authentication
 
-[QOR Admin](../chapter2/setup.md) provides a flexible authentication and authorization solution. With it, you could integrate with your current authentication and authorization methods.
+[QOR Admin](../chapter2/setup.md) allows you to integrate your current authentication methods by providing an interface for common Authentication-related tasks. For instance, you could integrate [AuthBoss](https://github.com/go-authboss/authboss) with [QOR Admin](../chapter2/setup.md).
 
-The authorization aspect of this interface lies in the `GetCurrentUser` method, while the remaining methods are all about authentication.
+Note: to solve your Authorization needs, please refer to [Roles](roles.md).
 
 What you need to do is implement an `Auth` interface like below, and set it in the [QOR Admin](../chapter2/setup.md) value.
 
