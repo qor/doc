@@ -27,9 +27,9 @@ Screenshot:
 
 ![location](location.png)
 
-## [Qor Support](https://github.com/qor/qor)
+## QOR Integration
 
-[QOR](http://getqor.com) is architected from the ground up to accelerate development and deployment of Content Management Systems, E-commerce Systems, and Business Applications and as such is comprised of modules that abstract common features for such systems.
+Although [Location](https://github.com/qor/location) could be used alone, it integrates nicely with [QOR](https://github.com/qor/qor).
 
 To use [Location](https://github.com/qor/location) with [QOR Admin](../chapter2/setup.md), simply embed `location.Location` in a model then behold the map picker in the admin interface.
 

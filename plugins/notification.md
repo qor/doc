@@ -1,6 +1,6 @@
 # QOR Notification
 
-[QOR Notification](https://github.com/qor/notification) provides a way to send notifications to the users. Like order update, delivery notices.
+[QOR Notification](https://github.com/qor/notification) provides a way to send notifications to users. Notifications can be anything your system needs, like order update, delivery notices, whatever.
 
 ## Usage
 
@@ -26,7 +26,7 @@ Notification.GetNotifications(user interface{}, context *qor.Context)
 Notification.GetUnresolvedNotificationsCount(user interface{}, context *qor.Context)
 ```
 
-Screenshot:
+The Notifications List in [QOR Admin](../chapter2/setup.md) looks like this when populated:
 
 ![notification](notification-demo.png)
 

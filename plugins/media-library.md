@@ -37,7 +37,7 @@ type Product struct {
 }
 ```
 
-And you're done setting up! You could the use it like this:
+And you're done setting up! You could then use it like this:
 
 ```go
 var product Product
@@ -78,10 +78,8 @@ product.Image.URL("small")
 product.Image.URL("big@ld")
 ```
 
-## [Qor Support](https://github.com/qor/qor)
+## QOR Integration
 
-[QOR](http://getqor.com) is architected from the ground up to accelerate development and deployment of Content Management Systems, E-commerce Systems, and Business Applications and as such is comprised of modules that abstract common features for such systems.
-
-[Media Library](https://github.com/qor/media_library) could be used alone, but it works very nicely with [QOR](https://github.com/qor/qor) (as a [QOR](https://github.com/qor/qor) Plugin), if you have requirements to manage your application's data, be sure to check [QOR](https://github.com/qor/qor) out!
+[Media Library](https://github.com/qor/media_library) could be used alone, but it integrates nicely with [QOR](https://github.com/qor/qor).
 
 [Media Library Demo with QOR](http://demo.getqor.com/admin/products/1)
