@@ -2,7 +2,7 @@
 
 ## Text input
 
-It is rendered by the attributes type by default.
+It is rendered by the attribute's type by default, for example given the follwing code:
 
 ```
 type User struct {
@@ -10,7 +10,7 @@ type User struct {
 }
 ```
 
-The `Name` will be rendered as text input.
+...`Name` will be rendered as a text input.
 
 ## Text area
 
