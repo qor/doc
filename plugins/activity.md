@@ -20,7 +20,7 @@ func main() {
 }
 ```
 
-This will add activity tracking feature to order like:
+The above code snippet will add an activity tracking feature to the Order resource in a hypothetical project, which would look a bit like the screenshot below in [QOR Admin](../chapter2/setup.md):
 
 ![activity demo](activity-demo.png)
 

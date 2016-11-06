@@ -1,10 +1,10 @@
 # Exchange
 
-[Exchange](https://github.com/qor/exchange) is a [Golang](http://golang.org/) library that allows a database to be exported or imported to or from a file.
+[Exchange](https://github.com/qor/exchange) allows a database to be exported to or imported from a file.
 
-Data can optionally be validated during import and export.
+Data can be optionally validated during import and export.
 
-Data can optionally be processed during import.
+Data can be optionally processed during import.
 
 [![GoDoc](https://godoc.org/github.com/qor/exchange?status.svg)](https://godoc.org/github.com/qor/exchange)
 

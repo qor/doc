@@ -1,12 +1,12 @@
 # Audited
 
-[Audited](https://github.com/qor/audited) is used to record the last user who created and/or updated your [GORM](https://github.com/jinzhu/gorm) model. It does so using a `CreatedBy` and `UpdatedBy` field. [Audited](https://github.com/qor/audited) could be used alone, but it works very nicely with [QOR](https://github.com/qor/qor).
+[Audited](https://github.com/qor/audited) is used to record the last user who created and/or updated your [GORM](https://github.com/jinzhu/gorm) model. It does so using a `CreatedBy` and `UpdatedBy` field. While [Audited](https://github.com/qor/audited) can be used alone (with [GORM](https://github.com/jinzhu/gorm)), it integrates nicely with [QOR](https://github.com/qor/qor) to log and display this extra information.
 
 [![GoDoc](https://godoc.org/github.com/qor/audited?status.svg)](https://godoc.org/github.com/qor/audited)
 
 ### Register GORM Callbacks
 
-[Audited](https://github.com/qor/audited) utilizes [GORM](https://github.com/jinzhu/gorm) callbacks to log data, So you need to register callbacks first:
+[Audited](https://github.com/qor/audited) utilizes [GORM](https://github.com/jinzhu/gorm) callbacks to log data, so you will need to register callbacks first:
 
 ```go
 import (
@@ -18,9 +18,9 @@ db, err := gorm.Open("sqlite3", "demo_db")
 audited.RegisterCallbacks(db)
 ```
 
-### Make Model Auditable
+### Making a Model Auditable
 
-Embed `audited.AuditedModel` into your model as an anonymous field to make the model audit-able:
+Embed `audited.AuditedModel` into your model as an anonymous field to make the model auditable:
 
 ```go
 type Product struct {

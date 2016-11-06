@@ -1,6 +1,6 @@
 # Authentication
 
-[QOR Admin](../chapter2/setup.md) allows you to integrate your current authentication methods by providing an interface for common Authentication-related tasks. For instance, you could integrate [AuthBoss](https://github.com/go-authboss/authboss) with [QOR Admin](../chapter2/setup.md).
+[QOR Admin](../chapter2/setup.md) allows you to integrate your current authentication methods by providing an interface for common Authentication related tasks. For instance, you could integrate [AuthBoss](https://github.com/go-authboss/authboss) with [QOR Admin](../chapter2/setup.md).
 
 Note: to solve your Authorization needs, please refer to [Roles](roles.md).
 

@@ -1,18 +1,17 @@
 # Filebox
 
-[Filebox](https://github.com/qor/filebox) provides access permission control for files, directories.
+[Filebox](https://github.com/qor/filebox) provides access permission control for files and directories.
 
-You could choose [Filebox](https://github.com/qor/filebox) to satisfy below scenarios:
+You could utilize [Filebox](https://github.com/qor/filebox) to satisfy the following scenarios:
 
 Scenario 1:
 
-* You would like to make file `~/documents/files/users.csv` able to be download via link `http://127.0.0.1/downloads/users.csv`
-* Only Admin user able to download this file
+* You would like to make a file, let's say `~/documents/files/users.csv`, downloadable via  the URL `http://127.0.0.1/downloads/users.csv`.
+* restrict downloads of that file to Admin users.
 
 Scenario 2:
 
-* You create a folder at `~/exchanges`
-* Only Admin user could access files in this folder
+* Restricting access to files within a folder, let's say `~/exchanges`, to Admin users.
 
 [![GoDoc](https://godoc.org/github.com/qor/filebox?status.svg)](https://godoc.org/github.com/qor/filebox)
 
