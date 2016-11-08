@@ -67,10 +67,4 @@ func main() {
 - It is possible, via the admin interface, to abort a scheduled job: view the Job's data via `Workers > Scheduled` or `Workers > All Jobs` and press the `Cancel scheduled Job` button.
 - It is possible, via the admin interface, to update a scheduled job, including setting a new date and time: view the Job's data via `Workers > Scheduled` or `Workers > All Jobs`, update the `Schedule Time` field's value, and press the `Update scheduled Job` button. Note: scheduling a Job to a date/time in the past will see the Job get run immediately.
 
-## [Qor Support](https://github.com/qor/qor)
-
-[QOR](http://getqor.com) is architected from the ground up to accelerate development and deployment of Content Management Systems, E-commerce Systems, and Business Applications and as such is comprised of modules that abstract common features for such systems.
-
-[Worker](https://github.com/qor/worker) is a Plugin of [QOR Admin](../chapter2/setup.md) - if you have requirements to manage your application's data be sure to check QOR out!
-
 [Worker Demo:  http://demo.getqor.com/admin/workers](http://demo.getqor.com/admin/workers)

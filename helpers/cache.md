@@ -1,6 +1,6 @@
 # Cache Store
 
-[Cache Store](https://github.com/qor/cache) provide a way to cache things.
+[Cache Store](https://github.com/qor/cache) provide a way to cache web content to accelerate the speed of your site.
 
 ## Memcached Cache Store Usage
 

@@ -78,8 +78,4 @@ product.Image.URL("small")
 product.Image.URL("big@ld")
 ```
 
-## QOR Integration
-
-[Media Library](https://github.com/qor/media_library) could be used alone, but it integrates nicely with [QOR](https://github.com/qor/qor).
-
 [Media Library Demo with QOR](http://demo.getqor.com/admin/products/1)

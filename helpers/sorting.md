@@ -93,12 +93,6 @@ products // => []Product{
          //    }
 ```
 
-## Qor Support
-
-[QOR](http://getqor.com) is architected from the ground up to accelerate development and deployment of Content Management Systems, E-commerce Systems, and Business Applications and as such is comprised of modules that abstract common features for such systems.
-
-Although Sorting could be used alone, it works very nicely with QOR - if you have requirements to manage your application's data, be sure to check QOR out!
-
 ### Sorting GORM-backend Models
 
 After enable sorting modes for [GORM](https://github.com/jinzhu/gorm) models, [QOR Admin](../chapter2/setup.md) will automatically enable the sorting feature for the resource.
@@ -107,7 +101,7 @@ After enable sorting modes for [GORM](https://github.com/jinzhu/gorm) models, [Q
 
 ### Sorting Collections
 
-If you want to make a [select_many](../metas/select_many.md), [collection_edit](../metas/collection-edit.md) field be sortable, You could add a `sorting.SortableCollection` field with name Field's name + 'Sorter', which is used to save above field's data's order. then the above Field will be identified to be sortable in [QOR Admin](../chapter2/setup.md).
+If you want to make a sortable [select_many](../metas/select_many.md), [collection_edit](../metas/collection-edit.md) field, You could add a `sorting.SortableCollection` field with name Field's name + 'Sorter', which is used to save above field's data's order. then the above Field will be identified to be sortable in [QOR Admin](../chapter2/setup.md).
 
 ```
 // For model relations

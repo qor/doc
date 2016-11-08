@@ -78,17 +78,13 @@ func init() {
 }
 ```
 
-## Qor Support
+## Store all changes in draft table by default
 
-[QOR](http://getqor.com) is architected from the ground up to accelerate development and deployment of Content Management Systems, E-commerce Systems, and Business Applications and as such is comprised of modules that abstract common features for such systems.
-
-Although Publish could be used alone, it works very nicely with [QOR](https://github.com/qor/qor), if you have requirements to manage your application's data, be sure to check [QOR](https://github.com/qor/qor) out!
-
-[Publish Demo: http://demo.getqor.com/admin/publish](http://demo.getqor.com/admin/publish)
-
-If you want all changes made to be stored in the draft table by default, initialize [QOR Admin](../chapter2/setup.md) with the [Publish](https://github.com/qor/publish) value's draft DB. If you then want to manage those drafts' data, add the [Publish](https://github.com/qor/publish) value as resource to [QOR Admin](../chapter2/setup.md):
+If you want all changes made to be stored in the draft table by default, initialize [QOR Admin](../chapter2/setup.md) with the [Publish](https://github.com/qor/publish) value's draft DB. If you then want to manage those draft data, add the [Publish](https://github.com/qor/publish) value as resource to [QOR Admin](../chapter2/setup.md):
 
 ```go
 Admin := admin.New(&qor.Config{DB: Publish.DraftDB()})
 Admin.AddResource(Publish)
 ```
+
+[Publish Demo: http://demo.getqor.com/admin/publish](http://demo.getqor.com/admin/publish)

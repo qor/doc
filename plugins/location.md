@@ -1,6 +1,6 @@
 # Location
 
-[Location](https://github.com/qor/location) picks up location details from an interactive Google Map widget when creating/editing any applicable Resource in [Qor Admin](http://github.com/qor/qor).
+[Location](https://github.com/qor/location) picks up location details from an interactive Google Map widget when creating/editing any applicable Resource in [Qor Admin](http://github.com/qor/admin).
 
 # Usage
 
