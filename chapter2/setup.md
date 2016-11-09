@@ -40,4 +40,4 @@ Admin := admin.New(&qor.Config{DB: DB})
 
 ### 3. General settings
 
-You can customize the [Dashboard](../chapter2/dashboard.md#h1), Set [Site name](../chapter2/site_name.md#h1), Configure [Menus](../chapter2/menus.md#h1) and [Router](../chapter2/router.md#h1).
+Now the [QOR Admin](https://github.com/qor/admin) is initialized. Next you can customize the [Dashboard](../chapter2/dashboard.md#h1), Set [Site name](../chapter2/site_name.md#h1), Configure [Menus](../chapter2/menus.md#h1) and [Router](../chapter2/router.md#h1). Then go to next chapter to learn more about the [Resources](../chapter2/resource-intro.md).
