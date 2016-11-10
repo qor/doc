@@ -23,7 +23,7 @@ Invoke `Execute` function to render your template.
 The `Execute` function accepts 4 parameters
 
 1. The template name, The default view path is `{current_repo_path}/app/views`, So in this example, [Render](https://github.com/qor/render) will looking for the template `{current_repo_path}/app/views/index.tmpl`. If the parameter is `users/profile`, the template path shall be `{current_repo_path}/app/views/users/profile.tmpl`.
-2. The context you need in the template. It is a `interface{}` and recorded in `.Result`. For instance, if you pass `context["CurrentUserName"] = "ThePlant"`. In the template, you need call `{{.Result.CurrentUserName}}` to get the value "ThePlant".
+2. The context you can use in the template. It is a `interface{}` and recorded in `.Result`. For instance, if you pass `context["CurrentUserName"] = "ThePlant"` as the context. In the template, you can call `{{ .Result.CurrentUserName }}` to get the value "ThePlant".
 3. [http.Request](https://golang.org/pkg/net/http/#Request) of Go
 4. [http.ResponseWriter](https://golang.org/pkg/net/http/#ResponseWriter) of Go
 
