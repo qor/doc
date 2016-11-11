@@ -17,18 +17,22 @@ DB, err = gorm.Open("sqlite3", "demo_db") // [gorm](https://github.com/jinzhu/go
 media_library.RegisterCallbacks(&DB)
 ```
 
-Add [Media Library](https://github.com/qor/media_library) support to structs:
+Add [Media Library](https://github.com/qor/media_library) support to model.
+
+You can upload file to FileSystem.
 
 ```go
-// upload file to FileSystem
 import "github.com/qor/media_library"
 
 type Product struct {
   gorm.Model
   Image media_library.FileSystem
 }
+```
 
-// Upload file to s3
+Or upload file to s3
+
+```go
 import "github.com/qor/media_library/aws"
 
 type Product struct {
@@ -37,7 +41,7 @@ type Product struct {
 }
 ```
 
-And you're done setting up! You could then use it like this:
+And you're done setting up! You could use it like this:
 
 ```go
 var product Product
@@ -52,10 +56,11 @@ DB.Save(&product)
 product.Image.URL()
 ```
 
-## Advanced Usage
+## Advanced usage
+
+You can predefine common image size and fetch it easily.
 
 ```go
-// Resize images into different sizes when saving images
 type ProductIconImageStorage struct{
   media_library.FileSystem
 }
