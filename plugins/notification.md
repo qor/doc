@@ -32,6 +32,8 @@ The Notifications List in [QOR Admin](../chapter2/setup.md) looks like this when
 
 ## Register Actions for Notification
 
+This example shows how to add a "Dismiss" button to notification. The button will appears in the notification which `ResolvedAt` is nil. Please check [Action](../chapter2/actions.md) for more detail.
+
 ```go
 Notification.Action(&notification.Action{
         Name:         "Dismiss",
