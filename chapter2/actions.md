@@ -62,7 +62,7 @@ The 4 `Modes` mapping to these pages:
 The `ActionArgument` used in `Handle` option has 3 attributes.
 
 1. `PrimaryValues`, `[]string`. This records the object ID(s).
-2. `Context`, `*admin.Context`. The context of [QOR Admin](../chapter2/setup.md). Usually, this is the bridge of the current database. like `actionArgument.Context.DB`.
+2. `Context`, `*admin.Context`. The context of [QOR Admin](../chapter2/setup.md). Check [Admin context](../chapter2/context.md) for more detail.
 3. `Argument`, `interface{}`. The argument of user input. check [Action with user input](#action-with-user-input) for example.
 
 
@@ -132,4 +132,3 @@ This example shows how to make an action that user could click it to view produc
     Modes: []string{"menu_item", "edit"},
   })
 ```
-
