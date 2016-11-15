@@ -2,7 +2,7 @@
 
 * [Getting started](chapter1/README.md)
 * [Building an application](chapter2/README.md)
-   * [Set up QOR admin](chapter2/setup.md)
+   * [QOR Admin](chapter2/setup.md)
       * [Dashboard](chapter2/dashboard.md)
       * [Site name](chapter2/site_name.md)
       * [Menus](chapter2/menus.md)
