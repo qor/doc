@@ -4,16 +4,25 @@
 
 [![GoDoc](https://godoc.org/github.com/qor/serializable_meta?status.svg)](https://godoc.org/github.com/qor/serializable_meta)
 
-### Serializable Model Definition
+## Usage
+
+This example shows how to manage different kind of background jobs by [Serializable Meta](https://github.com/qor/serializable_meta)
+
+### Define serializable model
+
+Define `QorJob` model and embed `serializable_meta.SerializableMeta` to apply the feature.
 
 ```go
 type QorJob struct {
   gorm.Model
   Name string
-  serializable_meta.SerializableMeta // Embed serializable_meta.SerializableMeta to apply the serializable feature
+  serializable_meta.SerializableMeta
 }
+```
 
-// Needs method GetSerializableArgumentResource, so `Serializable Meta` can know your saving argument's type
+Add function `GetSerializableArgumentResource` to the model, so [Serializable Meta](https://github.com/qor/serializable_meta) can know the type of argument. And define background jobs.
+
+```go
 func (qorJob QorJob) GetSerializableArgumentResource() *admin.Resource {
   return jobsArgumentsMap[qorJob.Kind]
 }
@@ -24,19 +33,18 @@ var jobsArgumentsMap = map[string]*admin.Resource{
 }
 
 type sendNewsletterArgument struct {
-  Subject      string
-  Content      string `sql:"size:65532"`
+  Subject string
+  Content string
 }
 
-type importProductArgument struct {
-  ProductsCSV media_library.FileSystem
-}
+type importProductArgument struct {}
 ```
 
-### Usage
+### Use serializable features
+
+At first, Set job's `Name`, `Kind` and `SetSerializableArgumentValue`. Then save it into database.
 
 ```go
-// Save QorJob with argument into database
 var qorJob QorJob
 qorJob.Name = "sending newsletter"
 qorJob.Kind = "newsletter"
@@ -45,14 +53,21 @@ qorJob.SetSerializableArgumentValue(&sendNewsletterArgument{
   Content: "content",
 })
 
-db.Create(&qorJob) // will Marshal `sendNewsletterArgument` as json, and save it into database column `value`
-// INSERT INTO "qor_jobs" (kind, value) VALUES (`newsletter`, `{"Subject":"subject","Content":"content"}`);
+db.Create(&qorJob)
+```
 
-// Get QorJob and its argument from database
+This will marshal `sendNewsletterArgument` as a json, and save it into database by this SQL
+
+```sql
+INSERT INTO "qor_jobs" (kind, value) VALUES (`newsletter`, `{"Subject":"subject","Content":"content"}`);
+```
+
+Now you can fetch the saved `QorJob` from the database. And get the serialized data from the record.
+
+```go
 var result QorJob
 db.First(&result, "name = ?", "sending newsletter")
 
-// Use its argument
 var argument = result.GetSerializableArgument(result)
 argument.(*sendNewsletterArgument).Subject // "subject"
 argument.(*sendNewsletterArgument).Content // "content"

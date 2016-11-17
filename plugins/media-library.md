@@ -31,18 +31,22 @@ DB, err = gorm.Open("sqlite3", "demo_db") // [gorm](https://github.com/jinzhu/go
 media_library.RegisterCallbacks(&DB)
 ```
 
-Add [Media Library](https://github.com/qor/media_library) support to structs:
+Add [Media Library](https://github.com/qor/media_library) support to model.
+
+You can upload file to FileSystem.
 
 ```go
-// upload file to FileSystem
 import "github.com/qor/media_library"
 
 type Product struct {
   gorm.Model
   Image media_library.FileSystem
 }
+```
 
-// Upload file to s3
+Or upload file to s3
+
+```go
 import "github.com/qor/media_library/aws"
 
 type Product struct {
@@ -51,7 +55,7 @@ type Product struct {
 }
 ```
 
-And you're done setting up! You could then use it like this:
+And you're done setting up! You could use it like this:
 
 ```go
 var product Product
@@ -66,10 +70,11 @@ DB.Save(&product)
 product.Image.URL()
 ```
 
-## Advanced Usage
+## Advanced usage
+
+You can predefine common image size and fetch it easily.
 
 ```go
-// Resize images into different sizes when saving images
 type ProductIconImageStorage struct{
   media_library.FileSystem
 }
@@ -100,9 +105,3 @@ Media Library has some features aimed at helping achieve Accessibile frontends:
 - capture of textual transcript for *videos* and *linked videos* to aid with Accessibility.
 
 The values captured are fed into the sub-templates for each media type to be used if/where necessary. For example, an *image*'s HTML output (an `img` tag) manifests the textual description within an `alt` attribute while a video's HTML (an `iframe` tag) manifests the textual description within a `title` attribute.
-
-## QOR Integration
-
-[Media Library](https://github.com/qor/media_library) could be used alone, but it integrates nicely with [QOR](https://github.com/qor/qor).
-
-[Media Library Demo with QOR](http://demo.getqor.com/admin/products/1)

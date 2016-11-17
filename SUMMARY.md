@@ -2,11 +2,12 @@
 
 * [Getting started](chapter1/README.md)
 * [Building an application](chapter2/README.md)
-   * [Set up QOR admin](chapter2/setup.md)
+   * [QOR Admin](chapter2/setup.md)
       * [Dashboard](chapter2/dashboard.md)
       * [Site name](chapter2/site_name.md)
       * [Menus](chapter2/menus.md)
       * [Router](chapter2/router.md)
+      * [Context](chapter2/context.md)
    * [Resource](chapter2/resource-intro.md)
       * [Search](chapter2/search.md)
       * [Scopes and filters](chapter2/scope_and_filters.md)

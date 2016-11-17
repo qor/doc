@@ -1,6 +1,6 @@
 # Qor Slug
 
-[Slug](https://github.com/qor/slug) package is an extension for [QOR](https://github.com/qor/qor). It provides an easy way to create a pretty URL for your model.
+[Slug](https://github.com/qor/slug) provides an easy way to create a pretty URL for your model.
 
 [![GoDoc](https://godoc.org/github.com/qor/slug?status.svg)](https://godoc.org/github.com/qor/slug)
 
@@ -21,6 +21,8 @@ type User struct {
 }
 ```
 
-In the admin:
+In the [QOR Admin](./chapter2/setup.md), You can see:
 
 ![slug](slug.png)
+
+Suppose you generate user profile page URL by `NameWithSlug`. The URL shall be `/users/the-plant` which is prettier and safer than `/users/1`.

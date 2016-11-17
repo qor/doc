@@ -66,13 +66,7 @@ type User struct {
 }
 ```
 
-## [Qor Support](https://github.com/qor/qor)
-
-[QOR](https://github.com/qor/qor) is architected from the ground up to accelerate development and deployment of Content Management Systems, E-commerce Systems, and Business Applications and as such is comprised of modules that abstract common features for such systems.
-
-[Validations](https://github.com/qor/validations) could be used alone, but it works very nicely with [QOR](https://github.com/qor/qor) (as a [QOR](https://github.com/qor/qor) Plugin) - if you have requirements to manage your application's data be sure to check [QOR](https://github.com/qor/qor) out!
-
-[QOR Demo:  http://demo.getqor.com/admin](http://demo.getqor.com/admin)
+## Customize errors on form field
 
 If you want to display errors for each form field in [QOR Admin](../chapter2/setup.md), you could register your error like this:
 
