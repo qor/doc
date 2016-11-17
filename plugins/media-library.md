@@ -3,8 +3,8 @@
 [Media Library](https://github.com/qor/media_library) is a [Golang](http://golang.org/) library that supports the upload of *files*/*images*/*videos* to a filesystem or cloud storage as well as *linked videos* (i.e. YouTube, Vimeo, etc.). The plugin includes:
 
 - cropping and resizing features for images.
-- optional multiple sizes for a single media resource.
-- Acessibility helpers
+- optional multiple sizes for each media resource.
+- Accessibility helpers.
 
 [![GoDoc](https://godoc.org/github.com/qor/media_library?status.svg)](https://godoc.org/github.com/qor/media_library)
 
