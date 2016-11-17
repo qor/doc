@@ -1,8 +1,22 @@
 # Media Library
 
-[Media Library](https://github.com/qor/media_library) is a [Golang](http://golang.org/) library that supports the upload of files/images to a filesystem or cloud storage. The plugin includes cropping and resizing features for images.
+[Media Library](https://github.com/qor/media_library) is a [Golang](http://golang.org/) library that supports the upload of *files*/*images*/*videos* to a filesystem or cloud storage as well as *linked videos* (i.e. YouTube, Vimeo, etc.). The plugin includes:
+
+- cropping and resizing features for images.
+- optional multiple sizes for a single media resource.
+- Acessibility helpers
 
 [![GoDoc](https://godoc.org/github.com/qor/media_library?status.svg)](https://godoc.org/github.com/qor/media_library)
+
+###### File Types
+
+[Media Library](https://github.com/qor/media_library) accepts any and every file type, yet it associates certain file types as *images* or *videos* so as to provide helpers supporting those media's specific needs.
+
+
+    Images: .jpg, .jpeg, .png, .tif, .tiff, .bmp, .gif
+
+    Videos: .mp4, .m4p, .m4v, .m4v, .mov, .mpeg, .webm, .avi, .ogg, .ogv
+
 
 ## Usage
 
@@ -77,6 +91,15 @@ func (ProductIconImageStorage) GetSizes() map[string]media_library.Size {
 product.Image.URL("small")
 product.Image.URL("big@ld")
 ```
+
+## Accessibility helpers
+
+Media Library has some features aimed at helping achieve Accessibile frontends:
+
+- capture of a textual description for *images*, *videos*, and *linked videos* to aid with Accessibility.
+- capture of textual transcript for *videos* and *linked videos* to aid with Accessibility.
+
+The values captured are fed into the sub-templates for each media type to be used if/where necessary. For example, an *image*'s HTML output (an `img` tag) manifests the textual description within an `alt` attribute while a video's HTML (an `iframe` tag) manifests the textual description within a `title` attribute.
 
 ## QOR Integration
 
