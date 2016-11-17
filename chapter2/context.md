@@ -1,6 +1,6 @@
 # Context
 
-Context is a set of commonly used informations. You can call it via `admin.Context`.
+Context is a set of commonly used informations. You can call it via `admin.Context`. This is useful when you customizing special logic inside [QOR Admin](../chapter2/setup.md). Like [Action with user input](../chapter2/actions.md#action-with-user-input).
 
 ## Common options
 
