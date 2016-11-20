@@ -1,12 +1,12 @@
 # WildcardRouter
 
-[WildcardRouter](https://github.com/qor/wildcard_router) is component that designed to handle dynamic routes.
+[WildcardRouter](https://github.com/qor/wildcard_router) handles [*dynamic routes*](https://en.wikipedia.org/wiki/Dynamic_routing).
 
 [![GoDoc](https://godoc.org/github.com/qor/wildcard_router?status.svg)](https://godoc.org/github.com/qor/wildcard_router)
 
 ## Usage
 
-Suppose you have a model `Page` that handle requests by `ServeHTTP` function based on URL in database.
+Suppose you have a model, `Page`, that handles requests by `ServeHTTP` function based on a URL in a database.
 
 ```go
 import (
@@ -33,7 +33,7 @@ func (PageHandler) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 }
 ```
 
-And you have another model `FAQ` also handle requests by `ServeHTTP` function based on URL in database too.
+And you have another model, `FAQ`, which also handles requests by `ServeHTTP` function based on a URL in a database...
 
 ```go
 type FAQHandler struct {}
@@ -58,7 +58,7 @@ func (FAQHandler) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 }
 ```
 
-Those URLs could be anything, with no rule. Let's initialize [WildcardRouter](https://github.com/qor/wildcard_router) and mount it.
+Those URLs could be anything, with no rule... Let's initialize [WildcardRouter](https://github.com/qor/wildcard_router) and mount it.
 
 ```go
 func main() {
@@ -69,7 +69,7 @@ func main() {
 }
 ```
 
-`AddHandler` to [WildcardRouter](https://github.com/qor/wildcard_router). Any model that implemented method `ServeHTTP` could be a handler.
+`AddHandler` to [WildcardRouter](https://github.com/qor/wildcard_router) and any model that implements method `ServeHTTP` can be routed to as a handler.
 
 ```go
   wildcardRouter.AddHandler(PageHandler{})

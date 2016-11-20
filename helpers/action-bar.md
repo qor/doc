@@ -1,10 +1,10 @@
 # ActionBar
 
-[ActionBar](https://github.com/qor/action_bar) depends on [QOR Admin](../chapter2/setup.md). It provides an action bar on the top of frontend page. The bar contains:
+[ActionBar](https://github.com/qor/action_bar) depends on [QOR Admin](../chapter2/setup.md). It provides an action bar on the top of frontend pages. The bar contains:
 
-* Switcher of `Preview` and `Edit` mode
-* Login/Logout links
-* Additional links in a menu
+* Switcher of `Preview` and `Edit` mode,
+* Login/Logout links,
+* Additional links in a menu.
 
 [![GoDoc](https://godoc.org/github.com/qor/action_bar?status.svg)](https://godoc.org/github.com/qor/action_bar)
 

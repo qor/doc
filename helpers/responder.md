@@ -16,7 +16,7 @@ responder.Register("application/json", "json")
 responder.Register("application/xml", "xml")
 ```
 
-[Responder](https://github.com/qor/responder) has registered these 3 mime types by default, you could register more types with the `Register` function. The `Register` function accepts 2 parameters.
+[Responder](https://github.com/qor/responder) has the above 3 mime types registered by default. You can register more types with the `Register` function, which accepts 2 parameters:
 
 1. The mime type, like `text/html`
 2. The format of the mime type, like `html`
@@ -33,4 +33,4 @@ func handler(writer http.ResponseWriter, request *http.Request) {
 })
 ```
 
-The first `html` in the example will be the default response type if [Responder](https://github.com/qor/responder) cannot find corresponding mime type.
+The first `html` in the example will be the default response type if [Responder](https://github.com/qor/responder) cannot find a corresponding mime type.

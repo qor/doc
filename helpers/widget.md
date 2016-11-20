@@ -1,6 +1,6 @@
 # Widget
 
-[Widget](https://github.com/qor/widget) defined customizable, shareable HTML widgets for different pages
+[Widget](https://github.com/qor/widget) are defined, customizable, shareable HTML *widgets* that can be used within [QOR Admin](../chapter2/setup.md) or your own frontend.
 
 ## Getting Started
 
@@ -96,11 +96,11 @@ func Index(request *http.Request, writer http.ResponseWriter) {
 
 ### Templates
 
-Widget's template is Golang HTML template based, so supposed to be as flexible as it.
+[Widget](https://github.com/qor/widget)'s template is Golang HTML template based, and thus quite flexible.
 
-Above widget configured to use templates `banner1`, `banner2`, QOR widget will look up templates from path `$APP_ROOT/app/views/widgets` by default, so you need to put your template to the right place.
+Continuing on the above *widget* example, we configure it to use templates `banner1`, `banner2`. QOR widget will look up templates from path `$APP_ROOT/app/views/widgets` by default, so you need to put your template in the right folder!
 
-When render with the found template, [QOR Widget](https://github.com/qor/widget) will use the widget's generated context and use it to render the template like how Golang template works.
+Once the template is found, [QOR Widget](https://github.com/qor/widget) will use the widget's generated context and use it to render the template like how Golang template works.
 
 ```go
 // app/views/widgets/banner1.tmpl
@@ -135,7 +135,7 @@ Widgets.RegisterViewPath("app/views/widgets")
 
 ### Register Scopes
 
-In some cases, you might want to show a different page according to UTM source/medium/campaign or for A/B testing to increase the conversion rate.  then Widget's Scope is for you, you could register some scopes, and configure your widget for each of them, when a scope's `Visible` condition matched, then widget will use its configuration to render the widget.
+In some cases, you might want to show a different page according to UTM source/medium/campaign or for A/B testing to increase the conversion rate. Using a Widget's Scope you can register some *scopes*, configure your *widget* for each of them, and when a *scope*'s `Visible` condition is matched the *widget* will use its configuration to render the *widget*.
 
 ```go
 Widgets.RegisterScope(&widget.Scope{
