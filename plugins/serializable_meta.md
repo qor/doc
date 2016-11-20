@@ -6,7 +6,7 @@
 
 ## Usage
 
-This example shows how to manage different kind of background jobs by [Serializable Meta](https://github.com/qor/serializable_meta)
+The example herein shows how to manage different kinds of background jobs using [Serializable Meta](https://github.com/qor/serializable_meta).
 
 ### Define serializable model
 
@@ -20,7 +20,7 @@ type QorJob struct {
 }
 ```
 
-Add function `GetSerializableArgumentResource` to the model, so [Serializable Meta](https://github.com/qor/serializable_meta) can know the type of argument. And define background jobs.
+Add function `GetSerializableArgumentResource` to the model, so [Serializable Meta](https://github.com/qor/serializable_meta) can know the type of argument. Then define background jobs.
 
 ```go
 func (qorJob QorJob) GetSerializableArgumentResource() *admin.Resource {
@@ -42,7 +42,7 @@ type importProductArgument struct {}
 
 ### Use serializable features
 
-At first, Set job's `Name`, `Kind` and `SetSerializableArgumentValue`. Then save it into database.
+At first, Set a job's `Name`, `Kind` and `SetSerializableArgumentValue`. Then save it into database.
 
 ```go
 var qorJob QorJob

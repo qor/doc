@@ -1,10 +1,10 @@
 # Validations
 
-[Validations](https://github.com/qor/validations) provides a means to validate [GORM](https://github.com/jinzhu/gorm) models when creating and updating them.
+[Validations](https://github.com/qor/validations) provides a means to [*validate*](https://en.wikipedia.org/wiki/Data_validation) [GORM](https://github.com/jinzhu/gorm) models when creating and updating them.
 
 ### Register GORM Callbacks
 
-[Validations](https://github.com/qor/validations) uses [GORM](https://github.com/jinzhu/gorm) callbacks to handle validations, so you will need to register callbacks first:
+[Validations](https://github.com/qor/validations) uses [GORM](https://github.com/jinzhu/gorm) callbacks to handle *validations*, so you will need to register callbacks first:
 
 ```go
 import (
@@ -54,7 +54,7 @@ func (user User) Validate(db *gorm.DB) {
 db.Create(&User{}).GetErrors() // => []error{"age need to be 18+", "name can't be blank"}
 ```
 
-Qor Validation add support for [govalidator](https://github.com/asaskevich/govalidator), you could add tag into struct for some common validations, such as check required, numeric, length, etc.
+Qor [Validations](https://github.com/qor/validations) supports [govalidator](https://github.com/asaskevich/govalidator), so you could add a tag into your struct for some common *validations*, such as *check required*, *numeric*, *length*, etc.
 
 ```
 type User struct {
@@ -78,4 +78,6 @@ func (user User) Validate(db *gorm.DB) {
 }
 ```
 
-Checkout [http://demo.getqor.com/admin/products/1](http://demo.getqor.com/admin/products/1) as demo, change `Name` to be a blank string and save to see what happens.
+## Try it out for yourself
+
+Checkout the [http://demo.getqor.com/admin/products/1](http://demo.getqor.com/admin/products/1) demo, change `Name` to be a blank string and save to see what happens.

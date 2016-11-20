@@ -1,6 +1,6 @@
 # Publish
 
-The [Publish](https://github.com/qor/publish) Plugin decouples the timing of data updates in the [QOR Admin](../chapter2/setup.md) interface from the display of data on the frontend of the website which [QOR Admin](../chapter2/setup.md) is backing. A [GORM](https://github.com/jinzhu/gorm) model can be withheld from frontend display until it is "published".
+The [Publish](https://github.com/qor/publish) Plugin decouples the timing of data updates in the [QOR Admin](../chapter2/setup.md) interface from the display of data on the frontend of the website which [QOR Admin](../chapter2/setup.md) is backing. Effectively, a [GORM](https://github.com/jinzhu/gorm) model can be withheld from frontend display until it is "published".
 
 [![GoDoc](https://godoc.org/github.com/qor/publish?status.svg)](https://godoc.org/github.com/qor/publish)
 

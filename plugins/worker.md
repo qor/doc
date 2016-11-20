@@ -1,16 +1,16 @@
 # Worker
 
-[Worker](https://github.com/qor/worker) runs a single Job in the background, it can do so immediately or at a scheduled time.
+[Worker](https://github.com/qor/worker) runs a single [*Job*](https://en.wikipedia.org/wiki/Job_(computing)) in the background, it can do so immediately or at a scheduled time.
 
 Once registered with [QOR Admin](../chapter2/setup.md), [Worker](https://github.com/qor/worker) will provide a `Workers` section in the navigation tree, containing pages for listing and managing the following aspects of Workers:
 
-  - All Jobs.
-  - Running: Jobs that are currently running.
-  - Scheduled: Jobs which have been scheduled to run at a time in the future.
-  - Done: finished Jobs.
+  - All *Jobs*.
+  - Running: *Jobs* that are currently running.
+  - Scheduled: *Jobs* which have been scheduled to run at a time in the future.
+  - Done: finished *Jobs*.
   - Errors: any errors output from any Workers that have been run.
 
-The admin interface for a schedulable Job will have an additional `Schedule Time` input, with which administrators can set the scheduled date and time.
+The admin interface for a schedulable *Job* will have an additional `Schedule Time` input, with which administrators can set the scheduled date and time.
 
 [![GoDoc](https://godoc.org/github.com/qor/worker?status.svg)](https://godoc.org/github.com/qor/worker)
 
@@ -62,9 +62,9 @@ func main() {
 
 ## Things to note
 
-- If a Job is scheduled within 2 minutes of the current time, then it will be run immediately.
-- It is possible, via the admin interface, to abort a currently running job: view the Job's data via `Workers > Running` or `Workers > All Jobs` and press the `Abort running Job` button.
-- It is possible, via the admin interface, to abort a scheduled job: view the Job's data via `Workers > Scheduled` or `Workers > All Jobs` and press the `Cancel scheduled Job` button.
-- It is possible, via the admin interface, to update a scheduled job, including setting a new date and time: view the Job's data via `Workers > Scheduled` or `Workers > All Jobs`, update the `Schedule Time` field's value, and press the `Update scheduled Job` button. Note: scheduling a Job to a date/time in the past will see the Job get run immediately.
+- If a *Job* is scheduled within 2 minutes of the current time, then it will be run immediately.
+- It is possible, via the admin interface, to abort a currently running *Job*: view the *Job*'s data via `Workers > Running` or `Workers > All Jobs` and press the `Abort running Job` button.
+- It is possible, via the admin interface, to abort a scheduled *Job*: view the *Job*'s data via `Workers > Scheduled` or `Workers > All Jobs` and press the `Cancel scheduled Job` button.
+- It is possible, via the admin interface, to update a scheduled *Job*, including setting a new date and time: view the *Job*'s data via `Workers > Scheduled` or `Workers > All Jobs`, update the `Schedule Time` field's value, and press the `Update scheduled Job` button. Please be aware that scheduling a *Job* to a date/time in the past will see the Job get run immediately.
 
 [Worker Demo:  http://demo.getqor.com/admin/workers](http://demo.getqor.com/admin/workers)

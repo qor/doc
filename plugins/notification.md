@@ -1,6 +1,6 @@
 # QOR Notification
 
-[QOR Notification](https://github.com/qor/notification) provides a way to send notifications to users. Notifications can be anything your system needs, like order update, delivery notices, whatever.
+[QOR Notification](https://github.com/qor/notification) provides a way to send notifications to [QOR Admin](../chapter2/setup.md) administrators. Notifications can be anything your system needs, like order update, delivery notices, whatever.
 
 ## Usage
 
@@ -26,13 +26,13 @@ Notification.GetNotifications(user interface{}, context *qor.Context)
 Notification.GetUnresolvedNotificationsCount(user interface{}, context *qor.Context)
 ```
 
-The Notifications List in [QOR Admin](../chapter2/setup.md) looks like this when populated:
+The Notifications List in [QOR Admin](../chapter2/setup.md) looks a bit like this when populated:
 
 ![notification](notification-demo.png)
 
 ## Register Actions for Notification
 
-This example shows how to add a "Dismiss" button to notification. The button will appears in the notification which `ResolvedAt` is nil. Please check [Action](../chapter2/actions.md) for more detail.
+This example shows how to add a "Dismiss" button to notification. The button will appears in the notification which `ResolvedAt` is nil. Please read the [Action](../chapter2/actions.md) documentation for more details.
 
 ```go
 Notification.Action(&notification.Action{
