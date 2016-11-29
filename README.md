@@ -18,3 +18,5 @@ To keep up-to-date with [QOR](https://github.com/qor/qor) developments, subscrib
 * circle our [Google+ page](https://plus.google.com/u/0/113759909389888286690 "Google+ page"),
 * join our [Google+ Community](https://plus.google.com/communities/105869262256660405319 "Google+ Community"),
 * join our [Facebook group](https://www.facebook.com/qorsdk/ "Facebook group").
+
+**For security issues, please send us an email to security@getqor.com and give us time to respond BEFORE posting as an issue or reporting on public forums.**
