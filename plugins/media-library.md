@@ -31,9 +31,11 @@ DB, err = gorm.Open("sqlite3", "demo_db") // [gorm](https://github.com/jinzhu/go
 media_library.RegisterCallbacks(&DB)
 ```
 
-Add [Media Library](https://github.com/qor/media_library) support to model.
+You can upload file to different places by add different [Media Library](https://github.com/qor/media_library) support to model.
 
-You can upload file to FileSystem.
+### Store file in the file system
+
+You can store uploaded file in your file system by set the field type as `media_library.FileSystem`.
 
 ```go
 import "github.com/qor/media_library"
@@ -44,7 +46,52 @@ type Product struct {
 }
 ```
 
-Or upload file to s3
+This set the default size and path for `Image`. The default size is `4294967295` and default path is `{repo_path}/public/system/{{class}}/{{primary_key}}/{{column}}.{{extension}}`.
+
+You can set the path and size manually by adding tag to the field like this:
+
+```go
+type Product struct {
+  gorm.Model
+  Image media_library.MediaLibraryStorage `sql:"size:4294967295;" media_library:"url:/backend/{{class}}/{{primary_key}}/{{column}}.{{extension}};path:./private"`
+}
+```
+
+The `media_library` takes two parameters, `url` and `path`. the `url` set the relative file path and the `path` set the prefix path. So suppose we uploaded a image called `demo.png`. The file will be stored at `{repo_path}/private/backend/products/1/demo.png`.
+
+#### Be careful when using `http.FileServer`
+
+The `http.FileServer` not only serves the files, but also shows the directory contents. This is very dangerous when you do things like
+
+```go
+for _, path := range []string{"system", "javascripts", "stylesheets", "images"} {
+  mux.Handle(fmt.Sprintf("/%s/", path), http.FileServer(http.Dir("public")))
+}
+```
+
+The files under `public` will be exposed to public(especially the search engine!), Imagine someone upload a illegal or sensitive file to your server. The directory is fully visible to everyone and its indexable by search engines and boom!
+
+To avoid this problem, we made a safer `FileServer` function [here](https://github.com/qor/qor/blob/master/utils/utils.go#L176). This function serves file only. So the previous code now turned into:
+
+```go
+for _, path := range []string{"system", "javascripts", "stylesheets", "images"} {
+  mux.Handle(fmt.Sprintf("/%s/", path), utils.FileServer(http.Dir("public")))
+}
+```
+
+### Store file on S3
+
+To use S3 storage, you need pass the detail of the S3 account by ENV arguments.
+
+```bash
+export QOR_AWS_REGION=region
+export QOR_AWS_ACCESS_KEY_ID=access_key_id
+export QOR_AWS_SECRET_ACCESS_KEY=secret_access_key
+export S3Bucket=bucket_name
+export QOR_AWS_CLOUD_FRONT_DOMAIN=cloud_front_domain
+```
+
+Then, add S3 support to your model.
 
 ```go
 import "github.com/qor/media_library/aws"
@@ -55,7 +102,9 @@ type Product struct {
 }
 ```
 
-And you're done setting up! You could use it like this:
+### Basic usage
+
+After you're finished the setting. You could use it like this:
 
 ```go
 var product Product
@@ -70,7 +119,7 @@ DB.Save(&product)
 product.Image.URL()
 ```
 
-## Advanced usage
+### Predefine common image size
 
 You can predefine common image size and fetch it easily.
 
