@@ -18,8 +18,7 @@ func main() {
   Admin := admin.New(&qor.Config{DB: db})
 
   // Register Global ActionBar object
-  // Auth is admin.Auth interface, you need to define a struct and implements interface's functions
-  ActionBar = action_bar.New(Admin, Auth)
+  ActionBar = action_bar.New(Admin)
   ActionBar.RegisterAction(&action_bar.Action{Name: "Admin Dashboard", Link: "/admin"})
 
   // Then use Render to render action bar in view
