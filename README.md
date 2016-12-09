@@ -2,7 +2,7 @@
 
 Typically, a [QOR](https://github.com/qor/qor)-based system will revolve around [QOR Admin](./chapter2/setup.md), which is the CMS component. [QOR Admin](./chapter2/setup.md) facilitates easy database and media content management and is not bound to a single database technology.
 
-The bulk of [QOR](https://github.com/qor/qor)'s multifaceted capabilities lie in the plugins, they can be used independently but their super-powers shine when used together. Many of the plugins utilise [GORM](https://github.com/jinzhu/gorm), but it is possible to utilise any other ORM if need be.
+The bulk of [QOR](https://github.com/qor/qor)'s multifaceted capabilities lie in the plugins, they can be used independently but their super-powers shine when used together. Many of the plugins utilise [GORM](https://github.com/jinzhu/gorm) as ORM.
 
 We, [The Plant](https://theplant.jp), utilise [QOR](https://github.com/qor/qor) on our own projects and are interested to hear about yours and your experience in using [QOR](https://github.com/qor/qor) - there are a number of ways to contribute and communicate with us and the [QOR](https://github.com/qor/qor) community:
 
