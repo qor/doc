@@ -18,6 +18,56 @@ Permission modes are really the *roles* in [Roles](https://github.com/qor/roles)
 
 You can use those permission modes, or create your own by [defining permissions](#define-permission).
 
+### Permission Behaviors and Interactions
+
+1. All roles in the Deny mapping for a permission mode are immediately denied without reference to the Allow mapping for that permission mode.
+
+    *E.g.*
+    ```
+    roles.Deny(roles.Delete, roles.Anyone).Allow(roles.Delete, "admin")
+    ```
+     will deny access to `admin` for the permission mode `roles.Delete`, despite the chained call to `Allow()`. *I.e.* `Allow()` has **NO** effect in this chain.
+
+2. If there are **NO** roles in the Allow mapping for a permission mode, then `roles.Anyone` is allowed.
+
+    *E.g.*
+    ```
+    roles.Deny(roles.CRUD, "customer")
+    ```
+    will allow access for permission mode `roles.CRUD` to **any** role that is not a `customer` because the Allow mapping is empty and the blanket allow rule is in force.
+
+3. If even one (1) Allow mapping exists, then only roles on that list will be allowed through.
+
+    *E.g.*
+    ```
+    roles.Allow(roles.READ, "admin")
+    ```
+    allows the `admin` role through and rejects **ALL** other roles.
+
+The following is a flow diagram for a specific permission mode, *e.g.* `roles.READ`.
+
+``` flow
+st=>start: Input role
+denied0=>end: Denied
+allowed0=>end: Allowed
+denied1=>end: Denied
+allowed1=>end: Allowed
+op0=>operation: Exists in Deny map?
+op1=>operation: Allow map empty?
+op2=>operation: Exists in Allow map?
+cond0=>condition: Yes or No?
+cond1=>condition: Yes or No?
+cond2=>condition: Yes or No?
+
+st->op0->cond0
+cond0(no)->op1->cond1
+cond0(yes)->denied0
+cond1(yes)->allowed0
+cond1(no)->op2->cond2
+cond2(yes)->allowed1
+cond2(no)->denied1
+```
+
 ### Define Permission
 
 ```go
