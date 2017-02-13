@@ -53,3 +53,4 @@
      * [Sorting](helpers/sorting.md)
      * [Widget](helpers/widget.md)
      * [Wildcard router](helpers/wildcard-router.md)
+* [Changelog](changelog.md)
