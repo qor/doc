@@ -37,6 +37,7 @@
      * [Media library](plugins/media-library.md)
      * [Notification](plugins/notification.md)
      * [Publish](plugins/publish.md)
+     * [Publish2](plugins/publish2.md)
      * [Roles](plugins/roles.md)
      * [Serializable meta](plugins/serializable_meta.md)
      * [Slug](plugins/slug.md)
