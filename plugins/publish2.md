@@ -76,7 +76,13 @@ In all versions panel, the one with green circle(A) icon is the live version.
 
 ### <a name="disable-callbacks"></a> Disable callbacks
 
-Depend on the modules you used, [Publish2](https://github.com/qor/publish2) attaches different conditions to your object.
+Depend on the modules you used, [Publish2](https://github.com/qor/publish2) callback attaches different SQL conditions to your object queries.
+
+This is a SQL sample of select product with language_id is 6. All 3 modules are integrated with `Product`.
+
+```
+SELECT * FROM `products`  WHERE (language_id = '6') AND ((products.id, `products`.version_priority) IN (SELECT products.id, MAX(`products`.version_priority) FROM `products` WHERE (scheduled_start_at IS NULL OR scheduled_start_at <= '2017-02-13 02:04:09') AND (scheduled_end_at IS NULL OR scheduled_end_at >= '2017-02-13 02:04:09') AND publish_ready = 'true' AND deleted_at IS NULL GROUP BY products.id))) ORDER BY `products`.`id`, `products`.version_priority DESC
+```
 
 - Visible: `publish_ready = 'true'`
 - Version: `(products.id, `products`.version_priority) IN (SELECT products.id, MAX(`products`.version_priority))`
