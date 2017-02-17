@@ -31,6 +31,7 @@
      * [BinDataFS](plugins/bindata.md)
      * [Exchange](plugins/exchange.md)
      * [Filebox](plugins/filebox.md)
+     * [Help](plugins/help.md)
      * [I18n](plugins/i18n.md)
      * [L10n](plugins/l10n.md)
      * [Location](plugins/location.md)
