@@ -23,7 +23,7 @@ func (Auth) LoginURL(c *admin.Context) string {
   return "/login"
 }
 
-func (Auth) LogoutURL(*Context) string
+func (Auth) LogoutURL(c *admin.Context) string {
   return "/logout"
 }
 
