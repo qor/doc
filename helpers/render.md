@@ -60,3 +60,14 @@ You can call this in the template
 ```
 
 The output is `Hello Memememe`.
+
+### Use with [Responder](./responder.md)
+
+Just put the [Render](https://github.com/qor/render) inside [Responder](./responder.md) handle function.
+
+```go
+  responder.With("html", func() {
+    ...
+    Render.Execute("demo/index", viewContext, *http.Request, http.ResponseWriter)
+  })
+```
