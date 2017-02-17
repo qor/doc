@@ -54,6 +54,8 @@ func (user User) Validate(db *gorm.DB) {
 db.Create(&User{}).GetErrors() // => []error{"age need to be 18+", "name can't be blank"}
 ```
 
+## [Govalidator](https://github.com/asaskevich/govalidator) integration
+
 Qor [Validations](https://github.com/qor/validations) supports [govalidator](https://github.com/asaskevich/govalidator), so you could add a tag into your struct for some common *validations*, such as *check required*, *numeric*, *length*, etc.
 
 ```
