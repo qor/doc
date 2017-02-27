@@ -6,11 +6,11 @@ The [Publish2](https://github.com/qor/publish2) Plugin is the successor to [Publ
 * Schedule: to schedule objects to be online/offline automatically
 * Version: to allow an object to have more than one copies and chain them together
 
-It requires [GORM](https://github.com/jinzhu/gorm) as ORM.
+You can read the [Introducing Publish2 blog](http://getqor.com/en/blogs/article/title=introducing-publish2) to understand our design idea in detail.
 
 ## Usage
 
-First, add [Publish2](https://github.com/qor/publish2) fields to the model. You can choose the module you need, we provide composability here.
+First, add [Publish2](https://github.com/qor/publish2) fields to the model. You can choose the module you need, we provide composability here. Please note that it requires [GORM](https://github.com/jinzhu/gorm) as ORM.
 
 ```go
 type Product struct {
