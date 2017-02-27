@@ -12,7 +12,7 @@ Widgets := widget.New(&widget.Config{DB: db})
 type bannerArgument struct {
   Title           string
   Link            string
-  BackgroundImage media_library.FileSystem
+  BackgroundImage oss.OSS
 }
 
 // Register new widget
@@ -34,7 +34,7 @@ Widgets.RegisterWidget(&widget.Widget{
 
 type slideImage struct {
   Title string
-  Image media_library.FileSystem
+  Image oss.OSS
 }
 
 type slideShowArgument struct {
