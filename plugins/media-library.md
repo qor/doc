@@ -47,7 +47,7 @@ Then add [OSS(Object Storage Service)](https://github.com/qor/oss) to your model
   }
 ```
 
-Last, configure the storage. The default value is `storage := filesystem.New("/public")`. Here we configure S3 as storage.
+Last, configure the storage. The default value is `storage := filesystem.New("public")`. Here we configure S3 as storage.
 
 ```go
   import (
@@ -56,7 +56,7 @@ Last, configure the storage. The default value is `storage := filesystem.New("/p
   )
 
   storage := s3.New(s3.Config{AccessID: "access_id", AccessKey: "access_key", Region: "region", Bucket: "bucket", Endpoint: "cdn.getqor.com", ACL: aws.BucketCannedACLPublicRead})
-  // Default configuration `storage := filesystem.New("/public")`
+  // Default configuration `storage := filesystem.New("public")`
 ```
 
 ## Operate stored files
@@ -77,7 +77,7 @@ So once you finished the setting, you could operate saved files like this:
 
 ```go
   storage := s3.New(s3.Config{AccessID: "access_id", AccessKey: "access_key", Region: "region", Bucket: "bucket", Endpoint: "cdn.getqor.com", ACL: aws.BucketCannedACLPublicRead})
-  // storage := filesystem.New("/public")
+  // storage := filesystem.New("public")
 
   // Save a reader interface into storage
   storage.Put("/sample.txt", reader)
