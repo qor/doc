@@ -14,9 +14,11 @@ product.Meta(&admin.Meta{Name: "Description", Type: "rich_editor"})
 
 First, create an asset manager provided by [Media library](plugins/media-library.md), then configure it to be attached to a Rich Editor.
 
-```
+```go
+  import "github.com/qor/media/asset_manager"
+
   // Add Asset Manager, for rich editor
-  assetManager := Admin.AddResource(&media_library.AssetManager{}, &admin.Config{Invisible: true})
+  assetManager := Admin.AddResource(&asset_manager.AssetManager{}, &admin.Config{Invisible: true})
 
   product.Meta(&admin.Meta{Name: "Description", Config: &admin.RichEditorConfig{AssetManager: assetManager}})
 ```

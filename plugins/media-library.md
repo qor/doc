@@ -1,16 +1,16 @@
-# Media Library
+# Media
 
-[Media Library](https://github.com/qor/media_library) is a [Golang](http://golang.org/) library that supports the upload of *files*/*images*/*videos* to a filesystem or cloud storage as well as *linked videos* (i.e. YouTube, Vimeo, etc.). The plugin includes:
+[Media](https://github.com/qor/media) is a [Golang](http://golang.org/) library that supports the upload of *files*/*images*/*videos* to a filesystem or cloud storage as well as *linked videos* (i.e. YouTube, Vimeo, etc.). The plugin includes:
 
 - cropping and resizing features for images.
 - optional multiple sizes for each media resource.
 - Accessibility helpers.
 
-[![GoDoc](https://godoc.org/github.com/qor/media_library?status.svg)](https://godoc.org/github.com/qor/media_library)
+[![GoDoc](https://godoc.org/github.com/qor/media?status.svg)](https://godoc.org/github.com/qor/media)
 
 ###### File Types
 
-[Media Library](https://github.com/qor/media_library) accepts any and every file type, yet it associates certain file types as *images* or *videos* so as to provide helpers supporting those media's specific needs.
+[Media](https://github.com/qor/media) accepts any and every file type, yet it associates certain file types as *images* or *videos* so as to provide helpers supporting those media's specific needs.
 
 
     Images: .jpg, .jpeg, .png, .tif, .tiff, .bmp, .gif
@@ -20,44 +20,129 @@
 
 ## Usage
 
-[Media Library](https://github.com/qor/media_library) depends on [GORM](https://github.com/jinzhu/gorm) models as it is using [GORM](https://github.com/jinzhu/gorm)'s callbacks to handle file processing, so you will need to register callbacks first:
+[Media](https://github.com/qor/media) depends on [GORM](https://github.com/jinzhu/gorm) models as it is using [GORM](https://github.com/jinzhu/gorm)'s callbacks to handle file processing, so you will need to register callbacks first:
 
 ```go
-import "github.com/jinzhu/gorm"
-import "github.com/qor/media_library"
+  import (
+    "github.com/jinzhu/gorm"
+    "github.com/qor/media"
+  )
 
-DB, err = gorm.Open("sqlite3", "demo_db") // [gorm](https://github.com/jinzhu/gorm)
+  DB, err = gorm.Open("sqlite3", "demo_db") // [gorm](https://github.com/jinzhu/gorm)
 
-media_library.RegisterCallbacks(&DB)
+  media.RegisterCallbacks(&DB)
 ```
 
-You can upload file to different places by add different [Media Library](https://github.com/qor/media_library) support to model.
-
-### Store file in the file system
-
-You can store uploaded file in your file system by set the field type as `media_library.FileSystem`.
+Then add [OSS(Object Storage Service)](https://github.com/qor/oss) to your model:
 
 ```go
-import "github.com/qor/media_library"
+  import (
+    "github.com/jinzhu/gorm"
+    "github.com/qor/media/oss"
+  )
 
-type Product struct {
-  gorm.Model
-  Image media_library.FileSystem
-}
+  type Product struct {
+    gorm.Model
+    Image oss.OSS
+  }
 ```
 
-This set the default size and path for `Image`. The default size is `4294967295` and default path is `{repo_path}/public/system/{{class}}/{{primary_key}}/{{column}}.{{extension}}`.
+Last, configure the storage. The default value is `storage := filesystem.New("public")`. Here we configure S3 as storage.
+
+```go
+  import (
+    // "github.com/oss/filesystem"
+    "github.com/oss/s3"
+  )
+
+  storage := s3.New(s3.Config{AccessID: "access_id", AccessKey: "access_key", Region: "region", Bucket: "bucket", Endpoint: "cdn.getqor.com", ACL: aws.BucketCannedACLPublicRead})
+  // Default configuration `storage := filesystem.New("public")`
+```
+
+## Operate stored files
+
+The [OSS(Object Storage Service)](https://github.com/qor/oss) provides a pretty simple API
+
+```go
+  type StorageInterface interface {
+      Get(path string) (*os.File, error)
+      Put(path string, reader io.Reader) (*Object, error)
+      Delete(path string) error
+      List(path string) ([]*Object, error)
+      GetEndpoint() string
+  }
+```
+
+So once you finished the setting, you could operate saved files like this:
+
+```go
+  storage := s3.New(s3.Config{AccessID: "access_id", AccessKey: "access_key", Region: "region", Bucket: "bucket", Endpoint: "cdn.getqor.com", ACL: aws.BucketCannedACLPublicRead})
+  // storage := filesystem.New("public")
+
+  // Save a reader interface into storage
+  storage.Put("/sample.txt", reader)
+
+  // Get file with path
+  storage.Get("/sample.txt")
+
+  // Delete file with path
+  storage.Delete("/sample.txt")
+
+  // List all objects under path
+  storage.List("/")
+```
+
+### Predefine common image size
+
+You can implement the `GetSizes` function to predefine image sizes. The size name can be used to fetch image of corresponding size.
+
+```go
+  import (
+    "github.com/qor/media/oss"
+    "github.com/jinzhu/gorm"
+  )
+
+  type Product struct {
+    gorm.Model
+    Image ProductIconImageStorage
+  }
+
+  type ProductIconImageStorage struct{
+    oss.OSS
+  }
+
+  func (ProductIconImageStorage) GetSizes() map[string]media.Size {
+    return map[string]media.Size{
+      "small":    {Width: 60 * 2, Height: 60 * 2},
+      "small@ld": {Width: 60, Height: 60},
+
+      "middle":    {Width: 108 * 2, Height: 108 * 2},
+      "middle@ld": {Width: 108, Height: 108},
+
+      "big":    {Width: 144 * 2, Height: 144 * 2},
+      "big@ld": {Width: 144, Height: 144},
+    }
+  }
+
+  // Get image's url with style
+  product.Image.URL("small")
+  product.Image.URL("big@ld")
+```
+
+### Set file storage path in the file system
+
+The default size and path for `Image`. The default size is `4294967295` and default path is `{repo_path}/public/system/{{class}}/{{primary_key}}/{{column}}.{{extension}}`.
 
 You can set the path and size manually by adding tag to the field like this:
 
 ```go
 type Product struct {
   gorm.Model
-  Image media_library.MediaLibraryStorage `sql:"size:4294967295;" media_library:"url:/backend/{{class}}/{{primary_key}}/{{column}}.{{extension}};path:./private"`
+  Image oss.OSS `sql:"size:4294967295;" media:"url:/backend/{{class}}/{{primary_key}}/{{column}}.{{extension}};path:./private"`
 }
 ```
 
-The `media_library` takes two parameters, `url` and `path`. the `url` set the relative file path and the `path` set the prefix path. So suppose we uploaded a image called `demo.png`. The file will be stored at `{repo_path}/private/backend/products/1/demo.png`.
+The `media` takes two parameters, `url` and `path`. the `url` set the relative file path and the `path` set the prefix path. So suppose we uploaded a image called `demo.png`. The file will be stored at `{repo_path}/private/backend/products/1/demo.png`.
 
 #### Be careful when using `http.FileServer`
 
@@ -77,73 +162,6 @@ To avoid this problem, we made a safer `FileServer` function [here](https://gith
 for _, path := range []string{"system", "javascripts", "stylesheets", "images"} {
   mux.Handle(fmt.Sprintf("/%s/", path), utils.FileServer(http.Dir("public")))
 }
-```
-
-### Store file on S3
-
-To use S3 storage, you need pass the detail of the S3 account by ENV arguments.
-
-```bash
-export QOR_AWS_REGION=region
-export QOR_AWS_ACCESS_KEY_ID=access_key_id
-export QOR_AWS_SECRET_ACCESS_KEY=secret_access_key
-export S3Bucket=bucket_name
-export QOR_AWS_CLOUD_FRONT_DOMAIN=cloud_front_domain
-```
-
-Then, add S3 support to your model.
-
-```go
-import "github.com/qor/media_library/aws"
-
-type Product struct {
-  gorm.Model
-  Image aws.S3
-}
-```
-
-### Basic usage
-
-After you're finished the setting. You could use it like this:
-
-```go
-var product Product
-
-if productImage, err := os.Open("product_image.png"); err == nil {
-  product.Image.Scan(productImage)
-}
-
-DB.Save(&product)
-
-// Get image's url, will be s3 url if it is uploaded to s3
-product.Image.URL()
-```
-
-### Predefine common image size
-
-You can predefine common image size and fetch it easily.
-
-```go
-type ProductIconImageStorage struct{
-  media_library.FileSystem
-}
-
-func (ProductIconImageStorage) GetSizes() map[string]media_library.Size {
-  return map[string]media_library.Size{
-    "small":    {Width: 60 * 2, Height: 60 * 2},
-    "small@ld": {Width: 60, Height: 60},
-
-    "middle":    {Width: 108 * 2, Height: 108 * 2},
-    "middle@ld": {Width: 108, Height: 108},
-
-    "big":    {Width: 144 * 2, Height: 144 * 2},
-    "big@ld": {Width: 144, Height: 144},
-  }
-}
-
-// Get image's url with style
-product.Image.URL("small")
-product.Image.URL("big@ld")
 ```
 
 ## Accessibility helpers
