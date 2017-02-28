@@ -4,7 +4,7 @@
 
 ## Usage
 
-Currently, [QOR OSS](https://github.com/qor/oss) only support file system and S3. But you can easily implement your own storage by the interface.
+Currently, [QOR OSS](https://github.com/qor/oss) only support file system and S3. But you can easily implement your own storage strategies by implementing the interface.
 
 ```go
 // StorageInterface define common API to operate storage
