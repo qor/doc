@@ -63,11 +63,14 @@ The output is `Hello Memememe`.
 
 ### Use with [Responder](./responder.md)
 
-Just put the [Render](https://github.com/qor/render) inside [Responder](./responder.md) handle function.
+Put the [Render](https://github.com/qor/render) inside [Responder](./responder.md) handle function like this.
 
 ```go
-  responder.With("html", func() {
-    ...
-    Render.Execute("demo/index", viewContext, *http.Request, http.ResponseWriter)
+  func handler(writer http.ResponseWriter, request *http.Request) {
+    responder.With("html", func() {
+      Render.Execute("demo/index", viewContext, *http.Request, http.ResponseWriter)
+    }).With([]string{"json", "xml"}, func() {
+      writer.Write([]byte("this is a json or xml request"))
+    }).Respond(request)
   })
 ```
