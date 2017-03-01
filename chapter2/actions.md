@@ -46,6 +46,7 @@ Then the user `index` and `edit` page will show a button "ENABLE" like this:
 | Label | string | The button text of the action. |
 | Method | string | HTTP method, default is `PUT`. When there is `URL` option, it will be `GET` by default. |
 | URL | `func(record interface{}, context *admin.Context) string` | Set the URL that the action button shall trigger requests. This option will overwrite the `Handle` option. Check [Action by URL](#action-by-url) for example. |
+| URLOpenType | string | Set how to open the URL, The default value for the action that has `Resource` is `bottomsheet`(the link will be opened in an popup window). For the action that has no `Resource` is `_blank`.  |
 | Visible | `func(record interface{}, context *admin.Context) bool` | Set the condition of when this action is visible. [Example](#action-visible-option-demo) |
 | Handle | `func(argument *ActionArgument) error` | The function to process the request from action. |
 | Permission | `*roles.Permission` | Permission control, Please check [Roles](../plugins/roles.md) for more informations. |
