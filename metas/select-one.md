@@ -28,6 +28,29 @@ user.Meta(&admin.Meta{Name: "Gender", Type: "select_one", Config: &admin.SelectO
 u.Meta(&admin.Meta{Name: "Gender", Type: "select_one", Config: &admin.SelectOneConfig{Collection: []string{"M", "F"}, AllowBlank: true}})
 ```
 
+### Generate options by data from the database
+
+This is an example of generates options by the languages in the database. The `Collection` option accept a function with `context *admin.Context` parameter. You can get the database by `context.GetDB()` function. The returned value should be a `[][]string` array.
+
+```go
+  user.Meta(&admin.Meta{Name: "Language", Label: "Locale", Type: "select_one",
+    Config: &admin.SelectOneConfig{
+      Collection: func(_ interface{}, context *admin.Context) (options [][]string) {
+        var languages []models.Language
+        context.GetDB().Find(&languages)
+
+        for _, n := range languages {
+          idStr := fmt.Sprintf("%d", n.ID)
+          var option = []string{idStr, n.NameWithCountry()}
+          options = append(options, option)
+        }
+
+        return options
+      },
+    },
+  })
+```
+
 ### Overwrite default SelectionTemplate
 
 ```go
