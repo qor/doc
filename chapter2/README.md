@@ -13,3 +13,5 @@ There are also some helpers for front-end needs, such as `i18n` for Internationa
 For the front-end, we leave that work/code to developers (fully flexible) which means you can have fully customisable UI and Router without limitations.
 
 OK, keep this image in your mind and let's go through each part of [QOR](https://github.com/qor/qor) in more depth...
+
+TIP: It's pretty annoying when updating the helpers/plugins/feature set because they are independent repos, we made a shortcut shell to update [here](https://github.com/qor/qor/blob/master/update_all_qor_repos.sh). You can update all [QOR](https://github.com/qor/qor) components at one time by running this shell.
