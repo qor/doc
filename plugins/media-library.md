@@ -30,7 +30,7 @@
 
   DB, err = gorm.Open("sqlite3", "demo_db") // [gorm](https://github.com/jinzhu/gorm)
 
-  media.RegisterCallbacks(&DB)
+  media.RegisterCallbacks(DB)
 ```
 
 Then add [OSS(Object Storage Service)](https://github.com/qor/oss) to your model:
@@ -111,8 +111,8 @@ You can implement the `GetSizes` function to predefine image sizes. The size nam
     oss.OSS
   }
 
-  func (ProductIconImageStorage) GetSizes() map[string]media.Size {
-    return map[string]media.Size{
+  func (ProductIconImageStorage) GetSizes() map[string]*media.Size {
+    return map[string]*media.Size{
       "small":    {Width: 60 * 2, Height: 60 * 2},
       "small@ld": {Width: 60, Height: 60},
 
@@ -138,7 +138,7 @@ You can set the path and size manually by adding tag to the field like this:
 ```go
 type Product struct {
   gorm.Model
-  Image oss.OSS `sql:"size:4294967295;" media:"url:/backend/{{class}}/{{primary_key}}/{{column}}.{{extension}};path:./private"`
+  Image oss.OSS `sql:"size:4294967295;" media_library:"url:/backend/{{class}}/{{primary_key}}/{{column}}.{{extension}};path:./private"`
 }
 ```
 
