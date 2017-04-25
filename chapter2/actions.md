@@ -103,7 +103,7 @@ order.Action(&admin.Action{
   Handle: func(argument *admin.ActionArgument) error {
     // cancel the order
   },
-  Visible: func(record interface{}) bool {
+  Visible: func(record interface{}, context *Context) bool {
     if order, ok := record.(*models.Order); ok {
       for _, state := range []string{"draft", "processing"} {
         if order.State == state {
