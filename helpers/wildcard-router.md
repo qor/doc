@@ -13,11 +13,11 @@ import (
   "github.com/qor/wildcard_router"
 )
 
-type PageHandler struct {}
+type PageHandler struct{}
 
 type Page struct {
-  URL string
-  Body string
+	URL  string
+	Body string
 }
 
 // Page's records in database:
@@ -26,22 +26,22 @@ type Page struct {
 // Record2(URL: /page2, Content: "Page2")
 
 func (PageHandler) ServeHTTP(w http.ResponseWriter, req *http.Request) {
-  var page Page
-  if !db.First(&page, "url = ?", req.URL.Path).RecordNotFound() {
-    w.Write([]byte(page.Body))
-  }
+	var page Page
+	if !db.First(&page, "url = ?", req.URL.Path).RecordNotFound() {
+		w.Write([]byte(page.Body))
+	}
 }
 ```
 
 And you have another model, `FAQ`, which also handles requests by `ServeHTTP` function based on a URL in a database...
 
 ```go
-type FAQHandler struct {}
+type FAQHandler struct{}
 
 type FAQ struct {
-  URL      string
-  Question string
-  Answer   string
+	URL      string
+	Question string
+	Answer   string
 }
 
 // FAQ's records in database:
@@ -51,10 +51,10 @@ type FAQ struct {
 
 
 func (FAQHandler) ServeHTTP(w http.ResponseWriter, req *http.Request) {
-  var faq FAQ
-  if !db.First(&faq, "url = ?", req.URL.Path).RecordNotFound() {
-    w.Write([]byte(fmt.Sprintf("%v: %v", faq.Question, faq.Answer)))
-  }
+	var faq FAQ
+	if !db.First(&faq, "url = ?", req.URL.Path).RecordNotFound() {
+		w.Write([]byte(fmt.Sprintf("%v: %v", faq.Question, faq.Answer)))
+	}
 }
 ```
 
@@ -62,18 +62,26 @@ Those URLs could be anything, with no rule... Let's initialize [WildcardRouter](
 
 ```go
 func main() {
-  mux := http.NewServeMux()
+	mux := http.NewServeMux()
 
-  wildcardRouter := wildcard_router.New()
-  wildcardRouter.MountTo("/", mux)
+	wildcardRouter := wildcard_router.New()
+	wildcardRouter.MountTo("/", mux)
 }
 ```
 
 `AddHandler` to [WildcardRouter](https://github.com/qor/wildcard_router) and any model that implements method `ServeHTTP` can be routed to as a handler.
 
 ```go
-  wildcardRouter.AddHandler(PageHandler{})
-  wildcardRouter.AddHandler(FAQHandler{})
+    wildcardRouter.AddHandler(PageHandler{})
+    wildcardRouter.AddHandler(FAQHandler{})
+```
+
+If you would like to customize your 404 page, you could set handlefunc to `NoRoute`
+
+```go
+  wildcardRouter.NoRoute(func(w http.ResponseWriter, req *http.Request) {
+      w.Write([]byte("Sorry, this page was gone!"))
+  })
 ```
 
 The behavior will be:
@@ -83,5 +91,5 @@ The behavior will be:
   // Visit "/page2"   will return "Page2"
   // Visit "/faq1"    will return "FAQ1: Answer1"
   // Visit "/faq2"    will return "FAQ2: Answer2"
-  // Visit "/unknown" will return "404 page not found" with statu code 404
+  // Visit "/unknown" will return "Sorry, this page was gone!" with statu code 404
 ```
