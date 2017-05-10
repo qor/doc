@@ -80,6 +80,10 @@ If you would like to customize your 404 page, you could set handlefunc to `NoRou
 
 ```go
   wildcardRouter.NoRoute(func(w http.ResponseWriter, req *http.Request) {
+      // You need to set Content-Type to `text/html` if you would like brower recognize as HTML
+      w.Header().Set("Content-Type", "text/html; charset=utf-8")
+      // You need to set Status as NotFound too if you would like status code is 404
+      w.WriteHeader(http.StatusNotFound)
       w.Write([]byte("Sorry, this page was gone!"))
   })
 ```
