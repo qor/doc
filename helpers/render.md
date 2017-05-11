@@ -17,7 +17,7 @@ func main() {
 Next, invoke `Execute` function to render your template...
 
 ```go
-  Render.Execute("index", context, request, writer)
+Render.Execute("index", context, request, writer)
 ```
 
 The `Execute` function accepts 4 parameters:
@@ -42,15 +42,15 @@ The default layout is `{current_repo_path}/app/views/layouts/application.tmpl`. 
 Sometimes you may want to have some helper functions in your template. [Render](https://github.com/qor/render) supports passing helper functions by `Funcs` function.
 
 ```go
-  Render.Funcs(funcsMap).Execute("index", obj, request, writer)
+Render.Funcs(funcsMap).Execute("index", obj, request, writer)
 ```
 
 The `funcsMap` is based on [html/template.FuncMap](https://golang.org/src/html/template/template.go?h=FuncMap#L305). So with
 
 ```go
-  funcMap := template.FuncMap{
-    "Greet": func(name string) string { return "Hello " + name },
-  }
+funcMap := template.FuncMap{
+  "Greet": func(name string) string { return "Hello " + name },
+}
 ```
 
 You can call this in the template
@@ -66,11 +66,25 @@ The output is `Hello Memememe`.
 Put the [Render](https://github.com/qor/render) inside [Responder](./responder.md) handle function like this.
 
 ```go
-  func handler(writer http.ResponseWriter, request *http.Request) {
-    responder.With("html", func() {
-      Render.Execute("demo/index", viewContext, *http.Request, http.ResponseWriter)
-    }).With([]string{"json", "xml"}, func() {
-      writer.Write([]byte("this is a json or xml request"))
-    }).Respond(request)
-  })
+func handler(writer http.ResponseWriter, request *http.Request) {
+  responder.With("html", func() {
+    Render.Execute("demo/index", viewContext, *http.Request, http.ResponseWriter)
+  }).With([]string{"json", "xml"}, func() {
+    writer.Write([]byte("this is a json or xml request"))
+  }).Respond(request)
+})
+```
+
+### Use with [Bindatafs](../plugins/bindata.md)
+
+```go
+$ bindatafs --exit-after-compile=false config/views
+
+
+func main() {
+	Render := render.New()
+	Render.SetAssetFS(views.AssetFS)
+
+	Render.Execute("index", context, request, writer)
+}
 ```
