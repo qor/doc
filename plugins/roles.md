@@ -68,6 +68,17 @@ cond2(yes)->allowed1
 cond2(no)->denied1
 ```
 
+Please note that, when using [Roles](https://github.com/qor/roles) with [L10n](./l10n.md). The
+
+```go
+// allows the admin role through and rejects ALL other roles.
+roles.Allow(roles.READ, "admin")
+```
+
+might be invalid because [L10n](./l10n.md) defined a [permission system](./l10n.md#editable-locales) that applys new roles to the current user. For example, There is a user with role "manager", the `EditableLocales` in the [L10n](./l10n.md) permission system returns true in current locale. Then this user actually has two roles "manager" and "locale_admin". because [L10n](./l10n.md) set `resource.Permission.Allow(roles.CRUD, "locale_admin")` to the resource. So the user could access this resource by the role "locale\_admin".
+
+So you either use `Deny` instead which means swtich "white list" to "black list" or make the `EditableLocales` always return blank array which means disabled [L10n](./l10n.md) permission system.
+
 ### Define Permission
 
 ```go
