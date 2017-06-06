@@ -21,6 +21,7 @@
         * [Hidden/Readonly](metas/hidden-readonly.md)
         * [Password](metas/password.md)
         * [Rich editor](metas/rich-editor.md)
+        * [Banner editor](metas/banner-editor.md)
         * [Select many](metas/select-many.md)
         * [Select one](metas/select-one.md)
         * [Text input/Text area](metas/text-input.md)
