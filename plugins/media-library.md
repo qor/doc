@@ -47,7 +47,7 @@ Then add [OSS(Object Storage Service)](https://github.com/qor/oss) to your model
   }
 ```
 
-Last, configure the storage. The default value is `storage := filesystem.New("public")`. Here we configure S3 as storage.
+Last, configure the storage. The default value is `oss.Storage := filesystem.New("public")`. Here we configure S3 as storage.
 
 ```go
   import (
@@ -55,8 +55,8 @@ Last, configure the storage. The default value is `storage := filesystem.New("pu
     "github.com/oss/s3"
   )
 
-  storage := s3.New(s3.Config{AccessID: "access_id", AccessKey: "access_key", Region: "region", Bucket: "bucket", Endpoint: "cdn.getqor.com", ACL: aws.BucketCannedACLPublicRead})
-  // Default configuration `storage := filesystem.New("public")`
+  oss.Storage := s3.New(s3.Config{AccessID: "access_id", AccessKey: "access_key", Region: "region", Bucket: "bucket", Endpoint: "cdn.getqor.com", ACL: aws.BucketCannedACLPublicRead})
+  // Default configuration `oss.Storage := filesystem.New("public")`
 ```
 
 ## Operate stored files
