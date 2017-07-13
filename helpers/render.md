@@ -4,7 +4,7 @@
 
 ## Usage
 
-First, Import [Render](https://github.com/qor/render) and initialize it...
+### Initialize [Render](https://github.com/qor/render)
 
 ```go
 import "github.com/qor/render"
@@ -22,17 +22,32 @@ Render.Execute("index", context, request, writer)
 
 The `Execute` function accepts 4 parameters:
 
-1. The template name. The default view path is `{current_repo_path}/app/views`. In this example [Render](https://github.com/qor/render) will look for the template `{current_repo_path}/app/views/index.tmpl`, so if the parameter is `users/profile`, the template path shall be `{current_repo_path}/app/views/users/profile.tmpl`.
-2. The context you can use in the template. It is an `interface{}` and recorded in `.Result`. For example, if you pass `context["CurrentUserName"] = "Memememe"` as the context. In the template, you can call `{% raw %}{{.Result.CurrentUserName}}{% endraw %}` to get the value "Memememe".
+1. The template name. In this example [Render](https://github.com/qor/render) will look up template `index.tmpl` from view paths. the default view path is `{current_repo_path}/app/views`, and you could register more view paths.
+2. The context you can use in the template, it is an `interface{}`, you could use that in views. for example, if you pass `context["CurrentUserName"] = "Memememe"` as the context. In the template, you can call `{% raw %}{{.CurrentUserName}}{% endraw %}` to get the value "Memememe".
 3. [http.Request](https://golang.org/pkg/net/http/#Request) of Go.
 4. [http.ResponseWriter](https://golang.org/pkg/net/http/#ResponseWriter) of Go.
 
-### Specify layout explicitly
+### Understanding `yield`
+
+`yield` is a func that could be used in layout views, it will render current specified template. For above example, think `yield` as a placeholder, and it will replaced with template `index.tmpl`'s content.
+
+```html
+<!-- app/views/layout/application.tmpl -->
+<html>
+  <head>
+  </head>
+  <body>
+    {{yield}}
+  </body>
+</html>
+```
+
+### Specify Layout
 
 The default layout is `{current_repo_path}/app/views/layouts/application.tmpl`. If you want use another layout like `new_layout`, you can pass it as a parameter to `Layout` function.
 
 ```go
-  Render.Layout("new_layout").Execute("index", context, request, writer)
+Render.Layout("new_layout").Execute("index", context, request, writer)
 ```
 
 [Render](https://github.com/qor/render) will find the layout at `{current_repo_path}/app/views/layouts/new_layout.tmpl`.
@@ -79,7 +94,6 @@ func handler(writer http.ResponseWriter, request *http.Request) {
 
 ```go
 $ bindatafs --exit-after-compile=false config/views
-
 
 func main() {
 	Render := render.New()
