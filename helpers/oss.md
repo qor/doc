@@ -21,7 +21,7 @@ Here's an example about how to use [QOR OSS](https://github.com/qor/oss) with S3
 
 ```go
 import (
-    "github.com/oss/s3"
+    "github.com/qor/oss/s3"
 )
 
 func main() {
