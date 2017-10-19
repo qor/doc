@@ -6,6 +6,7 @@ The [SEO](https://github.com/qor/seo) library allows for the management and inje
 
 ## Definition
 
+```go
 // The `QorSeoSetting` struct is a normal GORM-backend model, need to run migration before using it
 db.AutoMigrate(&seo.QorSeoSetting{})
 
@@ -41,7 +42,6 @@ SeoCollection.RegisterSeo(&seo.SEO{
         return values
     },
 })
-
 ```
 
 ## Usage
