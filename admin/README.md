@@ -1,4 +1,8 @@
-## Getting started
+## QOR Admin
+
+QOR Admin is a Golang framework allow you instantly create a beautiful, cross platform, configurable Admin Interface and API for managing your data in minutes.
+
+It is not a Web framework like [Chi](https://github.com/go-chi/chi), [Beego](https://github.com/astaxie/beego) or [Gin](https://github.com/gin-gonic/gin), and it could be [used with them](../admin/integration.md).
 
 In this document, we will provide example code based on a simple, hypothetical project: a content management system based on [QOR Admin](../chapter2/setup.md). The end goal is to have a User model and a Product model, which would allow an administrator to use [QOR Admin](../chapter2/setup.md) to manage data within a `User` table and `Product` table within a [SQLite3 database](https://sqlite.org/ "SQLite3 database"). We hope that this simple project code will establish the foundations of [QOR](https://github.com/qor/qor) for you as you read through this document. So the first aspects we will touch on are:
 
@@ -9,17 +13,16 @@ It will really help if you type out this code and run it - you'll learn a lot in
 
 Let's begin, define a package and import dependencies...
 
-```
+```go
 package main
 
 import (
-    "fmt"
-    "net/http"
-
-    "github.com/jinzhu/gorm"
-    _ "github.com/mattn/go-sqlite3"
-    "github.com/qor/qor"
-    "github.com/qor/admin"
+  "fmt"
+  "net/http"
+  "github.com/jinzhu/gorm"
+  _ "github.com/jinzhu/gorm/dialects/sqlite"
+  "github.com/qor/qor"
+  "github.com/qor/admin"
 )
 ```
 
