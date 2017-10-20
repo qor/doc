@@ -1,3 +1,18 @@
 {
-    "plugins": ["new-flowchart"]
+  "title": "QOR Guide",
+  "plugins": [
+    "github", "edit-link", "new-flowchart"
+  ],
+  "pluginsConfig": {
+    "fontsettings": {
+      "size": 2
+    },
+    "github": {
+      "url": "https://github.com/qor"
+    },
+    "edit-link": {
+      "base": "https://github.com/qor/doc/edit/master",
+      "label": "Edit This Page"
+    }
+  }
 }

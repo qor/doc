@@ -7,6 +7,7 @@
     * [Fields](admin/fields.md)
     * [Search & Scopes & Filters](admin/search.md)
     * [Actions](admin/actions.md)
+    * [Data Validation](admin/validation.md)
   * [RESTFul JSON API](admin/restful_api.md)
   * [Internationalization](admin/i18n.md)
   * [Integrate with frameworks](admin/integration.md)
