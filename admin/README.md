@@ -1,6 +1,6 @@
 ## QOR Admin
 
-QOR Admin is a Golang framework allow you instantly create a beautiful, cross platform, configurable Admin Interface and API for managing your data in minutes.
+QOR Admin is a Golang framework allow you instantly create a beautiful, cross platform, configurable Admin Interface for managing your data in minutes.
 
 It is not a Web framework like [Chi](https://github.com/go-chi/chi), [Beego](https://github.com/astaxie/beego) or [Gin](https://github.com/gin-gonic/gin), and it could be [used with them](../admin/integration.md).
 
@@ -65,3 +65,14 @@ func main() {
 ```
 
 Execute `go get -u ./...` to install the dependencies, then run `go run main.go` and visit [localhost:9000/admin](localhost:9000/admin) to see the site.
+
+## Live Demo
+
+* Live Demo http://demo.getqor.com/admin
+* Source Code of Live Demo https://github.com/qor/qor-example
+
+## Next Steps
+
+Now you have a basic understanding of QOR Admin, learn to customize it:
+
+* [General Configuration](../admin/general.md)
