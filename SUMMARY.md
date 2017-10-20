@@ -13,3 +13,6 @@
   * [Integrate with WEB frameworks](admin/integration.md)
   * [Extend QOR Admin](admin/extend_admin.md)
   * [Deploy to production](admin/deploy.md)
+
+* Invisible Page
+  * [Menu](admin/menus.md)

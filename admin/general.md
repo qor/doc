@@ -48,4 +48,6 @@ Admin.GetRouter().Get("/", func(c *admin.Context) {
 
 ## Menus
 
+[Menus](../admin/menus.md)
+
 ## View Paths
