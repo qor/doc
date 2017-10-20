@@ -10,6 +10,6 @@
     * [Data Validation](admin/validation.md)
   * [RESTFul JSON API](admin/restful_api.md)
   * [Internationalization](admin/i18n.md)
-  * [Integrate with frameworks](admin/integration.md)
+  * [Integrate with WEB frameworks](admin/integration.md)
   * [Extend QOR Admin](admin/extend_admin.md)
   * [Deploy to production](admin/deploy.md)
