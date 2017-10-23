@@ -1,7 +1,7 @@
 {
   "title": "QOR Guides",
   "plugins": [
-    "github", "edit-link", "new-flowchart"
+    "github", "edit-link", "new-flowchart", "etoc"
   ],
   "pluginsConfig": {
     "fontsettings": {
