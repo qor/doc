@@ -1,5 +1,5 @@
 {
-  "title": "QOR Guide",
+  "title": "QOR Guides",
   "plugins": [
     "github", "edit-link", "new-flowchart"
   ],

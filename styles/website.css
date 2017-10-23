@@ -1,27 +1,3 @@
-.summary > li[data-level]:last-child {
+.summary > li[data-level="1.3"] {
   display: none;
 }
-
-<html>
-<body>
-<ul class="summary">
-  <li class="chapter" data-level="1.1" data-path="../">1.1</li>
-  <li class="chapter" data-level="1.2" data-path="./">1.2</li>
-  <li class="chapter" data-level="1.3">
-    1.3
-    <ul class="articles">
-      <li class="chapter" data-level="1.3.1" data-path="menus.html">
-         <a href="menus.html"></a>
-      </li>
-     </ul>
-   </li>
-
-   <li class="divider"></li>
-   <li>
-     <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-         Published with GitBook
-     </a>
-   </li>
-</ul>
-</body>
-</html>
