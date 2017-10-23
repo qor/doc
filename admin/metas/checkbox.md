@@ -1,6 +1,6 @@
 # Checkbox
 
-Allows a `bool` attribute to be rendered as a checkbox, for example:
+Allows a `bool` field to be rendered as a checkbox, e.g:
 
 ```
 type User struct {
@@ -8,10 +8,4 @@ type User struct {
 }
 ```
 
-You can set other parameters, such as "label":
-
-```
-user.Meta(&admin.Meta{Name: "ReceivePromotionEmail", Label: "Receive email"})
-```
-
-Check [available configurations](../chapter2/resource-intro.md#meta-config) for more detail.
+Check [available configurations](/admin/fields.md#customize-meta) for more detail.

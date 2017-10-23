@@ -12,7 +12,7 @@ type Product struct {
 }
 ```
 
-The "ReleaseDate" in the form will look like this in [QOR Admin](../chapter2/setup.md):
+The "ReleaseDate" in the form will look like this in QOR Admin:
 
 ![Datetime](datetime.png)
 
@@ -25,4 +25,3 @@ p.Meta(&admin.Meta{Name: "ReleaseDate", Type: "date"})
 ```
 
 The "ReleaseDate" field will be purely a date selector (i.e. no time entry provided).
-
