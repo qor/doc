@@ -17,3 +17,15 @@
 
 * Invisible Page
   * [Menu](admin/menus.md)
+  * [Fields](admin/fields.md)
+    * [String/Text](/admin/metas/text-input.md)
+    * [Checkbox](/admin/metas/checkbox.md)
+    * [Number/Float](/admin/metas/number.md)
+    * [Date/Datetime](/admin/metas/date.md)
+    * [Hidden/Readonly](/admin/metas/hidden-readonly.md)
+    * [Password](/admin/metas/password.md)
+    * [Rich editor](/admin/metas/rich-editor.md)
+    * [Single edit](/admin/metas/collection-edit.md)
+    * [Collection edit](/admin/metas/collection-edit.md)
+    * [Select one](/admin/metas/select-one.md)
+    * [Select many](/admin/metas/select-many.md)

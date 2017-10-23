@@ -151,19 +151,6 @@ type Meta struct {
 
   The configuration of current type of attribute, e.g. `Config: &admin.SelectOneConfig{Collection: []string{"Male", "Female", "Unknown"}}`. Check each meta's document for detail.
 
-### Predefined Meta types
-
-- [Checkbox](../metas/checkbox.md)
-- [Collection/Single edit](../metas/collection-edit.md)
-- [Date/Datetime](../metas/date.md)
-- [Number/Float](../metas/number.md)
-- [Hidden/Readonly](../metas/hidden-readonly.md)
-- [Password](../metas/password.md)
-- [Rich editor](../metas/rich-editor.md)
-- [Select many](../metas/select-many.md)
-- [Select one](../metas/select-one.md)
-- [String/Text](../metas/text-input.md)
-
 ### Virtual Field
 
 You can configure QOR Admin to display "virtual" fields - fields that are not database attributes. Just define them as `Meta` to your resource, to define it for a virtual field, `Valuer` is must required (refer [Customize Meta](#customize-meta)), so QOR Admin knows how to display it to end user.
@@ -201,3 +188,17 @@ user.Meta(&admin.Meta{Name: "Password",
 	},
 })
 ```
+
+### Predefined Meta types
+
+* [String/Text](/admin/metas/text-input.md)
+* [Checkbox](/admin/metas/checkbox.md)
+* [Number/Float](/admin/metas/number.md)
+* [Date/Datetime](/admin/metas/date.md)
+* [Hidden/Readonly](/admin/metas/hidden-readonly.md)
+* [Password](/admin/metas/password.md)
+* [Rich editor](/admin/metas/rich-editor.md)
+* [Single edit](/admin/metas/collection-edit.md)
+* [Collection edit](/admin/metas/collection-edit.md)
+* [Select one](/admin/metas/select-one.md)
+* [Select many](/admin/metas/select-many.md)
