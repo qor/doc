@@ -5,6 +5,7 @@ Resources are something that can be administered through the QOR Admin's user in
 ## Add a resource to QOR Admin
 
 ```go
+// GORM-backend model
 type User struct {
   gorm.Model
   Email     string
@@ -15,12 +16,13 @@ type User struct {
   Addresses []Address
 }
 
+// Add it to Admin
 user := Admin.AddResource(&User{}, &admin.Config{Menu: []string{"User Management"}})
 ```
 
-## Configurations
+## Resource Configuration
 
-Available options inside `admin.Config` are:
+Available options when customize a Resource inside `admin.Config` are:
 
 | Name       | Type              | Default | Description                                                                                         |
 | ---        | ---               | ---     | ---                                                                                                 |
