@@ -1,44 +1,52 @@
 ## General Configuration
 
-There are some configurations could be configured when initialize Admin
+You could customize Admin with `AdminConfig` struct when initialize it, here are some general configurations:
 
 ```go
 type AdminConfig struct {
   SiteName       string
   DB             *gorm.DB
   Auth           Auth
-  AssetFS        assetfs.Interface
   SessionManager session.ManagerInterface
   I18n           I18n
+  AssetFS        assetfs.Interface
   *Transformer
 }
 ```
 
 * SiteName
 
-By Default, Site Name is `Qor Admin`, you can use `SiteName` to change site's title.
+  By Default, Site Name is `Qor Admin`, you can use `SiteName` to change site's title.
 
-```go
-Admin := admin.New(&admin.AdminConfig{SiteName: "Qor Example"})
-```
+  ```go
+  Admin := admin.New(&admin.AdminConfig{SiteName: "Qor Example"})
+  ```
 
-hint: [You can inject stylesheets, javascripts into your admin site with your site's title](../admin/theming_and_customization.md)
+  hint: [You can inject stylesheets, javascripts into your admin site with your site's title](../admin/theming_and_customization.md)
 
-* Auth & SessionManager
+* DB
 
-[Authentication](../admin/authentication.md)
+  `DB` is a GORM DB connection, it is must required, QOR Admin will use the DB to manage data.
+
+* Auth
+
+  Auth is used for [Authentication](../admin/authentication.md)
+
+* SessionManager
+
+  Admin use SessionManager to handle cookies, flash messages, learn to [customize it](../admin/session_manager.md)
 
 * I18n
 
-[Internationalization](../admin/i18n.md)
+  [Internationalization](../admin/i18n.md) solution for Admin
 
 * AssetFS
 
-[Deploy to production](../admin/deploy.md)
+  When QOR Admin render pages, by default, it looks up templates from GOPATH of your filesystem, but usually when your site to production, you would like your application to be standalone executable, check [Deploy to production](../admin/deploy.md) for how to do that.
 
 ## Dashboard
 
-QOR Admin provides a default dashboard page with some dummy text. If you want to customize the dashboard, you can create a file `dashboard.tmpl` in [QOR view paths](#view-paths), QOR Admin will load it as [Golang](http://golang.org/) templates when rendering the dashboard page.
+QOR Admin provides a default dashboard page with some dummy text. If you want to customize the dashboard, you can create a file `dashboard.tmpl` in [QOR view paths](../admin/theming_and_customization.md#view-paths), QOR Admin will load it as Golang templates when rendering the dashboard page.
 
 If you want to disable the dashboard, you can redirect it to some other page, for example:
 
@@ -47,9 +55,3 @@ Admin.GetRouter().Get("/", func(c *admin.Context) {
   http.Redirect(c.Writer, c.Request, "/admin/clients", http.StatusSeeOther)
 })
 ```
-
-## Menus
-
-[Menus](../admin/menus.md)
-
-## View Paths
