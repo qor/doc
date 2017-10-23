@@ -44,7 +44,7 @@ product.NewAttrs(
 order.EditAttrs("User", "PaymentAmount", "ShippedAt", "CancelledAt", "State", "ShippingAddress")
 
 // Set attributes will be shown for the show page, similar to new page
-// If ShowAttrs haven't been configured, there will be no show page generated, by will show the edit from instead
+// If ShowAttrs haven't been configured, there will be no show page generated, by will show the edit form instead
 order.ShowAttrs("User", "PaymentAmount", "ShippedAt", "CancelledAt", "State", "ShippingAddress")
 ```
 
@@ -164,4 +164,40 @@ type Meta struct {
 - [Select one](../metas/select-one.md)
 - [String/Text](../metas/text-input.md)
 
-### Virtual Meta
+### Virtual Field
+
+You can configure QOR Admin to display "virtual" fields - fields that are not database attributes. Just define them as `Meta` to your resource, to define it for a virtual field, `Valuer` is must required (refer [Customize Meta](#customize-meta)), so QOR Admin knows how to display it to end user.
+
+```go
+product.Meta(&admin.Meta{Name: "MainImageURL", Valuer: func(record interface{}, context *qor.Context) interface{} {
+  if p, ok := record.(*models.Product); ok && len(p.Images) > 0 {
+    return p.Images[0].URL
+  }
+  return ""
+}})
+```
+
+If you want to use the virtual field in `NewAttrs`, `EditAttrs`, `ShowAttrs`, you have to:
+
+* Define meta's `Type`
+
+  Then QOR Admin knows which template to use when render it
+
+* Define meta's `Setter`
+
+  Then QOR Admin knows how to save form's value
+
+e.g:
+
+```go
+user.Meta(&admin.Meta{Name: "Password",
+	Type:   "password",
+	Valuer: func(interface{}, *qor.Context) interface{} { return "" },
+	Setter: func(record interface{}, metaValue *resource.MetaValue, context *qor.Context) {
+		if newPassword := utils.ToString(metaValue.Value); newPassword != "" {
+			bcryptPassword, _ := bcrypt.GenerateFromPassword([]byte(newPassword), bcrypt.DefaultCost)
+			record.(*models.User).EncryptedPassword = string(bcryptPassword)
+		}
+	},
+})
+```
