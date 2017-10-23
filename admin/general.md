@@ -16,11 +16,13 @@ type AdminConfig struct {
 
 * SiteName
 
-By Default, Site Name is `Qor Admin`, you can use AdminConfig's `SiteName` to set a new title.
+By Default, Site Name is `Qor Admin`, you can use `SiteName` to change site's title.
 
 ```go
 Admin := admin.New(&admin.AdminConfig{SiteName: "Qor Example"})
 ```
+
+hint: [You can inject stylesheets, javascripts into your admin site with your site's title](../admin/theming_and_customization.md)
 
 * Auth & SessionManager
 

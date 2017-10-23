@@ -10,8 +10,9 @@
   * [RESTFul JSON API](admin/restful_api.md)
   * [Authentication](admin/authentication.md)
   * [Internationalization](admin/i18n.md)
-  * [Integrate with WEB frameworks](admin/integration.md)
+  * [Theming and customization](admin/theming_and_customization.md)
   * [Extend QOR Admin](admin/extend_admin.md)
+  * [Integrate with WEB frameworks](admin/integration.md)
   * [Deploy to production](admin/deploy.md)
 
 * Invisible Page
