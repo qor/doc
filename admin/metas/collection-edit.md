@@ -46,7 +46,7 @@ type CollectionEditConfig struct {
 
 * Template
 
-  Template could be used to overwrite collection edit's template, which usually used when writing plugins to customize collection edit's template.
+  Template accept a file path to overwrite default *collection edit* template, which usually used when writing plugins to customize collection edit's template.
 
   Refer [sorting for collection edit](https://github.com/qor/sorting/blob/master/sortable_collection.go#L137) as an example.
 
