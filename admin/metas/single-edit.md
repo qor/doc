@@ -20,8 +20,22 @@ and QOR will generate a sub-form inside the 'Product' section of QOR Admin, agai
 
 ![Single edit](single_edit.png)
 
-## Customize field inside nested form
+## Customize fields inside nested form
 
 Refer [collection edit](/admin/metas/collection-edit.md) for details
+
+## Configuration
+
+```go
+type SingleEditConfig struct {
+	Template string
+}
+```
+
+* Template
+
+  Template could be used to overwrite single edit's template, which usually used when writing plugins to customize single edit's template.
+
+  Refer [sorting for collection edit](https://github.com/qor/sorting/blob/master/sortable_collection.go#L137) as an example.
 
 [1] note: slide-out sheet is not an official [Material Design](https://material.google.com) element, but we think it really helps maintain context when editing!
