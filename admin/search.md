@@ -66,6 +66,21 @@ Screenshot:
 
 ![group scope](group-scope.png)
 
+### Visible
+
+Only show `Paid` scope if `Visible` return true
+
+```go
+order.Scope(&admin.Scope{Name: "Paid", Group: "State",
+  Visible: func(context *admin.Context) bool {
+    return context.CurrentUser.IsAdmin
+  },
+  Handle: func(db *gorm.DB, context *qor.Context) *gorm.DB {
+      return db.Where("state = ?", "paid")
+  },
+})
+```
+
 [Scopes Online Demo](http://demo.getqor.com/admin/products)
 
 ## Filters
