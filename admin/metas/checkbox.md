@@ -9,3 +9,5 @@ type User struct {
 ```
 
 Check [available configurations](/admin/fields.md#customize-meta) for more detail.
+
+{% include "/admin/common_meta_types_with_title.md" %}

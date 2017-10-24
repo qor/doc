@@ -39,3 +39,5 @@ type SingleEditConfig struct {
   Refer [sorting for collection edit](https://github.com/qor/sorting/blob/master/sortable_collection.go#L137) as an example.
 
 [1] note: slide-out sheet is not an official [Material Design](https://material.google.com) element, but we think it really helps maintain context when editing!
+
+{% include "/admin/common_meta_types_with_title.md" %}

@@ -25,3 +25,5 @@ p.Meta(&admin.Meta{Name: "ReleaseDate", Type: "date"})
 ```
 
 The "ReleaseDate" field will be purely a date selector (i.e. no time entry provided).
+
+{% include "/admin/common_meta_types_with_title.md" %}

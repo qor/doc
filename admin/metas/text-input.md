@@ -19,3 +19,5 @@ Simply set the `Type` as "text".
 ```go
   product.Meta(&admin.Meta{Name: "Description", Type: "text"})
 ```
+
+{% include "/admin/common_meta_types_with_title.md" %}

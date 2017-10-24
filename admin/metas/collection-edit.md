@@ -55,3 +55,5 @@ type CollectionEditConfig struct {
   Maximum count of records could be created with collection edit.
 
 [1] note: slide-out sheet is not an official [Material Design](https://material.google.com) element, but we think it really helps maintain context when editing!
+
+{% include "/admin/common_meta_types_with_title.md" %}

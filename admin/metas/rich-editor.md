@@ -58,3 +58,5 @@ product.Meta(&admin.Meta{Name: "Description", Config: &admin.RichEditorConfig{
 ### Settings
 
 Pass redactor settings as json to rich editor, refer above example.
+
+{% include "/admin/common_meta_types_with_title.md" %}

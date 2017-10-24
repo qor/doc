@@ -90,3 +90,5 @@ banner_editor.GetContentByPlatform(page.BannerHTML, "Mobile")
 // Get HTML by http request
 banner_editor.GetContentByPlatform(page.BannerHTML, req)
 ```
+
+{% include "/admin/common_meta_types_with_title.md" %}

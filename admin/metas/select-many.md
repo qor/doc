@@ -134,3 +134,5 @@ u.Meta(&admin.Meta{
   },
 })
 ```
+
+{% include "/admin/common_meta_types_with_title.md" %}
