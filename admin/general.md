@@ -22,7 +22,7 @@ type AdminConfig struct {
   Admin := admin.New(&admin.AdminConfig{SiteName: "Qor Example"})
   ```
 
-  hint: [You can inject stylesheets, javascripts into your admin site with your site's title](../admin/theming_and_customization.md)
+  hint: [You can inject stylesheets, javascripts into your admin site with your site's title](/admin/theming_and_customization.md)
 
 * DB
 
@@ -30,11 +30,11 @@ type AdminConfig struct {
 
 * Auth
 
-  Auth is used for [Authentication](../admin/authentication.md)
+  Auth is used for [Authentication](/admin/authentication.md)
 
 * SessionManager
 
-  Admin use SessionManager to handle cookies, flash messages, learn to [customize it](../admin/session_manager.md)
+  Admin use SessionManager to handle cookies, flash messages, learn to [customize it](/admin/session_manager.md)
 
 * I18n
 
@@ -42,11 +42,11 @@ type AdminConfig struct {
 
 * AssetFS
 
-  When QOR Admin render pages, by default, it looks up templates from GOPATH of your filesystem, but usually when your site to production, you would like your application to be standalone executable, check [Deploy to production](../admin/deploy.md) for how to do that.
+  When QOR Admin render pages, by default, it looks up templates from GOPATH of your filesystem, but usually when your site to production, you would like your application to be standalone executable, check [Deploy to production](/admin/deploy.md) for how to do that.
 
 ## Dashboard
 
-QOR Admin provides a default dashboard page with some dummy text. If you want to customize the dashboard, you can create a file `dashboard.tmpl` in [QOR view paths](../admin/theming_and_customization.md#view-paths), QOR Admin will load it as Golang templates when rendering the dashboard page.
+QOR Admin provides a default dashboard page with some dummy text. If you want to customize the dashboard, you can create a file `dashboard.tmpl` in [QOR view paths](/admin/theming_and_customization.md#view-paths), QOR Admin will load it as Golang templates when rendering the dashboard page.
 
 If you want to disable the dashboard, you can redirect it to some other page, for example:
 
