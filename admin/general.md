@@ -38,11 +38,15 @@ type AdminConfig struct {
 
 * I18n
 
-  [Internationalization](../admin/i18n.md) solution for Admin
+  [Internationalization](/admin/i18n.md) solution for Admin
 
 * AssetFS
 
   When QOR Admin render pages, by default, it looks up templates from GOPATH of your filesystem, but usually when your site to production, you would like your application to be standalone executable, check [Deploy to production](/admin/deploy.md) for how to do that.
+
+* Transformer
+
+  [Transformer for RESTFul API](/admin/restful_api.md#transformer)
 
 ## Dashboard
 

@@ -7,7 +7,7 @@
     * [Search & Scopes & Filters](admin/search.md)
     * [Actions](admin/actions.md)
     * [Data Validation](admin/processing_validation.md)
-  * [RESTFul JSON API](admin/restful_api.md)
+  * [RESTFul API](admin/restful_api.md)
   * [Authentication](admin/authentication.md)
   * [Internationalization](admin/i18n.md)
   * [Theming and customization](admin/theming_and_customization.md)
