@@ -25,7 +25,7 @@ product.SearchHandler = func(keyword string, context *qor.Context) *gorm.DB {
 }
 ```
 
-### Search Center
+### Admin Search Center
 
 QOR Admin provides a search center, you could register searchable resources with `AddSearchResource`, with the search center, you could search multiple resources in one request
 
@@ -39,7 +39,7 @@ You can define scopes to filter data with given conditions, for example:
 
 ```go
 // Only show active users
-user.Scope(&admin.Scope{Name: "Active", Handle: func(db *gorm.DB, context *qor.Context) *gorm.DB {
+user.Scope(&admin.Scope{Name: "Active", Handler: func(db *gorm.DB, context *qor.Context) *gorm.DB {
   return db.Where("active = ?", true)
 }})
 ```
@@ -53,11 +53,11 @@ Screenshot
 To put similar scopes into one group, set the `Group` name for it as below:
 
 ```go
-order.Scope(&admin.Scope{Name: "Paid", Group: "State", Handle: func(db *gorm.DB, context *qor.Context) *gorm.DB {
+order.Scope(&admin.Scope{Name: "Paid", Group: "State", Handler: func(db *gorm.DB, context *qor.Context) *gorm.DB {
     return db.Where("state = ?", "paid")
 }})
 
-order.Scope(&admin.Scope{Name: "Shipped", Group: "State", Handle: func(db *gorm.DB, context *qor.Context) *gorm.DB {
+order.Scope(&admin.Scope{Name: "Shipped", Group: "State", Handler: func(db *gorm.DB, context *qor.Context) *gorm.DB {
   return db.Where("state = ?", "shipped")
 }})
 ```
@@ -66,16 +66,30 @@ Screenshot:
 
 ![group scope](group-scope.png)
 
-### Visible
+### Default Scopes
 
-Only show `Paid` scope if `Visible` return true
+  Default Scope will be applied to all requests
+
+  ```go
+  order.Scope(&admin.Scope{
+    Name: "Default Scope",
+    Default: true,
+    Handler: func(db *gorm.DB, context *qor.Context) *gorm.DB {
+      return db.Where("state = ?", "paid")
+    },
+  })
+  ```
+
+### Visible Scopes based on a condition
+
+Make scope visible based on `Visible` return `true`
 
 ```go
 order.Scope(&admin.Scope{Name: "Paid", Group: "State",
   Visible: func(context *admin.Context) bool {
     return context.CurrentUser.IsAdmin
   },
-  Handle: func(db *gorm.DB, context *qor.Context) *gorm.DB {
+  Handler: func(db *gorm.DB, context *qor.Context) *gorm.DB {
       return db.Where("state = ?", "paid")
   },
 })
@@ -108,3 +122,19 @@ product.Filter(&admin.Filter{
 Screenshot:
 
 ![filter](/admin/filter-demo.png)
+
+### Visible Filters based on a condition
+
+Make Filter visible based on `Visible` return `true`
+
+```go
+user.Filter(&admin.Filter{
+  Name: "Gender",
+  Visible: func(context *admin.Context) bool {
+    return context.CurrentUser.IsAdmin
+  },
+  Config: &admin.SelectOneConfig{
+    Collection: []string{"Male", "Female", "Unknown"},
+  },
+})
+```
