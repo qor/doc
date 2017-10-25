@@ -14,7 +14,7 @@ type AdminConfig struct {
 }
 ```
 
-* SiteName
+* <a id="sitename"></a>SiteName
 
   By Default, Site Name is `Qor Admin`, you can use `SiteName` to change site's title.
 
@@ -22,7 +22,7 @@ type AdminConfig struct {
   Admin := admin.New(&admin.AdminConfig{SiteName: "Qor Example"})
   ```
 
-  hint: [You can inject stylesheets, javascripts into your admin site with your site's title](/admin/theming_and_customization.md)
+  hint: [You can inject stylesheets, javascripts into your admin site with your site's title](/admin/theming_and_customization.md#global-stylesheet--javascript)
 
 * DB
 
@@ -40,9 +40,9 @@ type AdminConfig struct {
 
   [Internationalization](/admin/i18n.md) solution for Admin
 
-* AssetFS
+* <a id="assetfs"></a>AssetFS
 
-  When QOR Admin render pages, by default, it looks up templates from GOPATH of your filesystem, but usually when your site to production, you would like your application to be standalone executable, check [Deploy to production](/admin/deploy.md) for how to do that.
+  AssetFS defined how to look up templates when rendering pages, refer [View Paths]((/admin/theming_and_customization.md#view-paths) for more detail, when deploy your site to production, you usually want your application to be standalone executable, check out [Deploy to production](/admin/deploy.md) for how to.
 
 * Transformer
 

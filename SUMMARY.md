@@ -16,7 +16,6 @@
   * [Deploy to production](admin/deploy.md)
 
 * Invisible Page
-  * [Menu](admin/menus.md)
   * [Fields](admin/fields.md)
     * [String/Text](/admin/metas/text-input.md)
     * [Checkbox](/admin/metas/checkbox.md)

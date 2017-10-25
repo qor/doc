@@ -95,3 +95,11 @@ user.Action(&admin.Action{
   },
 })
 ```
+
+### Authorization For Menus
+
+QOR Admin will check permission mode `roles.Read` when checking if current user has the ability to view the menu, other modes will ignored.
+
+```go
+Admin.AddMenu(&admin.Menu{Name: "Report", Link: "/admin", Permission: roles.Allow(roles.Read, "admin")})
+```
