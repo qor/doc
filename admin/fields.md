@@ -145,7 +145,7 @@ type Meta struct {
 
 * Permission
 
-  Define user authority of this attribute, Check [Authentication](../admin/authentication.md) for detail.
+  Define user authority of this attribute, Check [Authentication](/admin/authentication.md#authorization-for-fields) for detail.
 
 * Config
 

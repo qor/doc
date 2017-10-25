@@ -27,9 +27,9 @@ Available options when customize a Resource inside `admin.Config` are:
 | Name       | Type              | Default | Description                                                                                         |
 | ---        | ---               | ---     | ---                                                                                                 |
 | Name       | string            |         | Display name of the resource                                                                        |
-| Menu       | []string          |         | Menu setting of the resource, check [Menus](../admin/theming_and_customization.md#menus) for detail |
-| Permission | *roles.Permission |         | Control the authority of the resource, check [Roles](../admin/authentication.md) for detail         |
-| Themes     | []ThemeInterface  |         | Set [customized theme](../admin/theming_and_customization.md#themes) for the resource               |
+| Menu       | []string          |         | Menu setting of the resource, check [Menus](/admin/theming_and_customization.md#menus) for detail |
+| Permission | *roles.Permission |         | Control the authority of the resource, check [Roles](/admin/authentication.md#authorization-for-resource) for detail         |
+| Themes     | []ThemeInterface  |         | Set [customized theme](/admin/theming_and_customization.md#themes) for the resource               |
 | Priority   | int               |         | Control the display sequence in menu, ordered by ASC                                                |
 | Singleton  | bool              | false   | Set the resource is a single object or multiple objects. e.g. "SEO setting" vs "Users"              |
 | Invisible  | bool              | false   | Set whether the resource is visible in menu                                                         |

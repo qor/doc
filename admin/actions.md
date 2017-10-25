@@ -87,7 +87,7 @@ type Action struct {
 
 * Permission
 
-  Permission control
+  Permission control, check out [Authentication](/admin/authentication.md#authorization-for-actions) for details.
 
 *  Resource
 
