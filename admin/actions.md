@@ -16,7 +16,6 @@ type User struct {
 user := Admin.AddResource(&models.User{})
 
 user.Action(&admin.Action{
-  // The name of the action. This will be the button text if no `Label` option passed in
   Name: "enable",
   Handle: func(actionArgument *admin.ActionArgument) error {
     // `FindSelectedRecords` => in bulk action mode, will return all checked records, in other mode, will return current record

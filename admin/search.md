@@ -25,7 +25,7 @@ product.SearchHandler = func(keyword string, context *qor.Context) *gorm.DB {
 }
 ```
 
-### Admin Search Center
+### Add Resource to Admin Search Center
 
 QOR Admin provides a search center, you could register searchable resources with `AddSearchResource`, with the search center, you could search multiple resources in one request
 

@@ -2,6 +2,8 @@
 
 QOR Admin generates RESTFul API for reigstered resources
 
+## Basic Usage
+
 ```go
 func main() {
   API := admin.New(&qor.Config{DB: db.DB})
@@ -24,6 +26,52 @@ Once you have your `user` resource defined, QOR Admin will generate RESTFul API 
 Request API with a `.json` extension, like `/api/users.json`, `QOR Admin` will return JSON formated data, request with extension `.xml` (`/api/users.xml`) will return data in XML strucutre.
 
 You could also tell `QOR Admin` the data format that you want with `Accept` header when requesting API [[1]](#transformer).
+
+## Customize Fields
+
+Customize Fields in the API is same as normal resource, you could use `IndexAttrs`, `ShowAttrs` to configure visible fields to API users.
+
+```go
+user := API.AddResource(&User{})
+
+user.IndexAttrs("MemberNumber", "Name", "Age", "Birthday")
+user.ShowAttrs("MemberNumber", "Name", "Age", "Birthday", "Points", "ShippingAddress")
+```
+
+## Actions
+
+Sometimes, it is required to expose an operation in the API that inherently is non RESTful.
+
+One example of such an operation is where you want to introduce a state change for a resource, you could design it with QOR Admin like:
+
+```go
+user.Action(&admin.Action{
+  Name: "enable",
+  Handle: func(actionArgument *admin.ActionArgument) error {
+    // `FindSelectedRecords` => in bulk action mode, will return all checked records, in other mode, will return current record
+    for _, record := range actionArgument.FindSelectedRecords() {
+      actionArgument.Context.DB.Model(record.(*models.User)).Update("Active", true)
+    }
+    return nil
+  },
+})
+
+user.Action(&admin.Action{
+  Name: "disable",
+  Handle: func(actionArgument *admin.ActionArgument) error {
+    // `FindSelectedRecords` => in bulk action mode, will return all checked records, in other mode, will return current record
+    for _, record := range actionArgument.FindSelectedRecords() {
+      actionArgument.Context.DB.Model(record.(*models.User)).Update("Active", false)
+    }
+    return nil
+  },
+})
+```
+
+It will generate API like:
+
+* PUT /api/users/12/enable  - enable user #12
+* PUT /api/users/12/disable - disable user #12
 
 ## Nested API
 
@@ -58,17 +106,6 @@ Which will generate API:
 * DELETE /api/users/12/orders/22 - Deletes users #12's orders #22
 
 If orders #22 doesn't belongs to user #12, API will return a `404 Not Found` error
-
-## Customize Fields
-
-Customize Fields in the API is same as normal resource, you could use `IndexAttrs`, `ShowAttrs` to configure visible fields to API users.
-
-```go
-user := API.AddResource(&User{})
-
-user.IndexAttrs("MemberNumber", "Name", "Age", "Birthday")
-user.ShowAttrs("MemberNumber", "Name", "Age", "Birthday", "Points", "ShippingAddress")
-```
 
 ## Authentication & Authorization
 
