@@ -190,7 +190,21 @@ Admin.RegisterFuncMap("my_fancy_func", func() string {
 
 ## View Actions
 
-Load view actions for index/edit/new/show pages
+If you put any templates to `{qor view paths}/actions`, it will be loaded for index/edit/new/show pages automatically.
+
+And you can only load a html snippet for your index page, by creating a template `{qor view paths}/actions/index/my_html_snippet.tmpl`, it will be loaded into page's sub header.
+
+![view actions](view-actions.png)
+
+[QOR Activity](https://github.com/qor/activity), [QOR Publish2](https://github.com/qor/publish2) are built based on this strategy.
+
+### View Actions for Header
+
+If you put a template into `{qor view paths}/actions/header`, it will be loaded in the top area of your admin site, e.g:
+
+![view actions](top-actions.png)
+
+[QOR Help](https://github.com/qor/help), [QOR Notification](https://github.com/qor/notification) are built based on it.
 
 ## Router
 
