@@ -105,9 +105,74 @@ genderMeta.AddProcessor(*admin.MetaProcessor{
 
 ### Create New Meta Types
 
+QOR Admin only provides [Common Meta types](/admin/fields.md#common-meta-types), you can easily create your own one, like:
+
+```go
+user.Meta(&admin.Meta{Name: "FieldName", Type: "my-fancy-meta-type"})
+```
+
+Then create templates `meta/index/my-fancy-meta-type.tmpl`, `meta/show/my-fancy-meta-type.tmpl`, and put them into qor view paths, you are done.
+
+`meta/index/my-fancy-meta-type.tmpl` will be used when render index page, if it doesn't exist, QOR Admin will use the meta's value from [`Valuer`](/admin/fields.md#valuer), and show it as string in the listing table.
+
+`meta/form/my-fancy-meta-type.tmpl` will be used when render show/edit page, this file must exists to render the meta correctly.
+
+Check out [QOR Slug](http://github.com/qor/slug) as an example.
+
 ### Create Meta Config
 
-### RegisterMetaConfigor
+If you want to pass some configurations to view, Meta Config is for you, different type of Metas usually have different things to configure, like meta `select one`, you can configure its data source, open type, for meta `rich editor`, you can configure its used plugins, asset manager.
+
+For your created meta types, if you have reuqirements to pass configuration to views, its better to create a Meta Config for it, e.g:
+
+```go
+type FancyMetaConfig struct {
+  Config1 string
+  Config2 string
+}
+
+// Meta Config has to implement this interface
+func (FancyMetaConfig) ConfigureQorMeta(metaor resource.Metaor) {
+  if meta, ok := metaor.(*admin.Meta); ok {
+    // do something for meta
+  }
+}
+```
+
+Refer [Rich Editor Config](https://github.com/qor/admin/blob/master/meta_rich_editor.go) as example.
+
+### Default Meta Configor
+
+Meta Configor is something regisered into Admin globally, any metas registered later will call `Meta Configor`, e.g:
+
+```go
+// All `date` metas will get a default FormattedValuer if it is not configured.
+Admin.RegisterMetaConfigor("date", func(meta *Meta) {
+	if meta.FormattedValuer == nil {
+		meta.SetFormattedValuer(func(value interface{}, context *qor.Context) interface{} {
+			switch date := meta.GetValuer()(value, context).(type) {
+			case *time.Time:
+				if date == nil {
+					return ""
+				}
+				if date.IsZero() {
+					return ""
+				}
+				return utils.FormatTime(*date, "2006-01-02", context)
+			case time.Time:
+				if date.IsZero() {
+					return ""
+				}
+				return utils.FormatTime(date, "2006-01-02", context)
+			default:
+				return date
+			}
+		})
+	}
+})
+```
+
+Check [Meta Configors](https://github.com/qor/admin/blob/master/meta_configors.go) for more examples.
 
 ## Customize View
 
