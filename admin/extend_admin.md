@@ -180,6 +180,8 @@ Checkout [customize templates](/admin/theming_and_customization.md#customize-tem
 
 ### Register FuncMap
 
+Register func map to views, then you could use them in your templates.
+
 ```go
 Admin.RegisterFuncMap("my_fancy_func", func() string {
   return "my_fancy_func"
@@ -192,4 +194,74 @@ Load view actions for index/edit/new/show pages
 
 ## Router
 
-Register new router into Admin
+You can define your own routes using `Router`.
+
+Routes (a.k.a. mux, handlers) are a way to map from a URL path to some code which is executed when an end-user accesses that path.
+
+### Registering HTTP routes
+
+First, get `router` from [QOR Admin](/admin/README.md)...
+
+```go
+router := Admin.GetRouter()
+```
+
+#### General routes
+
+```go
+router.Get("/path", func(context *admin.Context) {
+    // do something here
+})
+
+router.Post("/path", func(context *admin.Context) {
+    // do something here
+})
+
+router.Put("/path", func(context *admin.Context) {
+    // do something here
+})
+
+router.Delete("/path", func(context *admin.Context) {
+    // do something here
+})
+```
+
+#### Naming route
+
+```go
+router.Get("/path/:name", func(context *admin.Context) {
+    context.Request.URL.Query().Get(":name")
+})
+```
+
+#### Regexp support
+
+```go
+router.Get("/path/:name[world]", func(context *admin.Context) { // "/hello/world"
+    context.Request.URL.Query().Get(":name")
+})
+
+router.Get("/path/:name[\\d+]", func(context *admin.Context) { // "/hello/123"
+    context.Request.URL.Query().Get(":name")
+})
+```
+
+### Middlewares
+
+QOR Admin's Router has middlewares support, you could do some advanced work with it, take below code as example:
+
+```go
+db1 := gorm.Open("sqlite", "db1.db")
+db2 := gorm.Open("sqlite", "db2.db")
+
+Admin.GetRouter().Use(&admin.Middleware{
+	Name: "switch_db",
+	Handler: func(context *admin.Context, middleware *admin.Middleware) {
+    // switch admin's database to db2 for products related requests
+	  if regexp.MustCompile("/admin/products").MatchString(context.Request.URL.Path) {
+			context.SetDB(db2)
+		}
+		middleware.Next(context)
+	},
+})
+```
