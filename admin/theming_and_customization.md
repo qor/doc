@@ -4,17 +4,25 @@
 
 QOR Admin will auto-load javascripts and stylesheet files based on your Admin's [SiteName](/admin/general.md#sitename)
 
-For example, say you set the site name as `Qor Demo`, QOR Admin will look up `{qor view paths}/assets/javascripts/qor_demo.js` and `{qor view paths}/assets/stylesheets/qor_demo.css`, and load them if present.
+For example, say you set the site name to `Qor Demo`, QOR Admin will look up `{qor view paths}/assets/javascripts/qor_demo.js` and `{qor view paths}/assets/stylesheets/qor_demo.css`, and load them if present.
 
 ## View Paths
 
-When QOR Admin looks up templates when rendering pages, it uses [AssetFS](/admin/general.md#assetfs).
+When QOR Admin render pages, it looks up templates with [AssetFS](/admin/general.md#assetfs).
 
-A [default implemention](https://github.com/qor/assetfs/blob/master/filesystem.go) of `AssetFS` is looking up templates from filesystem from registered view paths.
+[A default implemention](https://github.com/qor/assetfs/blob/master/filesystem.go) of `AssetFS` is looking up templates from filesystem with pre-registered view paths.
+
+it includes:
+
+* {current_path}/app/views/qor
+* {current_path}/vendor/github.com/qor/admin/views
+* $GOPATH/src/github.com/qor/admin/views
+
+Checkout [AssetFS](http://github.com/qor/assetfs) for more details
 
 ## Themes
 
-QOR Admin provides flexible template customization. You can define your own theme for a resource, overwrite a specific page of a resource, like the edit page of the user.
+QOR Admin provides flexible template customization. You can define your own theme for a resource.
 
 A custom theme for a [Resource](/admin/resources.md) in QOR Admin can be applied using a custom javascript and css file. To apply a custom theme, set the theme name using the `UseTheme` method, this will load `assets/javascripts/fancy.js` and `assets/stylesheets/fancy.css` from the theme path.
 
@@ -25,7 +33,39 @@ product := Admin.AddResource(&Product{})
 product.UseTheme("fancy")
 ```
 
-This means `{qor view paths}/themes/fancy/assets/stylesheets/fancy.css` and `{qor view paths}/themes/fancy/assets/javascripts/fancy.js` will be loaded.
+This means `{qor view paths}/themes/fancy/assets/stylesheets/fancy.css` and `{qor view paths}/themes/fancy/assets/javascripts/fancy.js` will be loaded when request products.
+
+## Customize templates
+
+QOR Admin is using go templates to render admin interface, default templates could be found from https://github.com/qor/admin/tree/master/views
+
+You might want to customize some of them based on your requirements
+
+Then, you can put a new template with same name to [QOR View Paths]($view-paths), QOR Admin will load templates based on priority.
+
+QOR Admin will look up templates from those paths, top paths will have higher priority
+
+* {qor view paths}/themes/{theme name}/{resource params}/{template}
+* {qor view paths}/themes/{theme name}/{template}
+* {qor view paths}/{resource params}/{template}
+* {qor view paths}/{template}
+
+Then:
+
+* Overwrite `layout.tmpl` for whole site
+
+  You can create a file named `layout.tmpl` and put into `{current_path}/app/views/qor`
+
+* Overwrite `layout.tmpl` for a resource
+
+  If you want to overwrite layout for a specified resource, you could put the file to `{qor view paths}/{resource's params}`, e.g:
+
+  To overwrite Product's layout, create a file named `layout.tmpl` and put it into `{current_path}/app/views/qor/products`
+
+* Overwrite `layout.tmpl` for a collection of resources
+
+  Set same theme name for those resources with [UseTheme](#themes) `res.UseTheme('fancy')`
+  Then put `layout.tmpl` to `{current_path}/app/views/qor/themes/fancy/layout.tmpl`
 
 ## Menus
 
