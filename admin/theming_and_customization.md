@@ -96,16 +96,33 @@ Admin.AddResource(&User{}, &admin.Config{Invisible: true})
 You can add menu with custom URL, like this
 
 ```go
-Admin.AddMenu(&admin.Menu{Name: "Dashboard", Link: "/admin"})
+// Register Menu `Sales Report`, The "menu" under "Reports"
+Admin.AddMenu(&admin.Menu{Name: "Sales Report", Link: "/admin/sales_report", Ancestors: []string{"Reports"}})
 
-// Register nested menu, The "menu" under "Dashboard"
-Admin.AddMenu(&admin.Menu{Name: "menu", Link: "/link", Ancestors: []string{"Dashboard"}})
+// Register Menu `Sales Report` with RelativePath, the finally URL will be admin's endpoint + RelativePath, `/admin/sales_report` for this example.
+Admin.AddMenu(&admin.Menu{Name: "Sales Report", RelativePath: "/sales_report", Ancestors: []string{"Reports"}})
+```
 
-// Register menu with permission, User has "admin" permission could access "Report" page.
-Admin.AddMenu(&admin.Menu{Name: "Report", Link: "/admin", Permission: roles.Allow(roles.Read, "admin")})
+### Menu Permission
+
+```go
+// Register menu with permission, User has "admin" permission could see the "Report" menu.
+Admin.AddMenu(&admin.Menu{Name: "Report", Link: "/admin/reports", Permission: roles.Allow(roles.Read, "admin")})
 ```
 
 Please check [Authentication](/admin/authentication.md#authorization-for-menus) for more permission control informations.
+
+### Menu Priority
+
+Set Menu's Priority with `Priority`, small number has higher priority, negative number has lowest priority
+
+```go
+Admin.AddMenu(&admin.Menu{Name: "First Menu", Priority: 1})
+Admin.AddMenu(&admin.Menu{Name: "Second Menu", Priority: 2})
+Admin.AddMenu(&admin.Menu{Name: "Third Menu", Priority: 5})
+Admin.AddMenu(&admin.Menu{Name: "Forth Menu", Priority: -2})
+Admin.AddMenu(&admin.Menu{Name: "Last Menu", Priority: -1})
+```
 
 ### Configure your own menu icon
 
