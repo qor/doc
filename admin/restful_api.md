@@ -1,6 +1,6 @@
 # RESTFul API
 
-QOR Admin generates RESTFul API for reigstered resources
+QOR Admin generates RESTFul API for registered resources
 
 ## Basic Usage
 
@@ -29,7 +29,7 @@ You could also tell `QOR Admin` the data format that you want with `Accept` head
 
 ## Customize Fields
 
-Customize Fields in the API is same as normal resource, you could use `IndexAttrs`, `ShowAttrs` to configure visible fields to API users.
+Customize Fields in the API is same as a normal resource, you could use `IndexAttrs`, `ShowAttrs` to configure visible fields to API users.
 
 ```go
 user := API.AddResource(&User{})
@@ -40,7 +40,7 @@ user.ShowAttrs("MemberNumber", "Name", "Age", "Birthday", "Points", "ShippingAdd
 
 ## Actions
 
-Sometimes, it is required to expose an operation in the API that inherently is non RESTful.
+Sometimes, it is required to expose an operation in the API that inherently is non-RESTful.
 
 One example of such an operation is where you want to introduce a state change for a resource, you could design it with QOR Admin like:
 
@@ -79,17 +79,17 @@ You have to have valid [GORM](http://github.com/jinzhu/gorm) relationship to reg
 
 ```go
 type User struct {
-	gorm.Model
-	Name                   string `form:"name"`
-	Orders                 []Order
+    gorm.Model
+    Name                   string `form:"name"`
+    Orders                 []Order
 }
 
 type Order struct {
-	gorm.Model
-	UserID     uint
-	User       User
-	Amount     float32
-	OrderItems []OrderItem
+    gorm.Model
+    UserID     uint
+    User       User
+    Amount     float32
+    OrderItems []OrderItem
 }
 
 user := API.AddResource(&User{})
@@ -105,7 +105,7 @@ Which will generate API:
 * PUT /api/users/12/orders/22    - Updates user #12's orders #22
 * DELETE /api/users/12/orders/22 - Deletes users #12's orders #22
 
-If orders #22 doesn't belongs to user #12, API will return a `404 Not Found` error
+If orders #22 doesn't belong to user #12, API will return a `404 Not Found` error
 
 ## Authentication & Authorization
 

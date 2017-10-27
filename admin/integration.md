@@ -1,6 +1,6 @@
 # Integrate with WEB frameworks
 
-QOR Admin should be able to integrate with most golang web frameworks (let me know if there are any web framework not supported), here are some examples for how to integrate with them.
+QOR Admin should be able to integrate with most golang web frameworks (let me know if there are any web framework not supported), here are some examples of how to integrate with them.
 
 ## Integrate with HTTP ServeMux
 

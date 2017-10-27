@@ -10,7 +10,7 @@ For example, say you set the site name to `Qor Demo`, QOR Admin will look up `{q
 
 When QOR Admin render pages, it looks up templates with [AssetFS](/admin/general.md#assetfs).
 
-[A default implemention](https://github.com/qor/assetfs/blob/master/filesystem.go) of `AssetFS` is looking up templates from filesystem with pre-registered view paths.
+[A default implemention](https://github.com/qor/assetfs/blob/master/filesystem.go) of `AssetFS` is looking up templates from the filesystem with pre-registered view paths.
 
 it includes:
 
@@ -24,7 +24,7 @@ Checkout [AssetFS](http://github.com/qor/assetfs) for more details
 
 QOR Admin provides flexible template customization. You can define your own theme for a resource.
 
-A custom theme for a [Resource](/admin/resources.md) in QOR Admin can be applied using a custom javascript and css file. To apply a custom theme, set the theme name using the `UseTheme` method, this will load `assets/javascripts/fancy.js` and `assets/stylesheets/fancy.css` from the theme path.
+A custom theme for a [Resource](/admin/resources.md) in QOR Admin can be applied using a custom javascript and CSS file. To apply a custom theme, set the theme name using the `UseTheme` method, this will load `assets/javascripts/fancy.js` and `assets/stylesheets/fancy.css` from the theme path.
 
 For example:
 
@@ -41,7 +41,7 @@ QOR Admin is using go templates to render admin interface, default templates cou
 
 You might want to customize some of them based on your requirements
 
-Then, you can put a new template with same name to [QOR View Paths]($view-paths), QOR Admin will load templates based on priority.
+Then, you can put a new template with the same name to [QOR View Paths]($view-paths), QOR Admin will load templates based on priority.
 
 QOR Admin will look up templates from those paths, top paths will have higher priority
 
@@ -52,7 +52,7 @@ QOR Admin will look up templates from those paths, top paths will have higher pr
 
 Then:
 
-* Overwrite `layout.tmpl` for whole site
+* Overwrite `layout.tmpl` for the whole site
 
   You can create a file named `layout.tmpl` and put into `{current_path}/app/views/qor`
 
@@ -69,7 +69,7 @@ Then:
 
 ## Menus
 
-[QOR Admin](/admin/README.md) provides flexible way to manage menus. By default, `Resource` will be listed at the top level of menu. You can set the position manually.
+[QOR Admin](/admin/README.md) provides a flexible way to manage menus. By default, `Resource` will be listed at the top level of the menu. You can set the position manually.
 
 ```go
 Admin.AddResource(&User{})
@@ -114,7 +114,7 @@ Please check [Authentication](/admin/authentication.md#authorization-for-menus) 
 
 ### Menu Priority
 
-Set Menu's Priority with `Priority`, small number has higher priority, negative number has lowest priority
+Set Menu's Priority with `Priority`, small number has higher priority, negative number has the lowest priority
 
 ```go
 Admin.AddMenu(&admin.Menu{Name: "First Menu", Priority: 1})
@@ -128,11 +128,11 @@ Admin.AddMenu(&admin.Menu{Name: "Last Menu", Priority: -1})
 
 [QOR Admin](/admin/README.md) uses icons from [material icons](https://material.io/icons/), and pre-generated attribute name on each menu. So it is very easy to customize your own menu icon.
 
-Assume you are adding icon to `Product`. First, go to [material icons](https://material.io/icons/) page and pick the icon you wanted then copy the content in the screenshot
+Assume you are adding an icon to `Product`. First, go to [material icons](https://material.io/icons/) page and pick the icon you wanted then copy the content in the screenshot
 
 ![menu-icon-demo](menu-icon-demo.png)
 
-Then put it in the css, about how to customize css for QOR Admin go check [QOR Admin theme](#global-stylesheet--javascript).
+Then put it in the CSS, about how to customize CSS for QOR Admin go check [QOR Admin theme](#global-stylesheet--javascript).
 
 ```css
 [qor-icon-name*="Products"] > a::before {

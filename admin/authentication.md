@@ -14,7 +14,7 @@ type Auth interface {
 }
 ```
 
-When set it when initialize QOR Admin, like:
+When setting it when initializing QOR Admin, like:
 
 ```go
 func main() {
@@ -38,16 +38,16 @@ var Auth = clean.New(&auth.Config{
 type AdminAuth struct {}
 
 func (AdminAuth) LoginURL(c *admin.Context) string {
-	return "/auth/login"
+    return "/auth/login"
 }
 
 func (AdminAuth) LogoutURL(c *admin.Context) string {
-	return "/auth/logout"
+    return "/auth/logout"
 }
 
 func (AdminAuth) GetCurrentUser(c *admin.Context) qor.CurrentUser {
-	currentUser, _ := Auth.GetCurrentUser(c.Request).(qor.CurrentUser)
-	return currentUser
+    currentUser, _ := Auth.GetCurrentUser(c.Request).(qor.CurrentUser)
+    return currentUser
 }
 
 func main() {
@@ -80,7 +80,7 @@ product.Meta(&admin.Meta{Name: "Price", Permission: roles.Allow(roles.Update, "a
 
 ### Authorization For Actions
 
-QOR Admin will check permission mode `roles.Update` when checking if current user has the ability to call an action, other modes will ignored.
+QOR Admin will check permission mode `roles.Update` when checking if the current user has the ability to call an action, other modes will ignore.
 
 ```go
 user.Action(&admin.Action{
@@ -98,7 +98,7 @@ user.Action(&admin.Action{
 
 ### Authorization For Menus
 
-QOR Admin will check permission mode `roles.Read` when checking if current user has the ability to view the menu, other modes will ignored.
+QOR Admin will check permission mode `roles.Read` when checking if the current user has the ability to view the menu, other modes will ignore.
 
 ```go
 Admin.AddMenu(&admin.Menu{Name: "Report", Link: "/admin", Permission: roles.Allow(roles.Read, "admin")})

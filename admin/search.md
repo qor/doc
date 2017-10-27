@@ -20,8 +20,8 @@ You can overwrite it to customize resource's search, like preload some relations
 ```go
 oldSearchHandler := product.SearchHandler
 product.SearchHandler = func(keyword string, context *qor.Context) *gorm.DB {
-	context.SetDB(context.GetDB().Preload("Variations.Color").Preload("Variations.Size").Preload("Variations.Material"))
-	return oldSearchHandler(keyword, context)
+    context.SetDB(context.GetDB().Preload("Variations.Color").Preload("Variations.Size").Preload("Variations.Material"))
+    return oldSearchHandler(keyword, context)
 }
 ```
 
@@ -114,8 +114,8 @@ user.Filter(&admin.Filter{
 
 // Filter products by collection
 product.Filter(&admin.Filter{
-	Name:   "Collections",
-	Config: &admin.SelectOneConfig{RemoteDataResource: collection},
+    Name:   "Collections",
+    Config: &admin.SelectOneConfig{RemoteDataResource: collection},
 })
 ```
 

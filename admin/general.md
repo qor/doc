@@ -1,6 +1,6 @@
 ## General Configuration
 
-You could customize Admin with `AdminConfig` struct when initialize it, here are some general configurations:
+You could customize Admin with `AdminConfig` struct when initializing it, here are some general configurations:
 
 ```go
 type AdminConfig struct {
@@ -26,7 +26,7 @@ type AdminConfig struct {
 
 * DB
 
-  `DB` is a GORM DB connection, it is must required, QOR Admin will use the DB to manage data.
+  `DB` is a GORM DB connection, it is must be required, QOR Admin will use the DB to manage data.
 
 * Auth
 

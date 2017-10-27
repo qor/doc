@@ -4,7 +4,7 @@
 
 ## Usage
 
-Let's define a `Enable` action on user to see how `Action` works.
+Let's define an `Enable` action on a user to see how `Action` works.
 
 ```go
 type User struct {
@@ -35,16 +35,16 @@ Then the user `index` and `edit` page will show a button "ENABLE" like this:
 
 ```go
 type Action struct {
-	Name        string
-	Label       string
-	Method      string
-	URL         func(record interface{}, context *Context) string
-	URLOpenType string
-	Visible     func(record interface{}, context *Context) bool
-	Handler     func(argument *ActionArgument) error
-	Modes       []string
-	Resource    *Resource
-	Permission  *roles.Permission
+    Name        string
+    Label       string
+    Method      string
+    URL         func(record interface{}, context *Context) string
+    URLOpenType string
+    Visible     func(record interface{}, context *Context) bool
+    Handler     func(argument *ActionArgument) error
+    Modes       []string
+    Resource    *Resource
+    Permission  *roles.Permission
 }
 ```
 
@@ -58,7 +58,7 @@ type Action struct {
 
 * Method
 
-  HTTP method, default is `PUT`. When there is `URL` option, it will be `GET` by default
+  HTTP method, the default is `PUT`. When there is `URL` option, it will be `GET` by default
 
 * URL
 
@@ -66,7 +66,7 @@ type Action struct {
 
 * URLOpenType
 
-  Set how to open the URL, The default value for the action that has `Resource` is `bottomsheet`(the link will be opened in an popup window). For the action that has no `Resource` is `_blank`.
+  Set how to open the URL, The default value for the action that has `Resource` is `bottomsheet`(the link will be opened in a popup window). For the action that has no `Resource` is `_blank`.
 
 * Visible
 
@@ -82,7 +82,7 @@ type Action struct {
     * `Context`, `*admin.Context`. The context of [QOR Admin](/admin/README.md). Check Admin context for more detail.
     * `Argument`, `interface{}`. The argument of user input. check [Action with user input](#action-with-user-input) for example.
 
-  Also has a function `FindSelectedRecords`, it returns checked records in bulk action mode, return current record in other mode.
+  Also, has a function `FindSelectedRecords`, it returns checked records in bulk action mode, return current record in other modes.
 
 * Permission
 
@@ -97,7 +97,7 @@ type Action struct {
   Support 4 options: `"index", "edit", "show", "menu_item"`, the 4 `Modes` mapping to these pages:
 
   * `index`, Bulk actions, will be shown in index page as bulk actions.
-  * `edit`, Edit form action, will be shown in edit page.
+  * `edit`, Edit form action, will be shown on the edit page.
   * `show`, Show page action, will be shown in show page.
   * `menu_item`, Menu item action, will be shown in table's menu.
 
@@ -105,7 +105,7 @@ type Action struct {
 
 ## Visible Actions based on a condition
 
-  Use `Visible` to display `Cancel` order action when order's in "draft" and "processing" state only, the `record` parameter of `Visible` option is the current order. We can determine order state by it. When the return value is false, this action is invisible to user.
+  Use `Visible` to display `Cancel` order action when an order's in "draft" and "processing" state only, the `record` parameter of `Visible` option is the current order. We can determine order state by it. When the return value is false, this action is invisible to the user.
 
   ```go
   order.Action(&admin.Action{
@@ -146,7 +146,7 @@ This example shows how to make an action that user could click it to view produc
 
 ## Batch Action
 
-  Create a batch action with QOR Admin is fairly easy, just use [Action Modes](#action-modes) to enable an action in index page, the action becomes batch actions then, for example:
+  Create a batch action with QOR Admin is fairly easy, just use [Action Modes](#action-modes) to enable an action on the index page, the action becomes batch actions then, for example:
 
   ```go
   order.Action(&admin.Action{
@@ -170,7 +170,7 @@ This example shows how to make an action that user could click it to view produc
 
 ## Action with user input
 
-You need define a resource to accept user's input, which could be used in the `Handler` function.
+You need to define a resource to accept user's input, which could be used in the `Handler` function.
 
 ```go
 // the ship action's argument
