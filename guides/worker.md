@@ -1,6 +1,6 @@
 # Worker
 
-Worker runs a single [*Job*](<https://en.wikipedia.org/wiki/Job_(computing)>) in the background, it can do so immediately or at a scheduled time.
+Worker runs a single *Job* in the background, it can do so immediately or at a scheduled time.
 
 Once registered with [QOR Admin](http://github.com/qor/admin), [Worker](https://github.com/qor/worker) will provide a `Workers` section in the navigation tree, containing pages for listing and managing the following aspects of Workers:
 
