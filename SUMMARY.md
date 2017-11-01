@@ -1,5 +1,6 @@
 # Summary
 
+* [Getting Started with QOR](/README.md)
 * [Authentication](/guides/authentication.md)
 * [Sessions](/guides/sessions.md)
 * [Caching](/guides/caching.md)
