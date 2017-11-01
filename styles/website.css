@@ -1,4 +1,8 @@
-.summary > li[data-level="1.3"] {
+.summary > li > a, .summary > li > span {
+  font-weight: 700;
+}
+
+.summary > li[data-level="1.11"] {
   display: none;
 }
 
