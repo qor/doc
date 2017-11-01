@@ -7,10 +7,9 @@
 * [Sending Emails](/guides/sending_emails.md)
 * [Internationalization](/guides/i18n.md)
 * [Localization](/guides/l10n.md)
-* Views
-  * [Responder](/guides/responder.md)
-  * [Render](/guides/render.md)
-  * [BindataFS](/guides/bindatafs.md)
+* [Responder](/guides/responder.md)
+* [Render](/guides/render.md)
+* [BindataFS](/guides/bindatafs.md)
 * [Building Admin](admin/README.md)
   * [General Configuration](admin/general.md)
   * [Manage Resources](admin/resources.md)
