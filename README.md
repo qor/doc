@@ -1,8 +1,8 @@
 [QOR](https://github.com/qor/qor) is a set of libraries written in Go that abstract common features needed for business applications, Content Management Systems (CMS), and E-commerce systems (EC).
 
-Typically, a [QOR](https://github.com/qor/qor)-based system will revolve around [QOR Admin](./admin/README.md), which is the CMS component. [QOR Admin](./admin/README.md) facilitates easy database and media content management and is not bound to a single database technology.
+Typically, a [QOR](https://github.com/qor/qor)-based system will revolve around [QOR Admin](/admin/README.md), which is the CMS component. [QOR Admin](/admin/README.md) facilitates easy database and media content management and is not bound to a single database technology.
 
-The bulk of [QOR](https://github.com/qor/qor)'s multifaceted capabilities lie in the plugins, they can be used independently but their super-powers shine when used together. Many of the plugins utilize [GORM](https://github.com/jinzhu/gorm) as ORM.
+The bulk of QOR's multifaceted capabilities lie in the plugins, they can be used independently but their super-powers shine when used together. Many of the plugins utilize [GORM](https://github.com/jinzhu/gorm) as ORM.
 
 We, [The Plant](https://theplant.jp), utilise [QOR](https://github.com/qor/qor) on our own projects and are interested to hear about yours and your experience in using [QOR](https://github.com/qor/qor) - there are a number of ways to contribute and communicate with us and the [QOR](https://github.com/qor) community:
 
@@ -13,10 +13,7 @@ We, [The Plant](https://theplant.jp), utilise [QOR](https://github.com/qor/qor) 
 
 To keep up-to-date with [QOR](https://github.com/qor) developments, subscribe to one or more of the following:
 
-* watch our [QOR github repo](https://github.com/qor/qor "QOR Github repository") (and any plugin repos you are interested in),
-* follow our [Twitter](https://twitter.com/QORSDK "Twitter") account,
-* circle our [Google+ page](https://plus.google.com/u/0/113759909389888286690 "Google+ page"),
-* join our [Google+ Community](https://plus.google.com/communities/105869262256660405319 "Google+ Community"),
-* join our [Facebook group](https://www.facebook.com/qorsdk/ "Facebook group").
+* watch our [QOR github repo](https://github.com/qor/qor "QOR Github repository") (and any plugin repos you are interested in)
+* join our [English speaking Gitter chat](https://gitter.im/qor/qor "English speaking Gitter chat") or [Chinese speaking Gitter chat](https://gitter.im/qor/qor/china "Chinese speaking Gitter chat")
 
-**For security issues, please send us an email to security@getqor.com and give us time to respond BEFORE posting as an issue or reporting on public forums.**
+**For security issues, please send us an email to [security@getqor.com](mailto://security@getqor.com "security@getqor.com") and give us time to respond BEFORE posting as an issue or reporting on public forums.**

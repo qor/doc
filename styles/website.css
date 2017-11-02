@@ -2,8 +2,8 @@
   font-weight: 700;
 }
 
-.summary > li[data-level="1.11"] {
-  display: none;
+.summary > li[data-level="1.13"] {
+  display: none !important;
 }
 
 .toc {

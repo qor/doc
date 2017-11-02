@@ -8,8 +8,7 @@
 * [Internationalization](/guides/i18n.md)
 * [Localization](/guides/l10n.md)
 * [Responder](/guides/responder.md)
-* [Render](/guides/render.md)
-* [BindataFS](/guides/bindatafs.md)
+* [Render Views](/guides/render.md)
 * [Building Admin](admin/README.md)
   * [General Configuration](admin/general.md)
   * [Manage Resources](admin/resources.md)
@@ -25,6 +24,7 @@
   * [Integrate with WEB frameworks](admin/integration.md)
   * [Deploy to production](admin/deploy.md)
 * [Worker](/guides/worker.md)
+* [Deployment](/guides/bindatafs.md)
 
 * Invisible Page
   * [Fields](admin/fields.md)
