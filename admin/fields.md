@@ -48,6 +48,16 @@ order.EditAttrs("User", "PaymentAmount", "ShippedAt", "CancelledAt", "State", "S
 order.ShowAttrs("User", "PaymentAmount", "ShippedAt", "CancelledAt", "State", "ShippingAddress")
 ```
 
+## Customize fields for nested resources
+
+```go
+order := Admin.AddResource(&models.Order{})
+orderItemMeta := order.Meta(&admin.Meta{Name: "OrderItems"})
+orderItemResource := orderItemMeta.Resource
+
+orderItemResource.EditAttrs("ProductCode", "Price", "Quantity")
+```
+
 ## Meta
 
 By default, resource's fields are rendered based on its types and relations. The default should satisfy the usual cases, you can customize the rendering by overwriting the `Meta` definition.
