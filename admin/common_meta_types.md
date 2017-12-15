@@ -5,7 +5,7 @@
 * [Hidden/Readonly](/admin/metas/hidden-readonly.md)
 * [Password](/admin/metas/password.md)
 * [Rich editor](/admin/metas/rich-editor.md)
-* [Single edit](/admin/metas/collection-edit.md)
+* [Single edit](/admin/metas/single-edit.md)
 * [Collection edit](/admin/metas/collection-edit.md)
 * [Select one](/admin/metas/select-one.md)
 * [Select many](/admin/metas/select-many.md)
