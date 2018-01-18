@@ -1,14 +1,8 @@
 # Summary
 
-* [Getting Started with QOR](/README.md)
+* [Overview](/README.md)
+* [Get started](admin/get_started.md)
 * [Authentication](/guides/authentication.md)
-* [Sessions](/guides/sessions.md)
-* [Caching](/guides/caching.md)
-* [Sending Emails](/guides/sending_emails.md)
-* [Internationalization](/guides/i18n.md)
-* [Localization](/guides/l10n.md)
-* [Responder](/guides/responder.md)
-* [Render Views](/guides/render.md)
 * [Building Admin](admin/README.md)
   * [General Configuration](admin/general.md)
   * [Manage Resources](admin/resources.md)
@@ -23,8 +17,15 @@
   * [Extend QOR Admin](admin/extend_admin.md)
   * [Integrate with WEB frameworks](admin/integration.md)
   * [Deploy to production](admin/deploy.md)
-* [Worker](/guides/worker.md)
+* [Caching](/guides/caching.md)
 * [Deployment](/guides/bindatafs.md)
+* [Internationalization](/guides/i18n.md)
+* [Localization](/guides/l10n.md)
+* [Render Views](/guides/render.md)
+* [Responder](/guides/responder.md)
+* [Sending Emails](/guides/sending_emails.md)
+* [Sessions](/guides/sessions.md)
+* [Worker](/guides/worker.md)
 
 * Invisible Page
   * [Fields](admin/fields.md)
