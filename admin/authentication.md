@@ -32,6 +32,7 @@ import "github.com/qor/auth_themes/clean"
 
 var Auth = clean.New(&auth.Config{
   DB:         DB,
+  // User model needs to implement qor.CurrentUser interface (https://godoc.org/github.com/qor/qor#CurrentUser) to use it in QOR Admin
   UserModel:  models.User{},
 })
 
