@@ -46,8 +46,15 @@ func (AdminAuth) LogoutURL(c *admin.Context) string {
 }
 
 func (AdminAuth) GetCurrentUser(c *admin.Context) qor.CurrentUser {
-    currentUser, _ := Auth.GetCurrentUser(c.Request).(qor.CurrentUser)
-    return currentUser
+    currentUser := Auth.GetCurrentUser(c.Request)
+    if currentUser != nil {
+      qorCurrentUser, ok := currentUser.(qor.CurrentUser)
+      if !ok {
+        fmt.Printf("User %#v haven't implement qor.CurrentUser interface\n", currentUser)
+      }
+      return qorCurrentUser
+    }
+    return nil
 }
 
 func main() {
