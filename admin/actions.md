@@ -27,7 +27,7 @@ user.Action(&admin.Action{
 })
 ```
 
-Then the user `index` and `edit` page will show a button "ENABLE" like this:
+Then user's `index` and `edit` page will show a button "ENABLE" like this:
 
 ![action](action-demo.png)
 
@@ -94,14 +94,13 @@ type Action struct {
 
 * <a id="action-modes"></a>Modes
 
-  Support 4 options: `"index", "edit", "show", "menu_item"`, the 4 `Modes` mapping to these pages:
+  Support 5 options: `"batch", "edit", "show", "menu_item"`, `collection`, the 5 `Modes` mapping to these pages:
 
-  * `index`, Bulk actions, will be shown in index page as bulk actions.
-  * `edit`, Edit form action, will be shown on the edit page.
+  * `batch`, bulk actions, will be shown in index listing page when enable `Bulk Edit` mode
+  * `collection`, will be shown in the index listing page
   * `show`, Show page action, will be shown in show page.
+  * `edit`, Edit form action, will be shown on the edit page.
   * `menu_item`, Menu item action, will be shown in table's menu.
-
-  By default, Actions will be enabled for all four modes.
 
 ## Visible Actions based on a condition
 
@@ -164,7 +163,7 @@ This example shows how to make an action that user could click it to view produc
       }
       return false
     },
-    Modes: []string{"index"},
+    Modes: []string{"batch"},
   })
   ```
 
