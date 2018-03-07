@@ -77,7 +77,7 @@ funcMap := template.FuncMap{
 You can call this in the template
 
 ```go
-{{Greet "Memememe" }}
+{% raw %}{{Greet "Memememe" }}{% endraw %}
 ```
 
 The output is `Hello Memememe`.
