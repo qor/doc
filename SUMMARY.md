@@ -1,7 +1,7 @@
 # Summary
 
 * [Overview](/README.md)
-* [Get started](admin/get_started.md)
+* [Get started](get_started.md)
 * [Authentication](/guides/authentication.md)
 * [Building Admin](admin/README.md)
   * [General Configuration](admin/general.md)
