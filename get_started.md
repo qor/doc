@@ -1,6 +1,8 @@
 # Get Started
 
-Although [QOR Admin](admin/README.md) is just a component of [QOR](https://github.com/qor/qor) but we believe that a visible UI could help you getting a sense of [QOR](https://github.com/qor/qor) easily.
+Although [QOR Admin](admin/README.md) is just a component of [QOR](https://github.com/qor/qor) but we believe that a visible UI could help you getting a sense of [QOR](https://github.com/qor/qor) easily. So let's set up a simple CMS by [QOR Admin](admin/README.md).
+
+First, create a `main.go` with
 
 ```go
 package main
@@ -50,7 +52,7 @@ func main() {
 }
 ```
 
-Execute `go get -u ./...` to install the dependencies, then run `go run main.go` and visit [localhost:9000/admin](localhost:9000/admin) to see the admin site.
+Now, execute `go get -u ./...` to install the dependencies, then run `go run main.go` and visit [localhost:9000/admin](localhost:9000/admin) to see the admin site.
 
 ## Live Demo
 
