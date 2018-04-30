@@ -27,7 +27,7 @@ mux := http.NewServeMux()
 Admin.MountTo("/admin", mux)
 
 r := gin.Default()
-r.Any("/admin/*", gin.WrapH(mux))
+r.Any("/admin/*resources", gin.WrapH(mux))
 r.Run()
 ```
 
