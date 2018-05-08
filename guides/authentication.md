@@ -26,6 +26,7 @@ import (
   "github.com/qor/auth/providers/facebook"
   "github.com/qor/auth/providers/twitter"
   "github.com/qor/session/manager"
+  "github.com/jinzhu/gorm”
 )
 
 var (
