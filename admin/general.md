@@ -26,7 +26,7 @@ type AdminConfig struct {
 
 * DB
 
-  `DB` is a GORM DB connection, it is must be required, QOR Admin will use the DB to manage data.
+  `DB` is a GORM DB connection, it is required, QOR Admin will use the DB to manage data.
 
 * Auth
 
