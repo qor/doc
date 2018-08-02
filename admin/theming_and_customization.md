@@ -90,6 +90,10 @@ If you don't want a resource to be displayed in the menu, pass the `Invisible` o
 ```go
 Admin.AddResource(&User{}, &admin.Config{Invisible: true})
 ```
+If you don't want to use the default icon, pass the IconName option:
+```go
+Admin.AddResource(&User{}, &admin.Config{IconName: "Translation"})
+```
 
 ### Register a menu with custom URL
 
