@@ -141,3 +141,18 @@ Then put it in the CSS, about how to customize CSS for QOR Admin go check [QOR A
 ```
 
 Go to [QOR Admin](/admin/README.md), you should see the icon has been displayed beside the product menu.
+
+If you don't want to use the resource name as the icon name. You can use `IconName` like this
+
+```go
+  Admin.AddResource(&User{}, &admin.Config{IconName: "YouOwnIconName"})
+```
+
+The corresponding css of the menu icon would be
+
+```css
+[qor-icon-name*="YouOwnIconName"] > a::before {
+  content: "\E2BF";
+}
+```
+
