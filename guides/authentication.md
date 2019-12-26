@@ -26,7 +26,8 @@ import (
   "github.com/qor/auth/providers/facebook"
   "github.com/qor/auth/providers/twitter"
   "github.com/qor/session/manager"
-  "github.com/jinzhu/gorm”
+  "github.com/jinzhu/gorm"
+  _ "github.com/mattn/go-sqlite3"
 )
 
 var (
