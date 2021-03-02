@@ -103,12 +103,22 @@ Make any [Resource](/admin/resources.md) filter-able, within [QOR Admin](/admin/
 
 The example below shows how to filter Users, in a hypothetical project, by gender (either 'Male', 'Female', or 'Unknown').
 
+Note: SelectManyConfig only filter on string and integer fields.
+
 ```go
 // Filter users by gender
 user.Filter(&admin.Filter{
   Name: "Gender",
   Config: &admin.SelectOneConfig{
     Collection: []string{"Male", "Female", "Unknown"},
+  },
+})
+
+// Filter users by Roles with SelectManyConfig. 
+user.Filter(&admin.Filter{
+  Name: "Role",
+  Config: &admin.SelectManyConfig{
+    Collection: []string{"Admin", "Maintainer", "Member"},
   },
 })
 
@@ -122,6 +132,10 @@ product.Filter(&admin.Filter{
 Screenshot:
 
 ![filter](/admin/filter-demo.png)
+
+
+Filter with SelectManyConfig:
+![filter](/admin/select_many_config.png)
 
 ### Visible Filters based on a condition
 
