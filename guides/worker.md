@@ -63,7 +63,7 @@ func main() {
 ## Things to note
 
 - If a *Job* is scheduled within 2 minutes of the current time, then it will be run immediately.
-- If you want to use CSV files or other files in Worker, and you use [QOR/Media](https://github.com/qor/media/) to manipulate the files, don't forget to use `media.RegisterCallbacks(db)` to make the files work properly.
+- To use [QOR/Media](https://github.com/qor/media/) to process the uploaded file, you have to register callback for QOR/Media `media.RegisterCallbacks(db)`.
 - It is possible, via the admin interface, to abort a currently running *Job*: view the *Job*'s data via `Workers > Running` or `Workers > All Jobs` and press the `Abort running Job` button.
 - It is possible, via the admin interface, to abort a scheduled *Job*: view the *Job*'s data via `Workers > Scheduled` or `Workers > All Jobs` and press the `Cancel scheduled Job` button.
 - It is possible, via the admin interface, to update a scheduled *Job*, including setting a new date and time: view the *Job*'s data via `Workers > Scheduled` or `Workers > All Jobs`, update the `Schedule Time` field's value, and press the `Update scheduled Job` button. Please be aware that scheduling a *Job* to a date/time in the past will see the Job get run immediately.
