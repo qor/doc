@@ -34,14 +34,14 @@ func main() {
   DB, _ := gorm.Open("sqlite3", "demo.db")
   DB.AutoMigrate(&User{}, &Product{})
 
-  // Initalize
+  // Initialize
   Admin := admin.New(&admin.AdminConfig{DB: DB})
 
   // Create resources from GORM-backend model
   Admin.AddResource(&User{})
   Admin.AddResource(&Product{})
 
-  // Initalize an HTTP request multiplexer
+  // Initialize an HTTP request multiplexer
   mux := http.NewServeMux()
 
   // Mount admin to the mux
