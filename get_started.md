@@ -34,7 +34,7 @@ func main() {
   DB, _ := gorm.Open("sqlite3", "demo.db")
   DB.AutoMigrate(&User{}, &Product{})
 
-  // Initalize
+  // Initialize
   Admin := admin.New(&admin.AdminConfig{DB: DB})
 
   // Create resources from GORM-backend model
