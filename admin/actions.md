@@ -17,7 +17,7 @@ user := Admin.AddResource(&models.User{})
 
 user.Action(&admin.Action{
   Name: "enable",
-  Handle: func(actionArgument *admin.ActionArgument) error {
+  Handler: func(actionArgument *admin.ActionArgument) error {
     // `FindSelectedRecords` => in bulk action mode, will return all checked records, in other mode, will return current record
     for _, record := range actionArgument.FindSelectedRecords() {
       actionArgument.Context.DB.Model(record.(*models.User)).Update("Active", true)
